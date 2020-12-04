@@ -1,0 +1,33 @@
+.worldMap{
+    background-color: #efefef;
+}
+
+.legendThreshold {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.caption {
+    fill: #000;
+    text-anchor: start;
+    font-weight: bold;
+}
+
+body {
+    background-color: white;
+}
+
+.country {
+    fill: grey;
+    stroke: #333333;
+    stroke-width:0.5;
+}
+
+.selected{
+    fill: yellow;
+}
+
+.product-label {
+    font-size : 10px;
+
+}
