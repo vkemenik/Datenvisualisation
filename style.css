@@ -1,4 +1,30 @@
-.worldMap{
+
+#titleWWW {
+    font-size: 25px;
+    line-height: 20px;
+}
+
+#titleWasser {
+    font-size: 48px;
+    line-height: 20px;
+}
+
+.fontTitle {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.fontText {
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url('./img/background.png');
+}
+
+.worldMap {
     background-color: #efefef;
 }
 
@@ -17,17 +43,62 @@ body {
     background-color: white;
 }
 
-.country {
-    fill: grey;
-    stroke: #333333;
-    stroke-width:0.5;
+/*.country {*/
+/*    fill: #9CB6DB;*/
+/*    stroke: white;*/
+/*    stroke-width: 0.5;*/
+/*}*/
+
+.country:hover {
+    fill-opacity: 0.8;
+    stroke: white;
 }
 
-.selected{
-    fill: yellow;
+.selected {
+    fill: #055BDC;
 }
 
 .product-label {
-    font-size : 10px;
+    font-size: 10px;
 
 }
+
+.radios {
+    text-align:left;
+}
+.radios input{
+    /*margin: 0 5px 0 20px;*/
+    margin-left: 200px;
+
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.btnZoom{
+    background-color: #121C78;
+    color:white;
+    margin-bottom: 0.5em;
+}
+
+
+div.tooltip {
+    color: #222;
+    background-color: #fff;
+    padding: .5em;
+    text-shadow: #f5f5f5 0 1px 0;
+    border-radius: 2px;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 1.8em;
+}
+/*.btnZoom :hover{*/
+/*    background-color:darkblue;*/
+/*}*/
