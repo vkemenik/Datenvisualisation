@@ -6,5 +6,219 @@
 </head>
 <body>
 
+<div class="container">
+    <div class="mt-3 text-center worldMap">
+        <div class="row">
+            <div class="col-6 offset-1 ">
+                <div class="text-left">
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="radioButton" value="waterstress">Wasserstresssdjkhfglkashfglkash
+                            <input type="radio" class="form-check-input" name="radioButton" value="wwf">Virtuelles
+                            Wasser
+                            <input type="radio" class="form-check-input" name="radioButton" value="product"> Produkte
+                        </label>
+                    </div>
+                </div>
+                <div id="map">
+                    <svg id="tool" width="960" height="700"></svg>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var margin = {top: 50, left: 50, right: 50, bottom: 50},
+        height = 400 - margin.top - margin.bottom,
+        width = 800 - margin.left - margin.right;
+
+    /**
+     *
+     * */
+    var worldmap;
+    /**
+     * Maps for the dataset
+     * */
+
+    var waterStressData = d3.map();
+
+
+
+    // create the svg
+    var svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height")
+
+    // var svg = d3.select("#map")
+    // .append("svg")
+    // .attr("height", height + margin.top + margin.bottom)
+    // .attr("width", width+margin.left+margin.right)
+    // .append("g")
+    // .attr("transform", "translate("+margin.left+","+margin.top+")");
+
+    /*
+    Read File
+     */
+    d3.queue()
+        .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+        .defer(d3.csv, "data/country-water-stress.csv", function (d) {
+            waterStressData.set(d.code, +d.score);
+        })
+        .await(ready);
+
+    /*
+    Create Projection using Mercartor (geoMercator)
+    and center it (translate) and zoom in a certain amount (scale)
+     */
+    var projection = d3.geoMercator()
+        .translate([480, 480])
+        .scale(960 / Math.PI / 2)
+    /*
+    Create a geoPath using the projection
+     */
+    var path = d3.geoPath()
+        .projection(projection);
+
+    function ready(error, topo) {
+         // console.log(waterStressData);
+        //console.log(topo);
+        // var countries = topojson.feature(data, data.objects.countries).features;
+        var countries = topo.features;
+        // console.log(countries);
+
+        /**
+         *Add a path for each country
+         */
+
+        // Another way to do show the country
+
+        /* svg.selectAll("path")
+        .data(countries)
+        .enter()
+        .append("path")
+        .attr("d",path)
+        .attr("fill",'grey')*/
+
+        worldmap = svg.selectAll(".country")
+            .data(countries)
+            .enter()
+            .append("path")
+            .attr("class", "country")
+            .attr("d", path)
+        /* .on('mouseover', function(d){
+        //     d3.select(this).classed("selected", true)
+        // })
+        // .on('mouseout', function(d){
+        //     d3.select(this).classed("selected", false)
+        // })*/
+
+        const buttons = d3.selectAll('input').on("change", function (d) {
+            const selection = this.value;
+        });
+        buttons.on('change', function (d) {
+            console.log('button chnaged to ' + this.value);
+            if(this.value == 'waterstress'){
+                var colorScale = d3.scaleThreshold()
+                    .domain([0, 1, 2, 3, 4, 5])
+                    .range(d3.schemeBlues[5]);
+                //legend
+                var g = svg.append("g")
+                    .attr("class", "legendThreshold")
+                    .attr("transform", "translate(20,20)");
+                g.append("text")
+                    .attr("class", "caption")
+                    .attr("x", 0)
+                    .attr("y", -6)
+                    .text("Wasser-Stress-Score");
+                var labels = ['Low <10%', 'Low - Medium (10-20%)', 'Medium - High (20-40%)', 'High (40-80%)', 'Extremely High (>80%)'];
+                var legend = d3.legendColor()
+                    .labels(function (d) {
+                        return labels[d.i];
+                    })
+                    .shapePadding(4)
+                    .scale(colorScale);
+
+                worldmap.attr("fill", function(d){
+                    d.total = waterStressData.get(d.id)||0;
+                    return colorScale(d.total);
+                });
+                svg.select(".legendTreshold")
+                .call(legend);
+
+            }
+        })
+
+        /**
+         * Add Circle for the products
+         */
+
+        /* svg.selectAll(".products-circle")
+             .data()
+             .enter()
+             .append("circle")
+             .attr("r", 2)
+             .attr("cx", function (d) {
+                 var coords = projection([d.long, d.lat])
+                 return coords[0];
+             })
+             .attr("cy", function (d) {
+                 var coords = projection([d.long, d.lat])
+                 return coords[1];
+             })
+         svg.selectAll(".products-label")
+             .data()
+             .enter()
+             .append("text")
+             .attr("class", "products-label")
+             .attr("x", function (d) {
+                 var coords = projection([d.long, d.lat])
+                 return coords[0];
+             })
+             .attr("y", function (d) {
+                 var coords = projection([d.long, d.lat])
+                 return coords[1];
+             })
+             .text(function(d){
+                 return d.name
+             })
+         .attr("dx", 10)
+         .attr("dy",5)*/
+
+        function updateMap(selectedMap) {
+            d3.selectAll('input').each(function (d) {
+                /* cb = d3.select(this);
+                 grp = cb.property("value");
+
+                 if (cb.property("checked")){
+                     if(grp === "")
+                 }*/
+                if (selectedMap == 'waterstress') {
+                    console.log('in waterstress');
+                    var countries = topojson.feature(topo, topo.objects.countries).features;
+
+                    svg.selectAll(".country")
+                        .data(countries)
+                        .enter()
+                        .append("path")
+                        .attr("class", "country")
+                        .attr("d", path)
+                        .attr("fill", function (d) {
+                            d.total = waterStressData.get(d.name);
+                        })
+
+                }
+            })
+        }
+
+        // const buttons = d3.selectAll('input').on("change", function (d) {
+        //     const selection = this.value;
+        // });
+        // buttons.on('change', function (d) {
+        //     console.log('button chnaged to ' + this.value);
+        //     updateMap(this.value);
+        // })
+    }
+</script>
 </body>
 </html>
