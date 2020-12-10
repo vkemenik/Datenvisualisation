@@ -2,223 +2,233 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>Wasser-facts</title>
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<div class="container">
-    <div class="mt-3 text-center worldMap">
-        <div class="row">
-            <div class="col-6 offset-1 ">
-                <div class="text-left">
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="radioButton" value="waterstress">Wasserstresssdjkhfglkashfglkash
-                            <input type="radio" class="form-check-input" name="radioButton" value="wwf">Virtuelles
-                            Wasser
-                            <input type="radio" class="form-check-input" name="radioButton" value="product"> Produkte
-                        </label>
+    <!--Load Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="50" class="">
+<div class="container background mt-3">
+    <header>
+        <div class="d-flex p-2 justify-content-end">
+            <div class="">
+                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">about</a>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <nav class="navbar  col-1" id="myScrollspy">
+            <ul class="nav nav-pills flex-column align-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section1"><!--<i class="fa fa-circle"></i>-->2</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#section2">3</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#section3">4</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#section4">5</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#section5">6</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#section6">7</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#section7">8</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="storyTelling" class="col-10">
+            <div id="home" class="row">
+                <div class="col mt-3">
+                    <div class="d-flex flex-column">
+                        <div class="text-center">
+                            <p class="fontTitle" id="titleWWWHome">Wer? Wie? Was?</p>
+                            <p class="fontTitle" id="titleWasserHome">Wasser</p>
+                        </div>
+                        <div class="text-left">
+                            <p class="fontText">
+                                Wasser sparen wird uns von klein auf beigebracht. Doch was hat es damit
+                                konkret auf sich?
+                                Es wird zwischen dem Wasserverbrauch einer Person im Haushalt, sowie dem Wasserverbrauch
+                                des „virtuellen Wassers“ unterschieden.
+                                Was das ist, worin die Unterschiede liegen und worin die Ungerechtigkeit liegt, könnt
+                                ihr hier erfahren.
+                            </p>
+                        </div>
+                        <!--                        <section class ="text-center">-->
+                        <!--                            <img src ="./img/Datenvisualisierung_Wave%201.png" style ="width:75%;" >-->
+                        <!--                        </section>-->
+                        <div class="text-center">
+                            <a type="button" id="chevronBtndown" class="btn" href="#section1" role="button"><i
+                                    class="fa fa-chevron-down"></i></a>
+
+                            <!--                            <button id = "chevronBtn" class ="btn"><i class="fa fa-chevron-down"></i></button>-->
+                        </div>
                     </div>
                 </div>
-                <div id="map">
-                    <svg id="tool" width="960" height="700"></svg>
+                <!--                <div class="d-flex flex-column">-->
+                <!--                    <a type="button"  id ="chevronBtnRight"class="btn align-self-center" href="tool.html" role="button"><i class="fa fa-chevron-right"></i></a>-->
+
+                <!--                </div>-->
+            </div>
+
+            <div id="section1" class=" row">
+                <div class="col-4">
+                    <section class="fontText">
+                        <h3> Unser blauen Planet</h3>
+                        <br>
+                        <p>Die Oberfläche der Erde hat insgesamt eine Größe von 510 Millionen Quadratkilometer.
+                            Mit einem Anteil von 71 Prozent ist unser blauer Planet zu etwa zwei Dritteln mit Wasser bedeckt.
+                            Alle Wasservorräte der Welt fassen insgesamt ca. 1,4 Milliarden Kubikkilometer* Wasser.</p>
+                    </section>
+                </div>
+                <div class="col-6">
+                    <img src="./img/Datenvisualisierung_World%201.png" class="center">
+                </div>
+                <div class="col-1">
+                    <a type="button"  class="btn align-self-center chevronBtnRight" href="tool.html"
+                       role="button"><i class="fa fa-chevron-right"></i></a>
                 </div>
 
             </div>
+
+            <div id="section2" class="row">
+                <div class ="col-4 fontText">
+                    <h3> Unser blauen Planet</h3>
+                    <br>
+                    <p>Der Großteil davon besteht aus Salzwasser (96,5 Prozent) und fließt in unseren Meeren und Ozeanen.
+                        Süßwasser dagegen macht mit etwa 35 Millionen Kubikkilometern Wasser gerade einmal 2,5 Prozent der weltweiten Wasserreserven aus.
+                    </p>
+                </div>
+                <div class ="col-6">
+                    <img src="">
+                </div>
+                <div class ="col-1">
+                    <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
+                       role="button"><i class="fa fa-chevron-right"></i></a>
+                </div>
+
+            </div>
+
+            <div id="section3" class="">
+                <div class ="col-4 fontText">
+                    <h3> Unser blauer Planet</h3>
+                    <br>
+                    <p>Der Großteil davon ist als Eis in den Gletschern der Arktis und Antarktis gebunden oder
+                        befindet sich als Grundwasser tief unter der Erde.
+                        Ob als Trinkwasser oder zur Bewässerung von Feldern: Wirklich zugänglich
+                        ist für uns Menschen eigentlich nur ein sehr kleiner Teil der Süßwasserreserven in Seen, Flüssen und Talsperren: nämlich 0,3 Prozent.</p>
+                </div>
+                <div class ="col-6">
+                    <img src="">
+                </div>
+                <div class ="col-1">
+                    <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
+                       role="button"><i class="fa fa-chevron-right"></i></a>
+                </div>
+
+
+            </div>
+
+            <div id="section4" class="">
+                <div class ="col-4 fontText">
+                    <h3> Das virtuelle Wasser</h3>
+                    <br>
+                    <p>Virtuelles Wasser ist das Wasser, welches wir indirekt durch Lebensmittel und
+                        andere Güter wie zum Beispiel Kleidung konsumieren. Es bezeichnet also jenes Wasser,
+                        das in einem anderen Teil der Welt genutzt oder verloren wurde, um Güter zu produzieren, welche hier konsumiert werden.</p>
+                </div>
+                <div class ="col-6">
+                    <img src="">
+                </div>
+                <div class ="col-1">
+                    <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
+                       role="button"><i class="fa fa-chevron-right"></i></a>
+                </div>
+
+
+            </div>
+
+            <div id="section5" class="">
+                <div class ="col-4 fontText">
+                    <h3> Die drei Sektoren</h3>
+                    <br>
+                    <p>Nahezu dreiviertel des Wassers wird weltweit für die Bewässerung benutzt und lediglich ein Anteil von 10 Prozent wird von Haushalten,
+                        wie zum Beispiel Dusche, WC-Spülung, Hände-Waschen & Co verwendet.
+                        Grund für den hohen Wasserverbrauch in dem Sektor Bewässerung ist die hohe Nachfrage bestimmter Konsumgüter. </p>
+                </div>
+                <div class ="col-6">
+                    <img src="">
+                </div>
+                <div class ="col-1">
+                    <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
+                       role="button"><i class="fa fa-chevron-right"></i></a>
+                </div>
+
+
+            </div>
+
+            <div id="section6" class="">
+                <div class ="col-4 fontText">
+                    <h3> Deutschland als Hauptakteur</h3>
+                    <br>
+                    <p>Europa, darunter auch Deutschland, importiert mit 100 - 305  Milliarden m³ weltweit am meisten Wasser. Hierbei wird aus Ländern importiert, die durch den Export besonders an Wasserstress und den darunter mitbringen-
+                        den Folgen (Gefährdung der Lebensgrundlage, Hungers-
+                        not, Senkung des Grundwasserspiegels, geringere Bildung) leiden. </p>
+                </div>
+                <div class ="col-6">
+                    <img src="">
+                </div>
+                <div class ="col-1">
+                    <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
+                       role="button"><i class="fa fa-chevron-right"></i></a>
+                </div>
+
+
+            </div>
+
+            <div id="section7" class="">
+                <h1> Section1</h1>
+                <p>test</p>
+
+            </div>
+
         </div>
+
     </div>
+
+
 </div>
-<script>
-    var margin = {top: 50, left: 50, right: 50, bottom: 50},
-        height = 400 - margin.top - margin.bottom,
-        width = 800 - margin.left - margin.right;
-
-    /**
-     *
-     * */
-    var worldmap;
-    /**
-     * Maps for the dataset
-     * */
-
-    var waterStressData = d3.map();
 
 
-
-    // create the svg
-    var svg = d3.select("svg"),
-        width = +svg.attr("width"),
-        height = +svg.attr("height")
-
-    // var svg = d3.select("#map")
-    // .append("svg")
-    // .attr("height", height + margin.top + margin.bottom)
-    // .attr("width", width+margin.left+margin.right)
-    // .append("g")
-    // .attr("transform", "translate("+margin.left+","+margin.top+")");
-
-    /*
-    Read File
-     */
-    d3.queue()
-        .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-        .defer(d3.csv, "data/country-water-stress.csv", function (d) {
-            waterStressData.set(d.code, +d.score);
-        })
-        .await(ready);
-
-    /*
-    Create Projection using Mercartor (geoMercator)
-    and center it (translate) and zoom in a certain amount (scale)
-     */
-    var projection = d3.geoMercator()
-        .translate([480, 480])
-        .scale(960 / Math.PI / 2)
-    /*
-    Create a geoPath using the projection
-     */
-    var path = d3.geoPath()
-        .projection(projection);
-
-    function ready(error, topo) {
-         // console.log(waterStressData);
-        //console.log(topo);
-        // var countries = topojson.feature(data, data.objects.countries).features;
-        var countries = topo.features;
-        // console.log(countries);
-
-        /**
-         *Add a path for each country
-         */
-
-        // Another way to do show the country
-
-        /* svg.selectAll("path")
-        .data(countries)
-        .enter()
-        .append("path")
-        .attr("d",path)
-        .attr("fill",'grey')*/
-
-        worldmap = svg.selectAll(".country")
-            .data(countries)
-            .enter()
-            .append("path")
-            .attr("class", "country")
-            .attr("d", path)
-        /* .on('mouseover', function(d){
-        //     d3.select(this).classed("selected", true)
-        // })
-        // .on('mouseout', function(d){
-        //     d3.select(this).classed("selected", false)
-        // })*/
-
-        const buttons = d3.selectAll('input').on("change", function (d) {
-            const selection = this.value;
-        });
-        buttons.on('change', function (d) {
-            console.log('button chnaged to ' + this.value);
-            if(this.value == 'waterstress'){
-                var colorScale = d3.scaleThreshold()
-                    .domain([0, 1, 2, 3, 4, 5])
-                    .range(d3.schemeBlues[5]);
-                //legend
-                var g = svg.append("g")
-                    .attr("class", "legendThreshold")
-                    .attr("transform", "translate(20,20)");
-                g.append("text")
-                    .attr("class", "caption")
-                    .attr("x", 0)
-                    .attr("y", -6)
-                    .text("Wasser-Stress-Score");
-                var labels = ['Low <10%', 'Low - Medium (10-20%)', 'Medium - High (20-40%)', 'High (40-80%)', 'Extremely High (>80%)'];
-                var legend = d3.legendColor()
-                    .labels(function (d) {
-                        return labels[d.i];
-                    })
-                    .shapePadding(4)
-                    .scale(colorScale);
-
-                worldmap.attr("fill", function(d){
-                    d.total = waterStressData.get(d.id)||0;
-                    return colorScale(d.total);
-                });
-                svg.select(".legendTreshold")
-                .call(legend);
-
-            }
-        })
-
-        /**
-         * Add Circle for the products
-         */
-
-        /* svg.selectAll(".products-circle")
-             .data()
-             .enter()
-             .append("circle")
-             .attr("r", 2)
-             .attr("cx", function (d) {
-                 var coords = projection([d.long, d.lat])
-                 return coords[0];
-             })
-             .attr("cy", function (d) {
-                 var coords = projection([d.long, d.lat])
-                 return coords[1];
-             })
-         svg.selectAll(".products-label")
-             .data()
-             .enter()
-             .append("text")
-             .attr("class", "products-label")
-             .attr("x", function (d) {
-                 var coords = projection([d.long, d.lat])
-                 return coords[0];
-             })
-             .attr("y", function (d) {
-                 var coords = projection([d.long, d.lat])
-                 return coords[1];
-             })
-             .text(function(d){
-                 return d.name
-             })
-         .attr("dx", 10)
-         .attr("dy",5)*/
-
-        function updateMap(selectedMap) {
-            d3.selectAll('input').each(function (d) {
-                /* cb = d3.select(this);
-                 grp = cb.property("value");
-
-                 if (cb.property("checked")){
-                     if(grp === "")
-                 }*/
-                if (selectedMap == 'waterstress') {
-                    console.log('in waterstress');
-                    var countries = topojson.feature(topo, topo.objects.countries).features;
-
-                    svg.selectAll(".country")
-                        .data(countries)
-                        .enter()
-                        .append("path")
-                        .attr("class", "country")
-                        .attr("d", path)
-                        .attr("fill", function (d) {
-                            d.total = waterStressData.get(d.name);
-                        })
-
-                }
-            })
-        }
-
-        // const buttons = d3.selectAll('input').on("change", function (d) {
-        //     const selection = this.value;
-        // });
-        // buttons.on('change', function (d) {
-        //     console.log('button chnaged to ' + this.value);
-        //     updateMap(this.value);
-        // })
-    }
-</script>
 </body>
 </html>
