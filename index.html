@@ -22,8 +22,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
 
 </head>
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="50" class="">
-<div class="container background mt-3">
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
+<div class="container mt-3">
     <header>
         <div class="d-flex p-2 justify-content-end">
             <div class="">
@@ -60,168 +60,160 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#section6">7</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#section7">8</a>
-                </li>
             </ul>
         </nav>
         <div id="storyTelling" class="col-10">
-            <div id="home" class="row">
-                <div class="col mt-3">
-                    <div class="d-flex flex-column">
-                        <div class="text-center">
-                            <p class="fontTitle" id="titleWWWHome">Wer? Wie? Was?</p>
-                            <p class="fontTitle" id="titleWasserHome">Wasser</p>
-                        </div>
-                        <div class="text-left">
-                            <p class="fontText">
-                                Wasser sparen wird uns von klein auf beigebracht. Doch was hat es damit
-                                konkret auf sich?
-                                Es wird zwischen dem Wasserverbrauch einer Person im Haushalt, sowie dem Wasserverbrauch
-                                des „virtuellen Wassers“ unterschieden.
-                                Was das ist, worin die Unterschiede liegen und worin die Ungerechtigkeit liegt, könnt
-                                ihr hier erfahren.
-                            </p>
-                        </div>
-                        <!--                        <section class ="text-center">-->
-                        <!--                            <img src ="./img/Datenvisualisierung_Wave%201.png" style ="width:75%;" >-->
-                        <!--                        </section>-->
-                        <div class="text-center">
-                            <a type="button" id="chevronBtndown" class="btn" href="#section1" role="button"><i
-                                    class="fa fa-chevron-down"></i></a>
-
-                            <!--                            <button id = "chevronBtn" class ="btn"><i class="fa fa-chevron-down"></i></button>-->
-                        </div>
-                    </div>
+            <div id="home" class="row heightContent bg-info">
+                <img src="./img/Datenvisualisierung_Wave%201.png" class="img-fluid">
+                <div class="homeCenteredTitle  fontText">
+                    <p class="fontTitle" id="titleWWWHome">Wer? Wie? Was?</p>
+                    <p class="fontTitle" id="titleWasserHome">Wasser</p>
                 </div>
-                <!--                <div class="d-flex flex-column">-->
-                <!--                    <a type="button"  id ="chevronBtnRight"class="btn align-self-center" href="tool.html" role="button"><i class="fa fa-chevron-right"></i></a>-->
-
-                <!--                </div>-->
+                <div class="homeCenteredTest fontText">
+                    <p class="fontText">
+                        Wasser sparen wird uns von klein auf beigebracht. Doch was hat es damit
+                        konkret auf sich?
+                        Es wird zwischen dem Wasserverbrauch einer Person im Haushalt, sowie dem Wasserverbrauch
+                        des „virtuellen Wassers“ unterschieden.
+                        Was das ist, worin die Unterschiede liegen und worin die Ungerechtigkeit liegt, könnt
+                        ihr hier erfahren.
+                    </p>
+                </div>
+                <div class="btnCenterBottom">
+                    <a type="button" id="chevronBtndown" class="btn" href="#section1" role="button"><i
+                            class="fa fa-chevron-down fa-2x"></i></a>
+                </div>
             </div>
-
-            <div id="section1" class=" row">
-                <div class="col-4">
+            <div id="section1" class="row align-items-center heightContent">
+                <div class="col-5">
                     <section class="fontText">
                         <h3> Unser blauen Planet</h3>
                         <br>
                         <p>Die Oberfläche der Erde hat insgesamt eine Größe von 510 Millionen Quadratkilometer.
-                            Mit einem Anteil von 71 Prozent ist unser blauer Planet zu etwa zwei Dritteln mit Wasser bedeckt.
+                            Mit einem Anteil von 71 Prozent ist unser blauer Planet zu etwa zwei Dritteln mit Wasser
+                            bedeckt.
                             Alle Wasservorräte der Welt fassen insgesamt ca. 1,4 Milliarden Kubikkilometer* Wasser.</p>
                     </section>
                 </div>
-                <div class="col-6">
-                    <img src="./img/Datenvisualisierung_World%201.png" class="center">
+                <div class="col-5">
+                    <img src="./img/Datenvisualisierung_World%201.png" class="img-fluid">
+                    <div class="text-center">
+                        <p class="fontPicture"> 71% Wasser</p>
+                    </div>
                 </div>
-                <div class="col-1">
-                    <a type="button"  class="btn align-self-center chevronBtnRight" href="tool.html"
-                       role="button"><i class="fa fa-chevron-right"></i></a>
+                <div class="col-2">
+                    <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
+                       role="button"><i class="fa fa-chevron-right fa-2x"></i></a>
                 </div>
 
             </div>
-
-            <div id="section2" class="row">
-                <div class ="col-4 fontText">
+            <div id="section2" class="row align-items-center heightContent">
+                <div class="col-5 fontText">
                     <h3> Unser blauen Planet</h3>
                     <br>
-                    <p>Der Großteil davon besteht aus Salzwasser (96,5 Prozent) und fließt in unseren Meeren und Ozeanen.
-                        Süßwasser dagegen macht mit etwa 35 Millionen Kubikkilometern Wasser gerade einmal 2,5 Prozent der weltweiten Wasserreserven aus.
+                    <p>Der Großteil davon besteht aus Salzwasser (96,5 Prozent) und fließt in unseren Meeren und
+                        Ozeanen.
+                        Süßwasser dagegen macht mit etwa 35 Millionen Kubikkilometern Wasser gerade einmal 2,5 Prozent
+                        der weltweiten Wasserreserven aus.
                     </p>
                 </div>
-                <div class ="col-6">
-                    <img src="">
+                <div class="col-5">
+                    <img src="./img/Datenvisualisierung_Water_1%201.png" class="img-fluid">
+                    <div class ="text-center">
+                        <p class="fontPicture"></p>
+                    </div>
                 </div>
-                <div class ="col-1">
+                <div class="col-2">
                     <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
-                       role="button"><i class="fa fa-chevron-right"></i></a>
+                       role="button"><i class="fa fa-chevron-right fa-2x"></i></a>
                 </div>
 
             </div>
 
-            <div id="section3" class="">
-                <div class ="col-4 fontText">
+            <div id="section3" class=" row align-items-center heightContent">
+                <div class="col-5 fontText">
                     <h3> Unser blauer Planet</h3>
                     <br>
                     <p>Der Großteil davon ist als Eis in den Gletschern der Arktis und Antarktis gebunden oder
                         befindet sich als Grundwasser tief unter der Erde.
                         Ob als Trinkwasser oder zur Bewässerung von Feldern: Wirklich zugänglich
-                        ist für uns Menschen eigentlich nur ein sehr kleiner Teil der Süßwasserreserven in Seen, Flüssen und Talsperren: nämlich 0,3 Prozent.</p>
+                        ist für uns Menschen eigentlich nur ein sehr kleiner Teil der Süßwasserreserven in Seen, Flüssen
+                        und Talsperren: nämlich 0,3 Prozent.</p>
                 </div>
-                <div class ="col-6">
-                    <img src="">
+                <div class="col-5">
+                    <img src="./img/Datenvisualisierung_Water_3%201%20(1).png" class="img-fluid">
                 </div>
-                <div class ="col-1">
+                <div class="col-2">
                     <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
-                       role="button"><i class="fa fa-chevron-right"></i></a>
+                       role="button"><i class="fa fa-chevron-right fa-2x"></i></a>
                 </div>
 
 
             </div>
 
-            <div id="section4" class="">
-                <div class ="col-4 fontText">
+            <div id="section4" class=" row align-items-center heightContent">
+                <div class="col-4 fontText">
                     <h3> Das virtuelle Wasser</h3>
                     <br>
                     <p>Virtuelles Wasser ist das Wasser, welches wir indirekt durch Lebensmittel und
                         andere Güter wie zum Beispiel Kleidung konsumieren. Es bezeichnet also jenes Wasser,
-                        das in einem anderen Teil der Welt genutzt oder verloren wurde, um Güter zu produzieren, welche hier konsumiert werden.</p>
+                        das in einem anderen Teil der Welt genutzt oder verloren wurde, um Güter zu produzieren, welche
+                        hier konsumiert werden.</p>
                 </div>
-                <div class ="col-6">
-                    <img src="">
+                <div class="col-3">
+                    <img src="./img/120L.png" class ="img-fluid">
                 </div>
-                <div class ="col-1">
+                <div class="col-3">
+                    <img src="./img/4000L.png" class ="img-fluid">
+                </div>
+
+                <div class="col-2">
                     <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
-                       role="button"><i class="fa fa-chevron-right"></i></a>
+                       role="button"><i class="fa fa-chevron-right fa-2x"></i></a>
                 </div>
 
 
             </div>
 
-            <div id="section5" class="">
-                <div class ="col-4 fontText">
+            <div id="section5" class=" row align-items-center heightContent">
+                <div class="col-5 fontText">
                     <h3> Die drei Sektoren</h3>
                     <br>
-                    <p>Nahezu dreiviertel des Wassers wird weltweit für die Bewässerung benutzt und lediglich ein Anteil von 10 Prozent wird von Haushalten,
+                    <p>Nahezu dreiviertel des Wassers wird weltweit für die Bewässerung benutzt und lediglich ein Anteil
+                        von 10 Prozent wird von Haushalten,
                         wie zum Beispiel Dusche, WC-Spülung, Hände-Waschen & Co verwendet.
-                        Grund für den hohen Wasserverbrauch in dem Sektor Bewässerung ist die hohe Nachfrage bestimmter Konsumgüter. </p>
+                        Grund für den hohen Wasserverbrauch in dem Sektor Bewässerung ist die hohe Nachfrage bestimmter
+                        Konsumgüter. </p>
                 </div>
-                <div class ="col-6">
-                    <img src="">
+                <div class="col-5">
+                    <img src="./img/Datenvisualisierung_Water_5%201.png" class ="img-fluid">
                 </div>
-                <div class ="col-1">
+                <div class="col-2">
                     <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
-                       role="button"><i class="fa fa-chevron-right"></i></a>
+                       role="button"><i class="fa fa-chevron-right fa-2x"></i></a>
                 </div>
 
 
             </div>
 
-            <div id="section6" class="">
-                <div class ="col-4 fontText">
+            <div id="section6" class=" row align-items-center heightContent">
+                <div class="col-5 fontText">
                     <h3> Deutschland als Hauptakteur</h3>
                     <br>
-                    <p>Europa, darunter auch Deutschland, importiert mit 100 - 305  Milliarden m³ weltweit am meisten Wasser. Hierbei wird aus Ländern importiert, die durch den Export besonders an Wasserstress und den darunter mitbringen-
+                    <p>Europa, darunter auch Deutschland, importiert mit 100 - 305 Milliarden m³ weltweit am meisten
+                        Wasser. Hierbei wird aus Ländern importiert, die durch den Export besonders an Wasserstress und
+                        den darunter mitbringen-
                         den Folgen (Gefährdung der Lebensgrundlage, Hungers-
                         not, Senkung des Grundwasserspiegels, geringere Bildung) leiden. </p>
                 </div>
-                <div class ="col-6">
+                <div class="col-6">
                     <img src="">
                 </div>
-                <div class ="col-1">
+                <div class="col-2">
                     <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
-                       role="button"><i class="fa fa-chevron-right"></i></a>
+                       role="button"><i class="fa fa-chevron-right fa-2x"></i></a>
                 </div>
-
-
             </div>
-
-            <div id="section7" class="">
-                <h1> Section1</h1>
-                <p>test</p>
-
-            </div>
-
         </div>
 
     </div>

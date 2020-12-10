@@ -1,4 +1,6 @@
-
+#test{
+    vertical-align: middle;
+}
 #titleWWWTool {
     font-size: 25px;
     line-height: 20px;
@@ -23,6 +25,10 @@
 .chevronBtnRight{
     color:white;
 }
+.fontPicture{
+    color:#0AA7FF;
+    font-size: 25px;
+}
 .fontTitle {
     font-family: "Roboto", sans-serif;
     color: white;
@@ -33,6 +39,10 @@
     font-family: "Roboto", sans-serif;
     color: white;
 }
+body,html {
+    height: 100%;
+    margin: 0;
+}
 
 body {
     /*background-image: url('./img/background.png');*/
@@ -42,12 +52,16 @@ body {
 }
 .background {
     background-image: url('./img/background.png');
+    height: 100%;
+    background-position: center;
     background-repeat: repeat;
-    background-size: auto;
+    background-size: cover;
 }
+.backgroundColor{
+    background-color: lightblue;}
 
 div.col-10 div {
-    height: 810px;
+    /*height: 500px;*/
 }
 ul.nav-pills {
     top: 150px;
@@ -133,6 +147,37 @@ div.tooltip {
     opacity: 0.9;
     position: absolute;
     font-size: 1.8em;
+}
+#home {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 810px;
+}
+/*#section1{*/
+/*    height: 810px;*/
+/*}*/
+
+.heightContent{
+    height: 810px;
+}
+.homeCenteredTitle{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.homeCenteredTest {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btnCenterBottom{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+
 }
 /*.btnZoom :hover{*/
 /*    background-color:darkblue;*/
