@@ -22,12 +22,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
 
 </head>
+<video width="100%" height="100%"  class="VideoIntro" autoplay loop>
+    <source src="./img/Datenvisualisierung_Wave_middle.mp4" type="video/mp4" />
+    </video> 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
 <div class="container mt-3">
     <header>
         <div class="d-flex p-2 justify-content-end">
             <div class="">
-                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">about</a>
+                <a type="button" class="AboutBtn" href="about.html" role="button">About</a>
             </div>
         </div>
     </header>
@@ -62,15 +65,15 @@
                 </li>
             </ul>
         </nav>
+
         <div id="storyTelling" class="col-10">
-            <div id="home" class="row heightContent bg-info">
-                <img src="./img/Datenvisualisierung_Wave%201.png" class="img-fluid">
-                <div class="homeCenteredTitle  fontText">
-                    <p class="fontTitle" id="titleWWWHome">Wer? Wie? Was?</p>
-                    <p class="fontTitle" id="titleWasserHome">Wasser</p>
-                </div>
-                <div class="homeCenteredTest fontText">
-                    <p class="fontText">
+
+            <div class="logo_gross">
+                <img src="./img/Logo_gross.png">
+            </div>
+            <div id="home" class="row heightContent">
+                <div class="introText">
+                    <p>
                         Wasser sparen wird uns von klein auf beigebracht. Doch was hat es damit
                         konkret auf sich?
                         Es wird zwischen dem Wasserverbrauch einer Person im Haushalt, sowie dem Wasserverbrauch
@@ -79,10 +82,7 @@
                         ihr hier erfahren.
                     </p>
                 </div>
-                <div class="btnCenterBottom">
-                    <a type="button" id="chevronBtndown" class="btn" href="#section1" role="button"><i
-                            class="fa fa-chevron-down fa-2x"></i></a>
-                </div>
+
             </div>
             <div id="section1" class="row align-items-center heightContent">
                 <div class="col-5">

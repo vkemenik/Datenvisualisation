@@ -1,6 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&display=swap');
+
 #test{
     vertical-align: middle;
 }
+/*Intro*/
+.AboutBtn {
+    position: fixed;
+    font-family: lato;
+    color: white;
+}
+
+.logo_gross{
+    margin-top: 5%;
+}
+
+.introText {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-35%, -25%);
+
+    font-family: lato;
+    font-size: 25px;
+    text-align: left;
+}
+
+.VideoIntro {
+    position: absolute;
+    margin-top: -20px;
+}
+
 #titleWWWTool {
     font-size: 25px;
     line-height: 20px;
@@ -167,12 +196,7 @@ div.tooltip {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.homeCenteredTest {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 .btnCenterBottom{
     position: absolute;
     bottom: 10px;
