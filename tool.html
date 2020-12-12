@@ -38,7 +38,7 @@
     <div class="radios mt-3 fontText">
         <div class="form-check form-check-inline pr-5">
             <label class="form-check-label" for="inlineRadio1">Wasserstress </label>
-            <input class="form-check-input ml-2" type="radio" name="radioButton" id="inlineRadio1" value="waterstress" checked>
+            <input class="form-check-input ml-2" type="radio" name="radioButton" id="inlineRadio1" value="waterstress">
         </div>
         <div class="form-check form-check-inline pr-5">
             <label class="form-check-label" for="inlineRadio2">Virtuelles Wasser </label>
@@ -200,6 +200,7 @@
 
                 worldmap.attr("fill", function (d) {
                     d.total = waterStressData.get(d.id) || 0;
+
                     return colorScale(d.total);
                 });
                 svg.select(".legendTreshold")
