@@ -76,6 +76,7 @@
      * */
 
     var waterStressData = d3.map();
+    var wwfData= d3.map();
 
     /**
      * Tooltip
@@ -108,6 +109,7 @@
         .defer(d3.csv, "data/country-water-stress.csv", function (d) {
             waterStressData.set(d.code, +d.score);
         })
+        .defer (d3.csv,"data/countries.csv")
         .await(ready);
 
     /*
@@ -125,7 +127,7 @@
     var path = d3.geoPath()
         .projection(projection);
 
-    function ready(error, topo) {
+    function ready(error, topo,waterData,wwfData) {
         // console.log(waterStressData);
         //console.log(topo);
         var countries = topo.features;
@@ -145,6 +147,21 @@
         //     .attr('stroke', '#ccc')
         //     .attr("fill", "none");
 
+        // console.log('wwfData', wwfData);
+        // console.log('waterstress', waterData);
+        // var link = [];
+        // wwfData.forEach(function(row){
+        //     source = [10.451526, 51.165691]
+        //     target = [+row.longitude, +row.latitude]
+        //     console.log('long', +row.longitude);
+        //     topush = {type: "LineString", coordinates: [source, target]}
+        //     link.push(topush)
+        // })
+        // console.log('link',link);
+
+        // Test Value
+        var link = {type: "LineString", coordinates: [[100, 60], [-60, -30]]}
+
         worldmap = svg.append("g")
             .selectAll(".country")
             .data(countries)
@@ -153,10 +170,8 @@
             .attr("class", "country")
             // Draw each country
             .attr("d", path)
-            .attr("fill", function (d) {
-                d.total = waterStressData.get(d.id) || 0;
-                return colorScaleWaterstress(d.total);
-            })
+            .attr("fill", "#9CB6DB")
+            .style("stroke", "#fff")
             .on('mouseover', function (d) {
                 // d3.select(this).classed("selected", true)
                 if (waterStressData.has(d.id))
@@ -178,6 +193,7 @@
         buttons.on('change', function (d) {
             console.log('button changed to ' + this.value);
             if (this.value == 'waterstress') {
+                console.log('data', waterStressData);
                 var colorScale = d3.scaleThreshold()
                     .domain([0, 1, 2, 3, 4, 5])
                     .range(d3.schemeBlues[5]);
@@ -201,10 +217,28 @@
                 worldmap.attr("fill", function (d) {
                     d.total = waterStressData.get(d.id) || 0;
 
-                    return colorScale(d.total);
+                    return colorScaleWaterstress(d.total);
                 });
                 svg.select(".legendTreshold")
                     .call(legend);
+
+            }
+            else if (this.value == 'wwf'){
+                svg.append("path")
+                    .attr("d", path(link))
+                    .style("fill", "none")
+                    .style("stroke", "#3DD9E3")
+                    .style("stroke-width", 7)
+
+                // worldmap.selectAll("path")
+                //     .data(link)
+                //     .enter()
+                //     .append("path")
+                //     .attr("d", function(d){ return path(d)})
+                //     .style("fill", "none")
+                //     .style("stroke", "#3DD9E3")
+                //     .style("stroke-width", 5)
+
 
             }
         })
