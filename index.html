@@ -13,6 +13,9 @@
     <!--Load Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- including ECharts file -->
+    <script src="./scripts/echarts/dist/echarts.js"></script>
+
 
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -22,9 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
 
 </head>
-<video width="100%" height="100%"  class="VideoIntro" autoplay loop>
-    <source src="./img/Datenvisualisierung_Wave_middle.mp4" type="video/mp4" />
-    </video> 
+<video width="100%" height="100%" class="VideoIntro" autoplay loop>
+    <source src="./img/Datenvisualisierung_Wave_middle.mp4" type="video/mp4"/>
+</video>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
 <div class="container mt-3">
     <header>
@@ -91,7 +94,8 @@
                         <br>
                         <p>Die Oberfläche der Erde hat insgesamt eine Größe von 510 Millionen Quadratkilometer.
                             Mit einem Anteil von 71 Prozent ist unser blauer Planet zu etwa zwei Dritteln mit Wasser
-                            bedeckt. Alle Wasservorräte der Welt fassen insgesamt ca. 1,4 Milliarden Kubikkilometer* Wasser.</p>
+                            bedeckt. Alle Wasservorräte der Welt fassen insgesamt ca. 1,4 Milliarden Kubikkilometer*
+                            Wasser.</p>
                     </section>
                 </div>
                 <div class="col-5">
@@ -118,7 +122,7 @@
                 </div>
                 <div class="col-5">
                     <img src="./img/Datenvisualisierung_Water_1%201.png" class="img-fluid">
-                    <div class ="text-center">
+                    <div class="text-center">
                         <p class="fontPicture"></p>
                     </div>
                 </div>
@@ -160,10 +164,10 @@
                         hier konsumiert werden.</p>
                 </div>
                 <div class="col-3">
-                    <img src="./img/120L.png" class ="img-fluid">
+                    <img src="./img/120L.png" class="img-fluid">
                 </div>
                 <div class="col-3">
-                    <img src="./img/4000L.png" class ="img-fluid">
+                    <img src="./img/4000L.png" class="img-fluid">
                 </div>
 
                 <div class="col-2">
@@ -185,7 +189,7 @@
                         Konsumgüter. </p>
                 </div>
                 <div class="col-5">
-                    <img src="./img/Datenvisualisierung_Water_5%201.png" class ="img-fluid">
+                    <img src="./img/Datenvisualisierung_Water_5%201.png" class="img-fluid">
                 </div>
                 <div class="col-2">
                     <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
@@ -205,8 +209,7 @@
                         den Folgen (Gefährdung der Lebensgrundlage, Hungers-
                         not, Senkung des Grundwasserspiegels, geringere Bildung) leiden. </p>
                 </div>
-                <div class="col-5">
-                    <img src="">
+                <div class="col-5" id="barChart" style="width: 600px;height:400px;">
                 </div>
                 <div class="col-2">
                     <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
@@ -214,12 +217,134 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-
 </div>
+<script type="text/javascript">
+    // based on prepared DOM, initialize echarts instance
+    var myChart = echarts.init(document.getElementById('barChart'));
+
+    // specify chart configuration item and data
+    var option = {
+        color: ["#055BDC", "#0AA7FF", "#3DD9E3"],
+        tooltip: {},
+        legend: {
+            bottom: '0',
+            orient: 'vertical',
+            textStyle: {
+                color: '#FFFFFF',
+                lineHeight: 0,
+                fontSize: 10,
+            },
+            width: "100%",
+            itemGap: 5,
+            padding: [4, 0, 0, 0]
 
 
+        },
+
+        dataset: {
+            // provide data.
+            source: [
+                ['Art', 'Interner landwirtschaftlicher Wasserfußabdruck', 'Externer landwirtschaftlicher Wasserfußabdruck',
+                    'Gesamter landwirtschaftlicher Wasserfußabdruck'],
+                ['Kulturpflanzen', 34.6, 49.2, 83.8],
+                ['Tierische Produkte ', 21.1, 12.7, 33.8],
+                ['Gesamt ', 55.7, 61.9, 117.6],
+
+            ]
+        },
+        xAxis: {
+            type: "category",
+            axisTick: {
+                show: true,
+                length: 10
+            },
+            nameTextStyle: {},
+            axisLabel: {
+                color: '#FFFFFF',
+                interval: 0,
+                fontSize: 10,
+                verticalAlign: "middle"
+
+
+            },
+        },
+        yAxis: {
+            type: "value",
+            name: "Wasser-Fußabdruck (km3/Jahr)",
+            nameLocation: "middle",
+            nameTextStyle: {
+                color: '#FFFFFF',
+                // lineHeight: 30,
+                fontSize: 10
+            },
+            nameGap: 27,
+            axisTick: {
+                show: true,
+            },
+            axisLabel: {
+                color: '#FFFFFF',
+                margin: 9.5,
+            },
+            splitLine: {
+                show: false,
+            },
+            axisLine: {
+                show: true
+            }
+
+        },
+        series: [
+            {
+                type: "bar",
+                label: {
+                    show: false,
+                    position: "outside",
+                    distance: 5,
+                    color:"#FFFFFF",
+                },
+                // markPoint:{
+                //     data:[{
+                //         type:"max"
+                //     }],
+                //     symbol:"pin"
+                // }
+            },
+            {
+                type: "bar",
+                label: {
+                    show: false,
+                    position: "outside",
+                    distance: 5,
+                    color:"#FFFFFF",
+                },
+                // markPoint:{
+                //     data:[{
+                //         type:"max"
+                //     }],
+                //     symbol:"pin"
+                // }
+            },
+            {
+                type: "bar",
+                label: {
+                    show: false,
+                    position: "outside",
+                    distance: 5,
+                    color:"#FFFFFF",
+                },
+                // markPoint:{
+                //     data:[{
+                //         type:"max"
+                //     }],
+                //     symbol:"pin"
+                // }
+            },
+        ]
+    };
+
+    // use configuration item and data specified to show chart
+    myChart.setOption(option);
+</script>
 </body>
 </html>

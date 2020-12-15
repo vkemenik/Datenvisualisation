@@ -116,7 +116,10 @@ body {
     text-anchor: start;
     font-weight: bold;
 }
+.contentHeightBarchar {
+    height: 900px;
 
+}
 /*body {*/
 /*    background-color: white;*/
 /*}*/
