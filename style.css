@@ -11,17 +11,17 @@
 }
 
 .logo_gross{
-    margin-top: 5%;
+    margin-top: 135px;
 }
 
 .introText {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-35%, -25%);
+    margin-top: 335px;
+    margin-right: 245px; 
+    width:100%;
 
     font-family: lato;
-    font-size: 25px;
+    font-size: 24px;
     text-align: left;
 }
 
@@ -74,6 +74,7 @@
 }
 body,html {
     height: 100%;
+    width: 100%;
     margin: 0;
 }
 
@@ -92,6 +93,7 @@ body {
 .background {
     background-image: url('./img/background.png');
     height: 100%;
+    width: 100%;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -192,17 +194,14 @@ div.tooltip {
 }
 #home {
     position: relative;
-    text-align: center;
+    text-align: left;
     color: white;
-    height: 810px;
+    height: 24px;
 }
 /*#section1{*/
 /*    height: 810px;*/
 /*}*/
 
-.heightContent{
-    height: 810px;
-}
 .homeCenteredTitle{
     position: absolute;
     top: 10%;
@@ -219,3 +218,16 @@ div.tooltip {
 /*.btnZoom :hover{*/
 /*    background-color:darkblue;*/
 /*}*/
+
+/*#nav breadcrumb*/
+
+/*#nav-link{
+    height: 57px;
+    color: orange; 
+
+}*/
+
+#logo {
+    position: relative;
+    margin-left:240px;
+}
