@@ -54,14 +54,7 @@
 .chevronBtnRight{
     color:white;
 }
-.fontPicture{
-    font-family: 'Lato', sans-serif;
-    color:#0AA7FF;
-    font-size: 50px;
-    font-weight: bold;
-    font-style: italic;
 
-}
 .fontTitle {
     font-family: 'Lato', sans-serif;
     color: white;
@@ -165,7 +158,7 @@ body {
 
 }
 
-hr {
+hrTool {
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -197,6 +190,7 @@ div.tooltip {
     text-align: left;
     color: white;
     height: 24px;
+    margin-top: 700px; 
 }
 /*#section1{*/
 /*    height: 810px;*/
@@ -228,6 +222,68 @@ div.tooltip {
 }*/
 
 #logo {
-    position: relative;
     margin-left:240px;
+    padding: 50px 50px;
+    color: white;
+    text-align: left;
+    font-family: lato;
+    font-size: 120px; 
+    font-style: italic;
+    font-weight: 800;
+    position: fixed;
+    line-height: 100%;
+    top: 0;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.frame{
+    position: relative;
+    margin-bottom: 75px;
+    left: 242px; 
+    right: 121px;
+    width: 100%;
+    height: 100%;
+}
+
+#section1 {
+    position: relative; 
+    width: 1440px;
+    height: 810px;
+}
+
+.inhalt {
+    top: 50%;
+    transform: translateY(75%);
+}
+
+.inhaltVideo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 604px;
+
+}
+
+.fontPicture{
+    position: absolute;
+    width: 187px;
+    height: 132px;
+    font-family: 'Lato', sans-serif;
+    color:#0AA7FF;
+    font-size: 50px;
+    line-height: 56px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
+    left: 407px;
+    padding-top: 35px;
+    
+}
+
+.hrSection1 {
+    position: absolute;
+    color:#0AA7FF;
+    border-width: 4px;
+    width: 174px;
 }

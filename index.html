@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" ame="viewport" content="width=device-width, initial-scale=1">
     <title>Wer? Wie? Was? Wasser?</title>
     <!-- Load Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -68,11 +68,11 @@
             </ul>
         </nav>
     -->
-    
-        <div id="storyTelling" class="container-fluid">
+    <!--
+        <div id="intro" class="container-fluid mb-3">
             <div class="row">
                 <div class="col-6 logo_gross" id="logo">
-                    <img src="./img/Logo_gross.png">
+                    Wer? Wie? <br />Was? Wasser?
                 </div>
             </div>
             <div class="row justify-content-end">
@@ -87,32 +87,61 @@
                     </p>
                 </div>
             </div>
-       </div>
+        </div>
+    -->
+        <div class="container-fluid frame">
+            <div id="section1">
+                <div class="row">
+                    <div class="col-3 inhalt">
+                        <section class="fontText">
+                            <h3>Unser blauer Planet</h3>
+                            <br>
+                            <p>Die Oberfläche der Erde hat insgesamt eine Größe von 510 Millionen Quadratkilometer.
+                                    Mit einem Anteil von 71 Prozent ist unser blauer Planet zu etwa zwei Dritteln mit Wasser
+                                    bedeckt. Alle Wasservorräte der Welt fassen insgesamt ca. 1,4 Milliarden km&sup3; 
+                                    Wasser.
+                            </p>
+                        </section>
+                    </div>
+                    <div class="col-6 inhaltVideo">
+                        <img src="./img/Datenvisualisierung_World.gif">
+                    </div>
+                </div>
+                <div class="row position-relative">
+                    <div class="col-2">
+                        <p class="fontPicture">
+                        71% Wasser
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <hr class="hrSection1">
+                    </div>
+                </div>
+            </div>
+        </div>
+     
 
-       <!--
-            <div id="section1" class="row align-items-center heightContent">
-                <div class="col-5">
-                    <section class="fontText">
-                        <h3> Unser blauen Planet</h3>
-                        <br>
-                        <p>Die Oberfläche der Erde hat insgesamt eine Größe von 510 Millionen Quadratkilometer.
+         <!--
+        <div id="section1" class="row align-items-center heightContent">
+            <div class="col-5">
+                <section class="fontText">
+                    <h3>Unser blauen Planet</h3>
+                     <br>
+                    <p>Die Oberfläche der Erde hat insgesamt eine Größe von 510 Millionen Quadratkilometer.
                             Mit einem Anteil von 71 Prozent ist unser blauer Planet zu etwa zwei Dritteln mit Wasser
                             bedeckt. Alle Wasservorräte der Welt fassen insgesamt ca. 1,4 Milliarden Kubikkilometer*
                             Wasser.</p>
-                    </section>
-                </div>
-                <div class="col-5">
+                </section>
+             </div>
+            <div class="col-5">
                     <img src="./img/Datenvisualisierung_World%201.png" class="img-fluid">
                     <div class="text-center">
                         <p class="fontPicture"> 71% Wasser</p>
                     </div>
-                </div>
-                <div class="col-2">
-                    <a type="button" class="btn align-self-center chevronBtnRight" href="tool.html"
-                       role="button"><i class="fa fa-chevron-right fa-2x"></i></a>
-                </div>
-
             </div>
+         </div>
+
+        <!--
             <div id="section2" class="row align-items-center heightContent">
                 <div class="col-5 fontText">
                     <h3> Unser blauen Planet</h3>
@@ -350,5 +379,17 @@
     myChart.setOption(option);
 </script>
 -->
+<script>
+    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("logo").style.fontSize = "30px";
+      } else {
+        document.getElementById("logo").style.fontSize = "90px";
+      }
+    }
+    </script>
 </body>
 </html>
