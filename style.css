@@ -219,3 +219,10 @@ div.tooltip {
 /*.btnZoom :hover{*/
 /*    background-color:darkblue;*/
 /*}*/
+
+.nav-link{
+    color:white;
+}
+ .nav-link:hover{
+     color: 0AA7FF;
+ }
