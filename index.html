@@ -35,6 +35,7 @@
             </div>
         </div>
     </header>
+</div>
     <!--
     <div class="row">
         <nav class="navbar" id="myScrollspy">
@@ -68,7 +69,7 @@
             </ul>
         </nav>
     -->
-    <!--
+    
         <div id="intro" class="container-fluid mb-3">
             <div class="row">
                 <div class="col-6 logo_gross" id="logo">
@@ -88,8 +89,9 @@
                 </div>
             </div>
         </div>
-    -->
-        <div class="container-fluid frame">
+  
+
+        <div class="container-fluid d-flex justify-content-center frame">
             <div id="section1">
                 <div class="row">
                     <div class="col-3 inhalt">
@@ -107,8 +109,8 @@
                         <img src="./img/Datenvisualisierung_World.gif">
                     </div>
                 </div>
-                <div class="row position-relative">
-                    <div class="col-2">
+                <div class="row position-relative info1">
+                    <div class="col-2 inhalt">
                         <p class="fontPicture">
                         71% Wasser
                         </p>
@@ -250,7 +252,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <script type="text/javascript">
     // based on prepared DOM, initialize echarts instance
     var myChart = echarts.init(document.getElementById('barChart'));
@@ -378,16 +380,18 @@
     // use configuration item and data specified to show chart
     myChart.setOption(option);
 </script>
--->
+
 <script>
-    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    // When the user scrolls down 200px from the top of the document, resize the header's font size
     window.onscroll = function() {scrollFunction()};
     
     function scrollFunction() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         document.getElementById("logo").style.fontSize = "30px";
+        document.getElementById("logo").style.marginLeft = "0px";
+        document.getElementById("logo").style.marginTop = "0px";
       } else {
-        document.getElementById("logo").style.fontSize = "90px";
+        document.getElementById("logo").style.fontSize = "120px";
       }
     }
     </script>

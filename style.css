@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&display=swap');
 
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*background-image: url('./img/background.png');*/
+    /*background-repeat: repeat;*/
+    /*background-size: auto;*/
+
+}
+.background {
+    /*background-image: url('./img/background.png');*/
+    background-color:#021841;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.backgroundColor{
+    background-color: lightblue;
+}
+
 #test{
     vertical-align: middle;
 }
@@ -14,6 +39,9 @@
     margin-top: 135px;
 }
 
+#intro {
+    padding-bottom: 500px;
+}
 .introText {
     position: absolute;
     margin-top: 335px;
@@ -64,6 +92,7 @@
 .fontText {
     font-family: "lato", sans-serif;
     color: white;
+    margin-top: 20px;
 }
 body,html {
     height: 100%;
@@ -77,33 +106,12 @@ h3 {
     font-style: italic;
 }
 
-body {
-    /*background-image: url('./img/background.png');*/
-    /*background-repeat: repeat;*/
-    /*background-size: auto;*/
-
-}
-.background {
-    background-image: url('./img/background.png');
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-.backgroundColor{
-    background-color: lightblue;}
-
 div.col-10 div {
     /*height: 500px;*/
 }
 ul.nav-pills {
     top: 150px;
     position: fixed;
-}
-
-body {
-    position: relative;
 }
 
 
@@ -158,7 +166,7 @@ body {
 
 }
 
-hrTool {
+.hrTool {
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -232,24 +240,24 @@ div.tooltip {
     font-weight: 800;
     position: fixed;
     line-height: 100%;
-    top: 0;
     width: 100%;
     transition: 0.2s;
 }
 
 .frame{
     position: relative;
-    margin-bottom: 75px;
+    padding-top: 75px;
+    padding-bottom: 75px;
     left: 242px; 
     right: 121px;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 #section1 {
     position: relative; 
-    width: 1440px;
-    height: 810px;
+    width: 100%;
+    height: 100%;
 }
 
 .inhalt {
@@ -259,6 +267,8 @@ div.tooltip {
 
 .inhaltVideo {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     height: 100%;
     width: 100%;
     left: 604px;
@@ -266,7 +276,7 @@ div.tooltip {
 }
 
 .fontPicture{
-    position: absolute;
+    position: relative;
     width: 187px;
     height: 132px;
     font-family: 'Lato', sans-serif;
@@ -283,7 +293,26 @@ div.tooltip {
 
 .hrSection1 {
     position: absolute;
-    color:#0AA7FF;
+    border-color:#0AA7FF;
+    margin-top: 12em;
+    margin-bottom: 0.5em;
+    margin-left: 13.5rem;
+    margin-right: auto;
+    border-style: solid;
     border-width: 4px;
     width: 174px;
+    left: 350px;
+    /*position: absolute;
+    color:#0AA7FF;
+    border-width: 4px;
+    width: 174px;*/
+
+   
+}
+
+.info1 {
+    width: 371px;
+    height: 132px;
+    margin-top: 50px;
+    align-items: center;
 }
