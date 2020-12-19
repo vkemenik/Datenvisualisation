@@ -28,6 +28,7 @@ body {
 #test{
     vertical-align: middle;
 }
+
 /*Intro*/
 .AboutBtn {
     position: fixed;
@@ -74,6 +75,8 @@ body {
     margin-top: 335px;
     margin-right: 245px; 
     width:100%;
+    margin-right: 245px;
+    width: 100%;
 
     font-family: lato;
     font-size: 24px;
@@ -95,19 +98,18 @@ body {
     line-height: 20px;
 }
 
-#titleWWWHome{
     font-size: 40px;
     line-height: 20px;
 }
-#titleWasserHome{
+
+#titleWasserHome {
     font-size: 60px;
     line-height: 20px;
 }
 #chevronBtndown{
+
+#chevronBtndown {
     color: white;
-}
-.chevronBtnRight{
-    color:white;
 }
 
 .fontTitle {
@@ -122,6 +124,7 @@ body {
     margin-top: 20px;
 }
 body,html {
+body, html {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -136,6 +139,7 @@ h3 {
 div.col-10 div {
     /*height: 500px;*/
 }
+
 ul.nav-pills {
     top: 150px;
     position: fixed;
@@ -187,7 +191,7 @@ ul.nav-pills {
 .radios {
     text-align:left;
 }
-.radios input{
+.radios input {
     /*margin: 0 5px 0 20px;*/
     margin-left: 200px;
 
@@ -205,10 +209,11 @@ ul.nav-pills {
 
 .btnZoom{
     background-color: #121C78;
-    color:white;
+    color: white;
     margin-bottom: 0.5em;
 }
 
+.btnProduct{
 
 div.tooltip {
     color: #222;
@@ -231,19 +236,20 @@ div.tooltip {
 /*    height: 810px;*/
 /*}*/
 
-.homeCenteredTitle{
+.homeCenteredTitle {
     position: absolute;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.btnCenterBottom{
+.btnCenterBottom {
     position: absolute;
     bottom: 10px;
     left: 50%;
 
 }
+
 /*.btnZoom :hover{*/
 /*    background-color:darkblue;*/
 /*}*/
