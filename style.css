@@ -73,8 +73,6 @@ body {
 .introText {
     position: absolute;
     margin-top: 335px;
-    margin-right: 245px; 
-    width:100%;
     margin-right: 245px;
     width: 100%;
 
@@ -98,6 +96,7 @@ body {
     line-height: 20px;
 }
 
+#titleWWWHome {
     font-size: 40px;
     line-height: 20px;
 }
@@ -106,12 +105,14 @@ body {
     font-size: 60px;
     line-height: 20px;
 }
-#chevronBtndown{
 
 #chevronBtndown {
     color: white;
 }
 
+.chevronBtnRight {
+    color: white;
+}
 .fontTitle {
     font-family: 'Lato', sans-serif;
     color: white;
@@ -123,7 +124,7 @@ body {
     color: white;
     margin-top: 20px;
 }
-body,html {
+
 body, html {
     height: 100%;
     width: 100%;
@@ -160,10 +161,12 @@ ul.nav-pills {
     text-anchor: start;
     font-weight: bold;
 }
+
 .contentHeightBarchar {
     height: 900px;
 
 }
+
 /*body {*/
 /*    background-color: white;*/
 /*}*/
@@ -189,8 +192,9 @@ ul.nav-pills {
 }
 
 .radios {
-    text-align:left;
+    text-align: left;
 }
+
 .radios input {
     /*margin: 0 5px 0 20px;*/
     margin-left: 200px;
@@ -207,13 +211,20 @@ ul.nav-pills {
     border-width: 1px;
 }
 
-.btnZoom{
+.btnZoom {
     background-color: #121C78;
     color: white;
     margin-bottom: 0.5em;
 }
 
 .btnProduct{
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: "lato", sans-serif;
+    color: white;
+}
+
 
 div.tooltip {
     color: #222;
@@ -225,6 +236,7 @@ div.tooltip {
     position: absolute;
     font-size: 1.8em;
 }
+
 #home {
     position: relative;
     text-align: left;
@@ -232,6 +244,7 @@ div.tooltip {
     height: 24px;
     margin-top: 700px; 
 }
+
 /*#section1{*/
 /*    height: 810px;*/
 /*}*/
@@ -261,6 +274,7 @@ div.tooltip {
     color: orange; 
 
 }*/
+
 
 #logo {
     margin-left:240px;
