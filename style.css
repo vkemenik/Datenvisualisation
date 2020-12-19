@@ -98,9 +98,7 @@ body {
     line-height: 20px;
 }
 
-    font-size: 40px;
-    line-height: 20px;
-}
+
 
 #titleWasserHome {
     font-size: 60px;
@@ -140,10 +138,54 @@ div.col-10 div {
     /*height: 500px;*/
 }
 
-ul.nav-pills {
-    top: 150px;
+/*Breadcrumps ;*/
+ul.nav-pillss {
     position: fixed;
+    top: 50%;
+    height: 100%;
+    margin-top: -50px; 
+    padding-left: 50px;
+    background-color: transparent;
+    font-family: "lato";
+    font-style: italic;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.07em;
 }
+
+.list {
+    height: 20px;
+    padding-bottom: 20px;
+
+}
+
+.nav-link {
+    color: white;
+      
+}
+
+.active {
+    color: #0AA7FF;
+}
+
+.nav-line {
+    position: absolute;
+    border-top: 1.5px solid white;
+    width: 25px;
+    margin-left: 30px;
+    margin-right: auto;
+
+}
+
+.nav-line a:active {
+    border-color: #0AA7FF;
+    width: 50px;
+    margin-left: 30px;
+    margin-right: auto;
+    margin-top: -12px;
+}
+
+
 
 
 .worldMap {
