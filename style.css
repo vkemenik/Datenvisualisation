@@ -136,6 +136,9 @@ h3 {
 div.col-10 div {
     /*height: 500px;*/
 }
+
+/*Breadcrump*/
+
 ul.nav-pills {
     top: 150px;
     position: fixed;
@@ -256,6 +259,8 @@ div.tooltip {
 
 }*/
 
+/*#Section 1*/
+
 #logo {
     margin-left:240px;
     padding: 50px 50px;
@@ -325,7 +330,6 @@ div.tooltip {
     font-weight: bold;
     font-style: italic;
     text-align: right;
-    left: 407px;
     padding-top: 35px;
     
 }
@@ -335,12 +339,11 @@ div.tooltip {
     border-color:#0AA7FF;
     margin-top: 12em;
     margin-bottom: 0.5em;
-    margin-left: 13.5rem;
     margin-right: auto;
+    margin-left: 9em; 
     border-style: solid;
     border-width: 4px;
     width: 174px;
-    left: 350px;
     /*position: absolute;
     color:#0AA7FF;
     border-width: 4px;
@@ -353,5 +356,6 @@ div.tooltip {
     width: 371px;
     height: 132px;
     margin-top: 50px;
+    margin-left: 250px;
     align-items: center;
 }
