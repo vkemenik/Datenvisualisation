@@ -73,6 +73,8 @@ body {
 .introText {
     position: absolute;
     margin-top: 335px;
+    margin-right: 245px; 
+    width:100%;
     margin-right: 245px;
     width: 100%;
 
@@ -96,7 +98,6 @@ body {
     line-height: 20px;
 }
 
-#titleWWWHome {
     font-size: 40px;
     line-height: 20px;
 }
@@ -106,13 +107,11 @@ body {
     line-height: 20px;
 }
 
+
 #chevronBtndown {
     color: white;
 }
 
-.chevronBtnRight {
-    color: white;
-}
 .fontTitle {
     font-family: 'Lato', sans-serif;
     color: white;
@@ -161,12 +160,10 @@ ul.nav-pills {
     text-anchor: start;
     font-weight: bold;
 }
-
 .contentHeightBarchar {
     height: 900px;
 
 }
-
 /*body {*/
 /*    background-color: white;*/
 /*}*/
@@ -192,9 +189,8 @@ ul.nav-pills {
 }
 
 .radios {
-    text-align: left;
+    text-align:left;
 }
-
 .radios input {
     /*margin: 0 5px 0 20px;*/
     margin-left: 200px;
@@ -211,19 +207,12 @@ ul.nav-pills {
     border-width: 1px;
 }
 
-.btnZoom {
+.btnZoom{
     background-color: #121C78;
     color: white;
     margin-bottom: 0.5em;
 }
 
-.btnProduct{
-    padding: 0;
-    border: none;
-    background: none;
-    font-family: "lato", sans-serif;
-    color: white;
-}
 
 
 div.tooltip {
@@ -236,7 +225,6 @@ div.tooltip {
     position: absolute;
     font-size: 1.8em;
 }
-
 #home {
     position: relative;
     text-align: left;
@@ -244,7 +232,6 @@ div.tooltip {
     height: 24px;
     margin-top: 700px; 
 }
-
 /*#section1{*/
 /*    height: 810px;*/
 /*}*/
@@ -275,6 +262,7 @@ div.tooltip {
 
 }*/
 
+/*#Section 1*/
 
 #logo {
     margin-left:240px;
@@ -345,7 +333,6 @@ div.tooltip {
     font-weight: bold;
     font-style: italic;
     text-align: right;
-    left: 407px;
     padding-top: 35px;
     
 }
@@ -355,12 +342,11 @@ div.tooltip {
     border-color:#0AA7FF;
     margin-top: 12em;
     margin-bottom: 0.5em;
-    margin-left: 13.5rem;
     margin-right: auto;
+    margin-left: 9em; 
     border-style: solid;
     border-width: 4px;
     width: 174px;
-    left: 350px;
     /*position: absolute;
     color:#0AA7FF;
     border-width: 4px;
@@ -373,5 +359,6 @@ div.tooltip {
     width: 371px;
     height: 132px;
     margin-top: 50px;
+    margin-left: 250px;
     align-items: center;
 }
