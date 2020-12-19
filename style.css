@@ -98,7 +98,10 @@ body {
     line-height: 20px;
 }
 
-
+/*{*/
+/*    font-size: 40px;*/
+/*    line-height: 20px;*/
+/*}*/
 
 #titleWasserHome {
     font-size: 60px;
@@ -138,54 +141,10 @@ div.col-10 div {
     /*height: 500px;*/
 }
 
-/*Breadcrumps ;*/
-ul.nav-pillss {
+ul.nav-pills {
+    top: 150px;
     position: fixed;
-    top: 50%;
-    height: 100%;
-    margin-top: -50px; 
-    padding-left: 50px;
-    background-color: transparent;
-    font-family: "lato";
-    font-style: italic;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0.07em;
 }
-
-.list {
-    height: 20px;
-    padding-bottom: 20px;
-
-}
-
-.nav-link {
-    color: white;
-      
-}
-
-.active {
-    color: #0AA7FF;
-}
-
-.nav-line {
-    position: absolute;
-    border-top: 1.5px solid white;
-    width: 25px;
-    margin-left: 30px;
-    margin-right: auto;
-
-}
-
-.nav-line a:active {
-    border-color: #0AA7FF;
-    width: 50px;
-    margin-left: 30px;
-    margin-right: auto;
-    margin-top: -12px;
-}
-
-
 
 
 .worldMap {
@@ -255,6 +214,11 @@ ul.nav-pillss {
     margin-bottom: 0.5em;
 }
 
+.btnProduct{
+    padding: 0;
+    border: none;
+    background: none;
+}
 
 
 div.tooltip {
@@ -404,3 +368,100 @@ div.tooltip {
     margin-left: 250px;
     align-items: center;
 }
+
+/** Switch Button*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #0AA7FF;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #0AA7FF;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/** Info Buttom Tooltip */
+.infoBtn{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.infoBtn .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #0AA7FF;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    z-index: 1;
+    top: 200%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.infoBtn .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.infoBtn:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
