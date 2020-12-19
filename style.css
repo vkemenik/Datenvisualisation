@@ -35,6 +35,33 @@ body {
     color: white;
 }
 
+.switchbutton {
+    position:fixed; 
+    height: 100%;
+    width: 41px; 
+    background-color: rgba(10, 34, 255, 0.25);
+    color: white;
+    right: 0%; 
+    top: 0%;
+}
+
+#swB a:hover {
+    background-color: rgba(10, 34, 255, 0.50);
+    color: white;
+    width: 55px;
+    transition: width 0.25s;
+}
+
+.svgB {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    width: 100%; 
+}
 .logo_gross{
     margin-top: 135px;
 }
@@ -273,6 +300,18 @@ div.tooltip {
     width: 100%;
     left: 604px;
 
+}
+
+.abbildung {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    color: #4F5F84;
+    position: absolute;
+    padding-top: 2rem;
+    
 }
 
 .fontPicture{
