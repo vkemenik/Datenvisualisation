@@ -147,6 +147,7 @@ ul.nav-pills {
 }
 
 /*Breadcrumps ;*/
+
 ul.nav-pillss {
     position: fixed;
     top: 50%;
@@ -159,39 +160,35 @@ ul.nav-pillss {
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0.07em;
+    transition: all .3s ease-in;
 }
 
 .list {
-    height: 20px;
-    padding-bottom: 20px;
+    height: 1.5px;
+    padding-bottom: 15px;
+}
 
+.list {
+    height: 1.5px;
+    padding-bottom: 15px;
 }
 
 .nav-link {
     color: white;
-      
+
+}
+.nav-line {
+    border-top: 1.5px solid white;
+    width: 25px;
 }
 
 .active {
     color: #0AA7FF;
-}
-
-.nav-line {
-    position: absolute;
-    border-top: 1.5px solid white;
-    width: 25px;
-    margin-left: 30px;
-    margin-right: auto;
-
-}
-
-.nav-line a:active {
-    border-color: #0AA7FF;
+    border-top: 1.5px solid #0AA7FF;
     width: 50px;
-    margin-left: 30px;
-    margin-right: auto;
-    margin-top: -12px;
 }
+
+
 
 .worldMap {
     background-color: #efefef;
@@ -328,8 +325,10 @@ div.tooltip {
     position: fixed;
     line-height: 100%;
     width: 100%;
+    text-decoration: none;
     transition: 0.2s;
 }
+
 
 .frame{
     position: relative;
