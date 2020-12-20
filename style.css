@@ -168,9 +168,9 @@ ul.nav-pillss {
     padding-bottom: 15px;
 }
 
-.list {
+.list2 {
     height: 1.5px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 .nav-link {
@@ -332,7 +332,7 @@ div.tooltip {
 
 .frame{
     position: relative;
-    padding-top: 75px;
+    padding-top: 175px;
     padding-bottom: 75px;
     left: 242px; 
     right: 121px;
