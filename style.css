@@ -137,6 +137,19 @@ h3 {
     font-style: italic;
 }
 
+.wave {
+    position: absolute;
+    margin:0;
+    padding: 0;
+    top: -600px;
+    z-index: -1;
+}
+
+.gif-wave {
+    width: 100%;
+    margin: 0;
+
+}
 div.col-10 div {
     /*height: 500px;*/
 }
@@ -348,19 +361,11 @@ div.tooltip {
     position: relative;
     padding-top: 175px;
     padding-bottom: 75px;
-    padding-left: auto;
-    padding-right: auto;
+    margin-left: 342px;
     width: 100%;
     height: 100vh;
-    
 }
 
-#section1 {
-    position: relative; 
-    width: 100%;
-    height: 100%;
-    
-}
 
 .inhalt {
     top: 50%;

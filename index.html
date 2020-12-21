@@ -49,9 +49,15 @@
     </div>
 </div>
 
-
-
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 wave">
+            <img src="./img/Datenvisualisierung_Wave.gif" class="gif-wave">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="navigation">
     <div class="row">
         <nav class="col-2" id="myScrollspy">
             <ul class="nav text-numbers flex-column align-content-center">
@@ -143,7 +149,7 @@
   
 
         <div class="container-fluid d-flex justify-content-center frame" id="section1">
-            <div >
+            <div>
                 <div class="row">
                     <div class="col-3 inhalt">
                         <section class="fontText">
@@ -449,9 +455,15 @@
         document.getElementById("logo").style.marginLeft = "240px";
         document.getElementById("logo").style.marginTop = "135px";
       }
+      if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+        document.getElementById("navigation").style.visibility = "visible";
+      } else {
+        document.getElementById("navigation").style.visibility = "hidden";
+      }
       
     }
 
     </script>
+
 </body>
 </html>
