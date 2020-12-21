@@ -14,7 +14,7 @@ body {
 }
 .background {
     /*background-image: url('./img/background.png');*/
-    background-color:#021841;
+    background-color: #031343;
     height: 100%;
     width: 100%;
     background-position: center;
@@ -361,12 +361,13 @@ div.tooltip {
     position: relative;
     padding-top: 175px;
     padding-bottom: 75px;
+    margin-bottom: 75px;
     margin-left: 342px;
     width: 100%;
     height: 100vh;
 }
 
-
+/*text links, video rechts*/
 .inhalt {
     top: 50%;
     transform: translateY(75%);
@@ -379,6 +380,21 @@ div.tooltip {
     
 
 }
+/*video links, text rechts*/
+.inhalt2 {
+    margin-top: 150px;
+    margin-left: 750px;
+    padding-bottom: 33px;
+    
+}
+
+.inhaltVideo2 {
+    position: absolute;
+    left: -20px;
+    margin-left: 0px;
+    
+
+}
 
 .abbildung {
     font-family: Lato;
@@ -388,7 +404,8 @@ div.tooltip {
     line-height: 24px;
     color: #4F5F84;
     position: absolute;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    padding-left: 3rem;
     
 }
 
@@ -431,6 +448,72 @@ div.tooltip {
     margin-top: 50px;
     margin-left: 250px;
     align-items: center;
+}
+
+/*Angaben Section 2*/
+.info2-salz {
+    width: 538px;
+    height: 132px;
+    margin-left: 450px;
+    margin-top: 20px;
+    
+}
+
+#fontPicture-2-salz {
+    position: relative;
+    width: 352px;
+    height: 132px;
+    font-family: 'Lato', sans-serif;
+    color:#055BDC;
+    font-size: 60px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-left: 280px;
+   
+    
+}
+
+#hrSection2-salz {
+    position: absolute;
+    border-color: #055BDC;
+    border-style: solid;
+    border-width: 4px;
+    width: 265px;
+    margin-top: 65px;   
+}
+
+.info2-sues {
+    width: 416px;
+    height: 72px;
+    margin-top: 40px;
+    margin-left: 450px;
+}
+
+#fontPicture-2-sues {
+    position: relative;
+    width: 138px;
+    height: 72px;
+    font-family: 'Lato', sans-serif;
+    color:#0AA7FF;
+    font-size: 30px;
+    line-height: 120%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-left: 280px;
+   
+    
+}
+
+#hrSection2-sues {
+    position: absolute;
+    border-color: #0AA7FF;
+    border-style: solid;
+    border-width: 2px;
+    width: 265px;
+    margin-top: 35px;   
 }
 
 /** Switch Button*/
