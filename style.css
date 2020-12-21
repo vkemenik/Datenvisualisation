@@ -148,12 +148,27 @@ ul.nav-pills {
 
 /*Breadcrumps ;*/
 
+ul.text-numbers {
+    position: fixed;
+    top: 48%;
+    height: 100%;
+    margin-top: -50px; 
+    padding-left: 50px;
+    background-color: transparent;
+    font-family: "lato";
+    font-style: italic;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.07em;
+    transition: all .3s ease-in;
+}
+
 ul.nav-pillss {
     position: fixed;
     top: 50%;
     height: 100%;
     margin-top: -50px; 
-    padding-left: 50px;
+    margin-left: 100px;
     background-color: transparent;
     font-family: "lato";
     font-style: italic;
@@ -184,10 +199,9 @@ ul.nav-pillss {
 
 .active {
     color: #0AA7FF;
-    border-top: 1.5px solid #0AA7FF;
+    border-color:  #0AA7FF;
     width: 50px;
 }
-
 
 
 .worldMap {
@@ -353,11 +367,9 @@ div.tooltip {
 
 .inhaltVideo {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    width: 100%;
-    left: 604px;
+    right: 0;
+    margin-right: 400px;
+    
 
 }
 
