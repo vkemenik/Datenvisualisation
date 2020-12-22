@@ -36,6 +36,11 @@ body {
     color: white;
 }
 
+.switchbetweensites {
+    position:relative;
+    z-index: 100;
+}
+
 .switchbutton {
     position:fixed; 
     height: 100%;
@@ -409,9 +414,18 @@ div.tooltip {
     padding-left: 3rem;
     
 }
-.abb-wr {
+.abb-wr1 {
     margin-top: -50px;
 }
+.abb-wr2 {
+    margin-top: -100px;
+    left: 0;
+}
+.abb-wr3 {
+    margin-top: -50px;
+    margin-left: 50px;
+}
+
 .fontPicture{
     position: relative;
     width: 187px;
@@ -516,6 +530,229 @@ div.tooltip {
     border-width: 2px;
     width: 365px;
     margin-top: 35px;   
+}
+
+/*Angaben Section 3*/
+.info3-gletscher {
+    width: 743px;
+    height: 539px;
+    margin-left: auto;
+    margin-right: auto;
+    top: -250px;
+    left: -250px;
+    
+}
+
+#fontPicture3-gletscher {
+    width: 201px;
+    height: 110px;
+    font-family: 'Lato', sans-serif;
+    color:#055BDC;
+    font-size: 60px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
+}
+
+#fontPicture3-grundwasser {
+    width: 169px;
+    height: 66px;
+    font-family: 'Lato', sans-serif;
+    color:#0AA7FF;
+    font-size: 30px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    padding-top: 200px;
+    padding-left: 600px;
+}
+
+#fontPicture3-fluesse-seen {
+    width: 110px;
+    height: 48px;
+    font-family: 'Lato', sans-serif;
+    color:#1A91AD;
+    font-size: 22px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    padding-top: 580px;
+    padding-left: 350px;
+}
+
+#fontPicture3-wolken-regen {
+    width: 110px;
+    height: 48px;
+    font-family: 'Lato', sans-serif;
+    color:#3DD9E3;
+    font-size: 15px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    padding-top: 595px;
+}
+
+/*Angaben Section 4*/
+.info4-vW {
+    width: 242px;
+    height: 89px;
+    margin-left: 10px;
+    top: -350px;
+   
+    
+}
+
+#fontPicture-4-ID4000 {
+    width: 231px;
+    height: 119px;
+    font-family: 'Lato', sans-serif;
+    color:#055BDC;
+    font-size: 25px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 170px;
+}
+
+#fontPicture-4-DW142 {
+    width: 231px;
+    height: 119px;
+    font-family: 'Lato', sans-serif;
+    color:#0AA7FF;
+    font-size: 20px;
+    line-height: 140%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-left: 330px;
+
+}
+
+/*Angaben Section 5*/
+.info5 {
+    width: 833px;
+    height: 214px;
+
+}
+
+#info5-70b{
+    margin-left: 410px;
+    margin-top: 240px;
+}
+
+#info5-20i{
+    position:absolute;
+    margin-top: 280px;
+    margin-left: 990px;
+
+}
+
+#info5-10h{
+    position:absolute;
+    margin-top: 120px;
+    margin-left: 1110px;
+}
+
+#fontPicture5-bew {
+    width: 282px;
+    height: 110px;
+    font-family: 'Lato', sans-serif;
+    color:#055BDC;
+    font-size: 50px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
+}
+
+#svgLine1 {
+    position: absolute;
+    top: 0;
+    margin-top: 70px;
+}
+
+#svgLine2 {
+    position: absolute;
+    top: 0;
+    margin-top: 30px;
+}
+
+#svgLine3 {
+    position: absolute;
+    top: 0;
+    margin-top: 10px;
+}
+
+#fontPicture5-industrie {
+    width: 137px;
+    height: 62px;
+    font-family: 'Lato', sans-serif;
+    color:#0AA7FF;
+    font-size: 30px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-left: 120px;
+
+}
+
+#fontPicture5-haushalte {
+    width: 99px;
+    height: 34px;
+    font-family: 'Lato', sans-serif;
+    color:#3DD9E3;
+    font-size: 22px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-left: 70px;
+
+}
+/*Angaben Section 6*/
+.info6-ewf {
+    width: 243px;
+    height: 63px;
+    top: -400px;
+
+}
+
+#fontPicture-6 {
+    width: 243px;
+    height: 63px;
+    font-family: 'Lato', sans-serif;
+    color:#055BDC;
+    font-size: 25px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+}
+
+/*Angaben Section 7*/
+.info-7 {
+    width: 650px;
+    height: 600px;
+}
+
+#barChart {
+    width: 650px;
+    height: 600px;
+    margin-left: 160px;
+    margin-top: 200px;
+}
+
+#abb-grafik {
+    position: absolute;
+    width: 100%;
+    margin-top: 250px;
+    margin-left: 620px;
 }
 
 /** Switch Button*/
