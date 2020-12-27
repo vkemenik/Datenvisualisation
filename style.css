@@ -425,6 +425,10 @@ div.tooltip {
     margin-top: -50px;
     margin-left: 50px;
 }
+.abb-wr4 {
+    margin-top: -100px;
+    left: -15px;
+}
 
 .fontPicture{
     position: relative;
@@ -743,7 +747,7 @@ div.tooltip {
 
 #barChart {
     width: 650px;
-    height: 600px;
+    height: 100%;
     margin-left: 160px;
     margin-top: 200px;
 }

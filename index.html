@@ -129,7 +129,7 @@
     <div class="row justify-content-end">
         <div class="col-6 introText" id="home">
             <p>
-                Wasser sparen wird uns von klein auf beigebracht. Doch was hat es damit
+                Wasser sparen wird uns von klein auf beigebracht. <br>Doch was hat es damit
                 konkret auf sich?<br><br>
                 Es wird zwischen dem Wasserverbrauch einer Person im Haushalt, sowie dem Wasserverbrauch
                 des „virtuellen Wassers“ unterschieden.
@@ -348,7 +348,7 @@
         <div class="row">
             <div class="col-6 inhaltVideo2">
                 <img src="./img/Datenvisualisierung_EWF0.png">
-                <p class ="abbildung abb-wr2">
+                <p class ="abbildung abb-wr4">
                     Abbildung 6: Vergleich  des Volumens  von 1 km&sup3;  zur Allianz Arena
                 </p>
             </div>
@@ -415,17 +415,17 @@
         color: ["#055BDC", "#0AA7FF", "#3DD9E3"],
         tooltip: {},
         legend: {
-            top: 580,
-            bottom: 0,
-            orient: 'left',
+            width: "100%",
+            height: "100%",
+            bottom: -20,
+            left: 40,
             textStyle: {
                 color: '#FFFFFF',
                 lineHeight: 0,
-                fontSize: 15,
+                fontSize: 10,
             },
-            width: "100%",
-            itemGap: 15,
-            padding: [0, 0, 0, 0]
+            itemGap: 8,
+            padding: [20, 20, 20, 20]
 
 
         },
@@ -460,11 +460,11 @@
         },
         yAxis: {
             type: "value",
-            name: "Wasser-Fußabdruck (km3/Jahr)",
+            name: "Wasser-Fußabdruck (km³/Jahr)",
             nameLocation: "middle",
             nameTextStyle: {
                 color: '#FFFFFF',
-                // lineHeight: 30,
+                // lineHeight: 30,^
                 fontSize: 12
             },
             nameGap: 50,
