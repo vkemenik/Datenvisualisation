@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" frame="viewport" content="width=device-width, initial-scale=1">
+    <title>Wer? Wie? Was? Wasser?</title>
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--Load Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- including ECharts file -->
+    <script src="./scripts/echarts/dist/echarts.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
+
+<div class="container-fluid img-ausblick">
+    <div class="row">
+        <div class="col-12 position-absolute">
+            <img src="./img/Datenvisualisierung_Wave_Ausblick_BG.png" id="background-ausblick">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-3 content-header>
+    <header>
+        <div class="col-6">
+            <a id="logo-ausblick" href="index.html">Wer? Wie? <br />Was? Wasser?</a>
+        </div>
+        <div class="d-flex p-3 justify-content-end">
+            <div class="p-4 align-self-center position-fixed" id="bt-ausblick">
+                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">Über das Projekt</a>
+            </div>
+        </div>
+    </header>
+</div>
+
+
+<div class="container-fluid switchbetweensites">
+    <div class="row justify-content-end">
+        <div class="col-1 position-fixed" id="swB">
+            <a type="button" class="switchbutton" href="about.html" role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi-chevron-right svgB" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid switchbetweensites">
+    <div class="row justify-content-start">
+        <div class="col-1 position-fixed" id="swB">
+            <a type="button" class="switchbutton-left" href="tool.html" role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class=" bi-chevron-left svgB" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" id="navigation">
+    <div class="row">
+        <nav class="col-2" id="myScrollspy">
+            <ul class="nav text-numbers flex-column align-content-center">
+                <li class="nav-item list2">
+                    <a class="nav-link" href="#section1">
+                        01
+                    </a>
+                </li>
+                <li class="nav-item list2">
+                    <a class="nav-link" href="#section2">
+                        02
+                    </a>
+                </li>
+
+                <li class="nav-item list2">
+                    <a class="nav-link" href="#section3">
+                        03
+                    </a>
+                </li>
+
+                <li class="nav-item list2">
+                    <a class="nav-link" href="#section4">04</a>
+                </li>
+
+            </ul>
+
+            <ul class="nav nav-pillss flex-column align-content-center">
+                <li class="nav-item list2">
+                    <a class="nav-link nav-line active" href="#section1">
+                    </a>
+                </li>
+                <li class="nav-item list2">
+                    <a class="nav-link nav-line active" href="#section2">
+                    </a>
+                </li>
+
+                <li class="nav-item list2">
+                    <a class="nav-link nav-line active" href="#section3"></a>
+                </li>
+
+                <li class="nav-item list2">
+                    <a class="nav-link nav-line active" href="#section4"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<div id="intro" class="container-fluid mb-3">
+    <div class="row">
+        <div class="col-10" id="headline-ausblick">
+            <p>Wie kann der Fußabdruck<br>reduziert werden?</p>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-6 ausblickText" >
+            <p>
+                Die Lösungen für einen geringeren Wasserfußabdruck sind schwierig in der Umsetzung, jedoch nicht unmöglich.<br>
+                <br>
+                Wie jeder Einzelne mit einem zielgerichteten Konsum den persönlichen Wasserfußabdruck senken kann, wird in den folgenden Abschnitten erläutert.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center frame-ausblick" id="section1">
+    <div data-aos="fade-up" data-aos-duration="350" class="row">
+        <div class="col-4" id="content-ausblick-h">
+            <p id="text-ausblick-h">
+                Die Handlungsträger
+            </p>
+        </div>
+    </div>
+
+    <div class="row" id="div-ausblick-subcontents">
+        <div data-aos="fade-up" data-aos-duration="500" class="col-3">
+            <section class="fontText" id="handlungstraeger">
+                <img src="./img/Regierung.svg" id="svgRUV">
+                <h3>Regierung</h3>
+                <br>
+                <p>
+                    Staatliche Intitutionen wie die deutsche Bundesregierung, die europäische Union und die Regierungen der
+                    Herkunftsländer der Produkte sind die effekivsten Wege für eine langfristige Verbesserung des Wasserfußabdrucks.
+                </p>
+            </section>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="1000" class="col-3">
+            <section class="fontText" id="handlungstraeger">
+                <img src="./img/Unternehmen.svg" id="svgRUV">
+                <h3>Unternehmen</h3>
+                <br>
+                <p>
+                    Unternehmen können sich vor allem an Initiativen wie zum Beispiel der Alliance for Water Stewardship
+                    oder das CEO Water Mandate beteiligen. Zudem kann der Wasserfußabdruck  durch konkrete Vorgaben beeinflusst werden.
+                </p>
+            </section>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="1500" class="col-3">
+            <section class="fontText"  id="handlungstraeger">
+                <img src="./img/Verbraucher.svg" id="svgRUV">
+                <h3>Verbraucher</h3>
+                <br>
+                <p>
+                    Verbraucher haben eine deutlich geringere Handlungsspanne als Regierungen oder Unternehmen. Dennoch
+                    kann der virtuelle Wasserverbrauch durch einen verringerten Konsum bestimmter Produkte reduziert werden.
+                </p>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center frame" id="section2">
+    <div>
+        <div class="row">
+            <div class="col-3 inhalt">
+                <section class="fontText">
+                    <h3>Handlungsmöglichkeiten<br>
+                        für Regierungen</h3>
+                    <br>
+                    <p>Die deutsche Bundesregierung kann vor allem durch stärkeres Engagement und höhere Investitionen
+                        für notwendige Grundlagen einer nachhaltigen Bewirtschaftung von Wasserressourcen wasserarme
+                        Regionen fördern. Die Unterstützung von Forschungsprojekten kann ebenso Abhilfe für die zukünftige
+                        Strategieentwicklung schaffen und schlussendlich dazu verhelfen, einer globalen Wasserkrise entgegen zu wirken.
+                    </p>
+                </section>
+            </div>
+            <div class="col-6 inhaltVideo-regierung">
+                <video autoplay muted id="iV-regierung">
+                    <source src="./img/Datenvisualisierung_Regierungen.mp4"  type="video/mp4" id="d-regierungen">
+                    Your browser does not support the video tag.
+                </video>
+                <p class ="abbildung" id="abb-regierung">
+                    Abbildung 1: Darstellung der Handlungsmöglichkeiten für Regierungen
+                </p>
+            </div>
+        </div>
+        <div class="row position-relative info1-r">
+            <div class="inhalt-r">
+                <p class="fontPicture-r1">
+                   Stärkeres Engagement
+                </p>
+                <p class="fontPicture-r2">
+                    & höhere Investitionen
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center frame" id="section3">
+    <div>
+        <div class="row">
+            <div class="col-6 inhaltVideo2">
+                <img src="./img/Datenvisualisierung_Unternehmen.gif" style="height: 600px;">
+                <p class ="abbildung" id="abb-unternehmen">
+                    Abbildung 2: Visualisierung der Standorte und dessen Zulieferkette eines Unternehmens
+                </p>
+            </div>
+            <div class="col-3 inhalt2">
+                <section class="fontText">
+                    <h3>Wie Unternehmen einen<br>
+                        Beitrag leisten können</h3>
+                    <br>
+                    <p>Unternehmen können durch die Messung und Dokumentation des Wasserfußabdrucks entlang der
+                        gesamten Zulieferkette Vorgaben für Produkte und Rohstoffe definieren. Dadurch können
+                        Auswirkungen in derzeitigen oder zukünftigen wasserknappen Regionen reduziert werden. Bei
+                        aktivem Engagement  für die Entwicklung, Anwendung und Umsetzung von Wasserstandards ist es für
+                        Verbraucher zudem einfacher, zwischen Produkten mit einem hohen oder niedrigen Wasserfußabdruck
+                        zu unterscheiden.
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="row position-relative info2-unternehmen">
+            <div class="col-5">
+                <p id="fontPicture-unternehmen">
+                    Messen & dokumentieren<br>
+                    von Zulieferketten, sowie<br> definieren von Vorgaben
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center frame" id="section4">
+    <div>
+        <div class="row">
+            <div class="col-3 inhalt">
+                <section class="fontText">
+                    <h3>Handlungsempfehlungen<br>
+                        für Konsumenten</h3>
+                    <br>
+                    <p>Die Verbraucher haben im Gegensatz zu den Regierungen und Unternehmen eine geringere Handlungsspanne.
+                        Eine Beeinflussung des virtuellen persönlichen Wasserkonsums ist dennoch möglich. Dazu zählt zum
+                        Beispiel der Einkauf von regionalen und saisonalem Obst und Gemüse, sowie der Reduktion des Fleischkonsums
+                        oder anderer Produkte, die in der Herstellung viel Wasser benötigen. Wenn möglich kann  der Verbraucher
+                        zudem Informationen über den Wasserfußabdruck der Produkte erhalten und somit ein Produkt kaufen, welches weniger
+                        Wasserressourcen benötigt.
+                    </p>
+                </section>
+            </div>
+            <div class="col-6 inhaltVideo">
+                <img src="./img/Datenvisualisierung_verbraucher.gif">
+                <p class ="abbildung">
+                    Abbildung 3: Darstellung des durchnschnittlichen Wasserverbrauchs bei der Erzeugung ausgewählter Lebensmittel 2018 (in l pro kg)
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center" id="footer">
+    <div class="row">
+        <footer class="col-12" id="footer-content">
+            <a href="impressum.html" id="footer-text">
+                Impressum
+            </a>
+            <a href="datenschutz.html" id="footer-text">
+                Datenschutz
+            </a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    // When the user scrolls down 200px from the top of the document, resize the header's font size
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+            document.getElementById("navigation").style.visibility = "visible";
+        } else {
+            document.getElementById("navigation").style.visibility = "hidden";
+        }
+
+    }
+
+</script>
+
+<script>
+    let video = document.querySelector('iV-regierung');
+    let isPaused = false;
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.intersectionRatio!=1  && !video.paused){
+                video.pause();
+                isPaused = true;
+            }
+            else if(isPaused) {
+                video.pause();
+                video.load ();
+                video.pause();
+                isPaused=false}
+        });
+    }, {threshold: 1});
+    observer.observe(video);
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>

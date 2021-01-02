@@ -22,9 +22,9 @@
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
 <div class="container-fluid mt-3">
     <header>
-        <div class="d-flex p-3 justify-content-end">
+        <div class="d-flex p-3 justify-content-end" id="bt-index">
             <div class="p-4 align-self-center position-fixed">
-                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">about</a>
+                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">Über das Projekt</a>
             </div>
         </div>
     </header>
@@ -369,7 +369,7 @@
         <div class="row position-relative info6-ewf">
             <div class="col-4">
                 <p id="fontPicture-6">
-                    1 km&sup3; Wasser entspricht<br>
+                    1 km&sup3; entspricht<br>
                     500x die Allianz Arena
                 </p>
             </div>
@@ -377,7 +377,7 @@
     </div>
 </div>
 
-<div class="container-fluid d-flex justify-content-center frame" id="section7">
+<div class="container-fluid d-flex justify-content-center frame-de" id="section7">
     <div>
         <div class="row">
             <div class="col-3 inhalt">
@@ -403,6 +403,19 @@
                 </p>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center" id="footer">
+    <div class="row">
+        <footer class="col-12" id="footer-content">
+            <a href="impressum.html" id="footer-text">
+                Impressum
+            </a>
+            <a href="datenschutz.html" id="footer-text">
+                Datenschutz
+            </a>
+        </footer>
     </div>
 </div>
 
@@ -543,8 +556,8 @@
     function scrollFunction() {
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             document.getElementById("logo").style.fontSize = "30px";
-            document.getElementById("logo").style.marginLeft = "0px";
-            document.getElementById("logo").style.marginTop = "-70px";
+            document.getElementById("logo").style.marginLeft = "10px";
+            document.getElementById("logo").style.marginTop = "-72px";
         } else {
             document.getElementById("logo").style.fontSize = "120px";
             document.getElementById("logo").style.marginLeft = "240px";

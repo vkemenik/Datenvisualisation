@@ -4,6 +4,8 @@
 body {
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -21,6 +23,29 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
+.img-ausblick {
+    padding: 0;
+    margin: 0;
+ }
+#background-ausblick {
+    margin-top: -50px;
+    padding: 0;
+    height: 100%;
+    width: auto;
+}
+
+#bt-ausblick {
+    margin-right: 30px;
+    position:relative;
+    z-index: 100;
+}
+
+#bt-index {
+    margin-right: 15px;
+    position:relative;
+    z-index: 100;
+}
 .backgroundColor{
     background-color: lightblue;
 }
@@ -28,6 +53,22 @@ body {
 #test{
     vertical-align: middle;
 }
+
+.content-header {
+    margin-bottom: 100px;
+}
+
+/* Button Über das Projekt*/
+
+.btn {
+    border-color: white;
+}
+
+.btn:hover{
+    border-color: #0AA7FF;
+    background-color: #0AA7FF;
+}
+
 
 /*Intro*/
 .AboutBtn {
@@ -48,6 +89,16 @@ body {
     background-color: rgba(10, 34, 255, 0.25);
     color: white;
     right: 0%;
+    top: 0%;
+}
+
+.switchbutton-left {
+    position:fixed;
+    height: 100%;
+    width: 41px;
+    background-color: rgba(10, 34, 255, 0.25);
+    color: white;
+    left: 0%;
     top: 0%;
 }
 
@@ -88,6 +139,18 @@ body {
     text-align: left;
 }
 
+.ausblickText {
+    position: absolute;
+    margin-top: 200px;
+    margin-right: 245px;
+    width:100%;
+    margin-right: 245px;
+    width: 100%;
+    color: white;
+    font-family: lato;
+    font-size: 24px;
+    text-align: left;
+}
 .VideoIntro {
     position: absolute;
     margin-top: -20px;
@@ -361,6 +424,35 @@ div.tooltip {
     transition: 0.2s;
 }
 
+#logo-ausblick {
+    margin-left:50px;
+    padding: 10px;
+    color: white;
+    text-align: left;
+    font-family: lato;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 800;
+    position: fixed;
+    line-height: 100%;
+    width: 100%;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#headline-ausblick {
+    margin-top: 100px;
+    margin-left:240px;
+    padding: 50px 50px;
+    color: white;
+    text-align: left;
+    font-family: lato;
+    font-size: 120px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 100%;
+    width: 100%;
+}
 
 .frame{
     position: relative;
@@ -372,18 +464,88 @@ div.tooltip {
     height: 100vh;
 }
 
+.frame-de{
+    position: relative;
+    padding-top: 175px;
+    padding-bottom: 75px;
+    margin-bottom: 175px;
+    margin-left: 342px;
+    width: 100%;
+    height: 100vh;
+}
+/* Section 1 Ausblick */
+.frame-ausblick {
+    position: relative;
+    padding-top: 275px;
+    padding-bottom: 75px;
+    margin-left: 342px;
+    width: 100%;
+    height: 100vh;
+}
+
+#content-ausblick-h {
+    width: 100%;
+    height: auto;
+    left: -300px;
+}
+
+#text-ausblick-h {
+    width: 715px;
+    height: 57px;
+    font-family: Lato;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 110%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#div-ausblick-subcontents {
+    position: absolute;
+    margin-top: 235px;
+
+}
+
+#handlungstraeger {
+    padding-right: 70px;
+}
+
+#svgRUV {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 50px;
+}
+
 /*text links, video rechts*/
 .inhalt {
     top: 50%;
     transform: translateY(75%);
 }
 
+.inhalt-r {
+    position: absolute;
+}
 .inhaltVideo {
     position: absolute;
     right: 0;
     margin-right: 400px;
+}
 
+.inhaltVideo-regierung {
+    position: absolute;
+    right: 0;
+    margin-top: 100px;
+    margin-right: 400px;
+}
 
+#iV-regierung {
+    -webkit-filter: brightness(90%);
+}
+
+#d-regierungen {
+    width: 715px;
+    height: auto;
 }
 /*video links, text rechts*/
 .inhalt2 {
@@ -412,8 +574,8 @@ div.tooltip {
     position: absolute;
     padding-top: 1rem;
     padding-left: 3rem;
-
 }
+
 .abb-wr1 {
     margin-top: -50px;
 }
@@ -430,6 +592,14 @@ div.tooltip {
     left: -15px;
 }
 
+#abb-regierung {
+    margin-top: -50px;
+}
+
+#abb-unternehmen {
+    margin-top: -50px;
+    left: -10px;
+}
 .fontPicture{
     position: relative;
     width: 187px;
@@ -442,7 +612,26 @@ div.tooltip {
     font-style: italic;
     text-align: right;
     padding-top: 35px;
+}
 
+.fontPicture-r1 {
+    font-family: 'Lato', sans-serif;
+    color:#055BDC;
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
+}
+
+.fontPicture-r2 {
+    font-family: 'Lato', sans-serif;
+    color:#0AA7FF;
+    font-size: 60px;
+    line-height: 66px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
 }
 
 .hrSection1 {
@@ -471,11 +660,25 @@ div.tooltip {
     align-items: center;
 }
 
+.info1-r {
+    top: -300px;
+    width: 352px;
+    height: 165px;
+    margin-left: 832px;
+}
+
 /*Angaben Section 2*/
 .info2-salz {
     width: 538px;
     height: 132px;
     margin-left: 450px;
+
+}
+
+.info2-unternehmen {
+    top: -500px;
+    width: 352px;
+    height: 133px;
 
 }
 
@@ -491,6 +694,21 @@ div.tooltip {
     font-style: italic;
     text-align: left;
     margin-left: 280px;
+
+
+}
+
+#fontPicture-unternehmen {
+    position: relative;
+    width: 352px;
+    height: 133px;
+    font-family: 'Lato', sans-serif;
+    color: #0AA7FF;
+    font-size: 30px;
+    line-height: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
 
 
 }
@@ -855,3 +1073,25 @@ input:checked + .slider:before {
     opacity: 1;
 }
 
+
+#footer {
+    width: 100%;
+    height: 100px;
+    background: #010a2f;
+}
+
+#footer-content {
+    margin-top: 45px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#footer-text {
+    text-decoration: none;
+    margin-right: 20px;
+}
