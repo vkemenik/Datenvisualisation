@@ -1,14 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About</title>
+    <meta charset="UTF-8" frame="viewport" content="width=device-width, initial-scale=1">
+    <title>Wer? Wie? Was? Wasser?</title>
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--Load Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- including ECharts file -->
+    <script src="./scripts/echarts/dist/echarts.js"></script>
 </head>
-<body>
- <div class = "fontText">
-     <p> This is the about page</p>
- </div>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
+
+<div class="container-fluid img-ausblick">
+    <div class="row row-about">
+        <div class="col-12 position-absolute div-img-ausblick">
+            <img src="./img/Datenvisualisierung_Wave_Ausblick_BG.png" id="background-ausblick">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-3 content-header">
+    <header>
+        <div class="col-6">
+            <a id="logo-ausblick" href="index.html">
+                Wer? Wie? <br />Was? Wasser?
+            </a>
+        </div>
+    </header>
+</div>
+
+
+<div id="intro" class="container-fluid mb-3">
+    <div class="row">
+        <div class="col-10" id="headline-ausblick">
+            <p>&Uuml;ber das Projekt</p>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-6 ausblickText" >
+            <p>
+                Seit kleinauf bekommen wir zu hören Wasser zu sparen, ohne dabei zu wissen, was es damit konkret auf sich hat.
+                Bei der Recherche stießen wir auf  unbekannte Begriffe wie der direkte und virtuelle Wasserkonsum, sowie der externe Wasserfußabdruck.
+                <br><br>
+                Was das ist, worin die Unterschiede liegen und wie wir sinnvoll Wasser sparen können,  haben wir in diesem Projekt erarbeitet und
+                anschaulich visualisiert. Dabei ist uns besonders wichtig, einen Augenmerk auf die soziale Ungerechtigkeit zu werfen.
+                Wir hoffen, dass durch unser Projekt klar wird, welchen Einfluss unser Konsum auf die Wasserkrise der Welt hat.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center frame-about">
+    <div>
+    <div data-aos="fade-up" data-aos-duration="350" class="row">
+        <div class="col-4" id="content-about-h">
+            <p id="text-ausblick-h">
+                Wer wir sind
+            </p>
+            <p id="text-about">
+                Wir sind drei Masterstudenten der Hochschule Augsburg, aus den Bereichen Interaktive Mediensysteme und Informatik. Im Zuge des Seminares “Datenvisualisierung” haben wir uns als Team zusammengefunden.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row ">
+        <div data-aos="fade-up" data-aos-duration="500" class="col-6 fontText" id="werwirsind">
+                <img src="./img/Datenvisualisierung_Celine.png" id="PNGteam">
+                <h3>Celine Benachour</h3>
+                <h4>»Beh&auml;lt den &Uuml;berblick«</h4>
+                <p>
+                    Hybrider Hintergrund in Gestaltung und Informatik. Verantwortlich für Recherche, Design, Animation und Frontend.
+                </p>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div data-aos="fade-up" data-aos-duration="1000" class="col-6 fontText" id="werwirsind">
+                <div id="v-section">
+                <h3>Vannessa Kemeni</h3>
+                <h4>»Macht die Dinge möglich.«</h4>
+                <p>
+                    Fachbereich Informatik.<br>
+                    Verantwortlich für die Grundstruktur im Code und die Aufbereitung der Daten.
+                </p>
+                </div>
+            <img src="./img/Datenvisualisierung_Vannessa.png" id="PNGteam-right">
+        </div>
+    </div>
+
+    <div class="row ">
+        <div data-aos="fade-up" data-aos-duration="1500" class="col-6 fontText" id="werwirsind">
+                <img src="./img/Datenvisualisierung_Sebastian.png" id="PNGteam">
+                <h3>Sebastian Nitsche</h3>
+                <h4>»M&auml;dchen für alles.«</h4>
+                <p>
+                   Fokus auf Gestaltung mit einem Blick für Umweltprobleme. Kümmert sich um die Themenfindung, Recherche, Design und Frontend.
+                </p>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center" id="footer">
+    <div class="row">
+        <footer class="col-12" id="footer-content">
+            <a href="impressum.html" id="footer-text">
+                Impressum
+            </a>
+            <a href="datenschutz.html" id="footer-text">
+                Datenschutz
+            </a>
+        </footer>
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
 </body>
 </html>

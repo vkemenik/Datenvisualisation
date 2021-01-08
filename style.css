@@ -27,12 +27,29 @@ body {
 .img-ausblick {
     padding: 0;
     margin: 0;
+    width: 100%;
  }
+
+.row-about {
+    padding: 0;
+    margin: 0;
+}
+.div-img-ausblick {
+    padding: 0;
+    margin: 0;
+}
+
 #background-ausblick {
     margin-top: -50px;
-    padding: 0;
-    height: 100%;
-    width: auto;
+    max-width: 110%;
+    width: 100%;
+    heigth: auto;
+}
+
+#background-about-end {
+    max-width: 110%;
+    width: 100%;
+    heigth: auto;
 }
 
 #bt-ausblick {
@@ -203,6 +220,15 @@ h3 {
     font-family: 'Lato', sans-serif;
     color: white;
     font-style: italic;
+}
+
+h4 {
+    font-family: Lato;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 160%;
+    color:  #FFFFFF;
+    margin-bottom: 40px;
 }
 
 .wave {
@@ -516,6 +542,67 @@ div.tooltip {
     height: 85px;
     margin-bottom: 50px;
 }
+
+/* Über das Projekt*/
+.frame-about {
+    position: relative;
+    padding-top: 475px;
+    padding-bottom: 75px;
+    margin-left: 377px;
+    width: 100%;
+}
+
+#content-about-h {
+    width: 100%;
+    height: auto;
+    left: -350px;
+    margin-bottom: 200px;
+}
+
+#text-about {
+    width: 750px;
+    height: 57px;
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#v-section {
+    position: absolute;
+    width: 300px;
+    left: -400px;
+}
+#werwirsind {
+    width: 687px;
+    height: 274px;
+    margin-left: 50px;
+    margin-bottom: 170px;
+}
+
+
+#PNGteam {
+    position: absolute;
+    left: -400px;
+    top:-25px;
+    width: 274px;
+    height: 274px;
+    margin-bottom: 50px;
+    -webkit-filter: drop-shadow(25px 25px 35px #020B20);
+    filter: drop-shadow(25px 25px 35px #020B20);
+}
+
+#PNGteam-right {
+    position: absolute;
+    top:-25px;
+    width: 274px;
+    height: 274px;
+    margin-bottom: 50px;
+    -webkit-filter: drop-shadow(25px 25px 35px #020B20);
+    filter: drop-shadow(25px 25px 35px #020B20);
+}
+
 
 /*text links, video rechts*/
 .inhalt {
