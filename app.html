@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Wasser-facts-Tool</title>
+
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Load external CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Load Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+</head>
+<body class="background">
+<div class="container mt-3">
+    <header>
+        <div class="d-flex justify-content-between">
+            <div>
+                <img src="./img/Logo_klein.png">
+            </div>
+            <div class="p-2">
+                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">about</a>
+            </div>
+        </div>
+    </header>
+    <div class="mt-3 fontText">
+        <div>
+            <div class="form-check form-check-inline pr-5">
+                <label class="pr-2">Wasserstress
+                    <sup>
+                        <i id="infoWaterStress" class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
+                            <span class="tooltiptext fontText">Absinken des Wasserpotentials bei Pflanzen aufgrund Wassermangels (Dürre).</span>
+                        </i>
+                    </sup>
+                </label>
+                <label class="switch">
+                    <input type="checkbox" value="waterStress">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="form-check form-check-inline pr-5">
+                <label class="pr-2">Virtuelles Wasser
+                    <sup>
+                        <i id="infoVirtualWater" class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
+                            <span class="tooltiptext fontText">Indirekter Wasserkonsum Deutschlands (virtuelles Wasser) durch importierte Produkte.</span>
+                        </i>
+                    </sup>
+                </label>
+                <label class="switch">
+                    <input type="checkbox" value="virtualWater">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline pr-5">
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Produkte
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Kaffee</a>
+                        <a class="dropdown-item" href="#">Reis</a>
+                        <a class="dropdown-item" href="#">Baumwolle</a>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" value="products">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <hr class="hrTool">
+        <div class="d-flex justify-content-between">
+            <div class="p-2 align-content-stretch" id="map">
+                <svg id="tool" width="900" height="670"></svg>
+            </div>
+            <div class="p-2 align-self-end">
+                <div class="btn-group-vertical">
+                    <button class="btn btnZoom" id="zoom-in"><i class="fa fa-plus fa-2x"></i></button>
+                    <button class="btn btnZoom" id="zoom-out"><i class="fa fa-minus fa-2x"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /** World map*/
+    let Worldmap;
+
+    /**
+     * Maps for the dataset
+     */
+    let introData = d3.map();
+    let waterStressData = d3.map();
+    let virtualWater = [];
+
+    /**
+     *
+     * */
+    var link = [];
+
+    /**
+     * Tooltip
+     */
+    let tooltip = d3.select('#map')
+        .append('div')
+        .attr('class', 'hidden tooltip')
+        .style("visibiliry", "hidden");
+
+
+    /**
+     * ColorScaleWaterstress
+     */
+    let colorScaleWaterstress = d3.scaleThreshold()
+        .domain([0, 1, 2, 3, 4, 5])
+        .range(d3.schemeBlues[5]);
+
+    /**
+     * SVG
+     */
+    let svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height")
+
+    /**
+     * Read the file
+     */
+
+    d3.queue()
+        .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+        .defer(d3.csv, "data/introData.csv", function (d) {
+            introData.set(d.code,
+                {"state": d.name, "text": d.text});
+
+        })
+        .defer(d3.csv, "data/countryWaterStress.csv", function (d) {
+            waterStressData.set(d.code, +d.score)
+        })
+        .defer(d3.csv, "data/virtualWaterCountryMin.csv")
+        .await(ready);
+
+
+    /*
+    Create Projection using Mercartor (geoMercator)
+    and center it (translate) and zoom in a certain amount (scale)
+     */
+    let projection = d3.geoMercator()
+        .scale(150)
+        .translate([490, 480]);
+
+    /*
+   Create a geoPath using the projection
+    */
+    var path = d3.geoPath()
+        .projection(projection);
+
+    /**
+     * G Gruppen
+     */
+    let g1 = svg.append("g");
+    let g2 = svg.append("g");
+
+    /**
+     * Line Gradients
+     */
+    var defs = svg.append("defs");
+    var gradient = defs.append("linearGradient")
+        .attr("id", "svgGradient")
+        .attr("x1", "0%")
+        .attr("x2", "100%")
+        .attr("y1", "0%")
+        .attr("y2", "100%");
+
+    gradient.append("stop")
+        .attr('class', 'start')
+        .attr("offset", "0%")
+        .attr("stop-color", "#FF0BFF")
+        .attr("stop-opacity", 1);
+
+    gradient.append("stop")
+        .attr('class', 'end')
+        .attr("offset", "100%")
+        .attr("stop-color", "#3DD9E3")
+        .attr("stop-opacity", 1);
+    console.log(introData);
+
+    function ready(error, topo, data1, data2, wwf) {
+        let countries = topo.features;
+        wwf.forEach(function (row) {
+            // console.log(row);
+            source = [9, 51]
+            target = [+row.Longitude, +row.Latitude]
+            topush = {type: "LineString", coordinates: [source, target]}
+            // console.log(topush);
+            virtualWater.push(topush)
+        })
+        console.log('wwf', virtualWater);
+
+        worldmap = g1
+            .selectAll(".country")
+            .data(countries)
+            .enter()
+            .append("path")
+            // Draw each country
+
+            .attr("class", "country")
+            .attr("d", path)
+            .attr("fill", "#9CB6DB")
+            .style("stroke", "#fff")
+            .on('mouseover', function (d) {
+                if (introData.has(d.id))
+                    tooltip.style('visibility', "visible")
+                        .html("<span><i>" + introData.get(d.id)["state"] + "</i></span>"
+                            + "<br/>"
+                            + "<hr class =" + "hrToolTip" + ">"
+                            + introData.get(d.id)["text"])
+            })
+            .on('mouseout', function (d) {
+                return tooltip.style("visibility", "hidden");
+            })
+            .on('mousemove', function (d) {
+                tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px");
+            })
+
+
+        const buttons = d3.selectAll('input').on("change", function (d) {
+            const selection = this.value;
+        });
+        let LinePath;
+        buttons.on('change', function (d) {
+            if (this.value === "waterStress") {
+                console.log('button changed to ' + 'waterStress')
+                if (d3.select(this).property("checked")) {
+                    console.log('true');
+                    // d3.select('#infoWaterStress')
+                    // .style("visibility", "visible")
+                    worldmap.attr("fill", function (d) {
+                        d.total = waterStressData.get(d.id) || 0;
+                        return colorScaleWaterstress(d.total);
+                    });
+                } else {
+                    worldmap.attr("fill", "#9CB6DB")
+                        .style("stroke", "#fff")
+
+                }
+            }
+
+            if (this.value == "virtualWater") {
+                console.log('button changed to ' + 'wwf')
+                if (d3.select(this).property("checked")) {
+                    linePath = g2.selectAll("myPath")
+                        .data(virtualWater)
+                        .enter()
+                        .append("path")
+                        .attr("d", function (d) {
+                            return path(d)
+                        })
+                        .style("fill", "none")
+                        .style("stroke", "url(#svgGradient)")
+                        .style("stroke-width", 5)
+                    console.log('true');
+                } else {
+                    linePath.remove();
+                    console.log('false');
+                }
+
+
+            }
+
+            if (this.value === "products") {
+                console.log('button changed to ' + 'products')
+                if (d3.select(this).property("checked")) {
+                    console.log('true');
+                } else {
+                    console.log('false');
+
+                }
+
+
+            }
+        })
+    }
+
+
+    // const buttons = d3.selectAll('input').on("change", function (d) {
+    //     const selection = this.value;
+    // });
+    // buttons.on('change', function (d) {
+    //     if (this.value === "waterStress") {
+    //         console.log('button changed to ' + 'waterStress')
+    //         if (d3.select(this).property("checked")) {
+    //             console.log('true');
+    //         } else {
+    //             console.log('false');
+    //         }
+    //     }
+    //
+    //     if (this.value == "virtualWater") {
+    //         console.log('button changed to ' + 'wwf')
+    //         if (d3.select(this).property("checked")) {
+    //             console.log('true');
+    //         } else {
+    //             console.log('false');
+    //
+    //         }
+    //
+    //
+    //     }
+    //
+    //     if (this.value === "products") {
+    //         console.log('button changed to ' + 'products')
+    //         if (d3.select(this).property("checked")) {
+    //             console.log('true');
+    //         } else {
+    //             console.log('false');
+    //
+    //         }
+    //
+    //
+    //     }
+    // })
+</script>
+
+</body>
+</html>

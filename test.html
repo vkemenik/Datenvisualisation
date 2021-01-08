@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="utf-8">
-    <title>Wasser-facts</title>
+    <title>Wasser-facts-Tool</title>
     <!-- Load Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -10,9 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Load Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
+    <!--Load Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <!-- Load d3.js -->
@@ -21,32 +20,45 @@
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     <script src="//d3js.org/topojson.v1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+    <!--    <script src="./scripts/d3/d3.min.js"></script>-->
+
 
     <!-- scripts -->
     <!--    <script src="./scripts/waterstress.js" type="text/javascript" defer></script>-->
-
-
 </head>
-<body>
-
-<div class="container">
-    <div class="mt-3 text-center worldMap">
-        <div class="row">
-            <div class="col-6 offset-1 ">
-                <div class="text-left">
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="radioButton" value="waterstress">Wasserstress
-                            <input type="radio" class="form-check-input" name="radioButton" value="wwf">Virtuelles
-                            Wasser
-                            <input type="radio" class="form-check-input" name="radioButton" value="product"> Produkte
-                        </label>
-                    </div>
-                </div>
-                <div id="map">
-                    <svg id="tool" width="960" height="700"></svg>
-                </div>
-
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
+<div class="container mt-3">
+    <div class="d-flex justify-content-between">
+        <div class="p-2 fontTitle">
+            <img src="./img/Logo_klein.png">
+        </div>
+        <div class="p-2 align-self-center">
+            <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">about</a>
+        </div>
+    </div>
+    <div class="radios mt-3 fontText">
+        <div class="form-check form-check-inline pr-5">
+            <label class="form-check-label" for="inlineRadio1">Wasserstress </label>
+            <input class="form-check-input ml-2" type="radio" name="radioButton" id="inlineRadio1" value="waterstress">
+        </div>
+        <div class="form-check form-check-inline pr-5">
+            <label class="form-check-label" for="inlineRadio2">Virtuelles Wasser </label>
+            <input class="form-check-input ml-2" type="radio" name="radioButton" id="inlineRadio2" value="wwf">
+        </div>
+        <div class="form-check form-check-inline pr-5">
+            <label class="form-check-label" for="inlineRadio3">Produkte </label>
+            <input class="form-check-input ml-2" type="radio" name="radioButton" id="inlineRadio3" value="product">
+        </div>
+    </div>
+    <hr class="hrTool">
+    <div class="d-flex justify-content-between">
+        <div class="p-2 align-content-stretch" id="map">
+            <svg id="tool" width="900" height="600"></svg>
+        </div>
+        <div class="p-2 align-self-end">
+            <div class="btn-group-vertical">
+                <button class="btn btnZoom" id="zoom-in"><i class="fa fa-plus "></i></button>
+                <button class="btn btnZoom" id="zoom-out"><i class="fa fa-minus"></i></button>
             </div>
         </div>
     </div>
@@ -65,29 +77,45 @@
      * */
 
     var waterStressData = d3.map();
+    var wwfData= d3.map();
 
+    /**
+     * Tooltip
+     * */
+
+    var tooltip = d3.select('#map')
+        .append('div')
+        .attr('class', 'hidden tooltip')
+        .style("visibility", "hidden");
+
+    /**
+     * ColorScaleWaterstress
+     * */
+    var colorScaleWaterstress = d3.scaleThreshold()
+        .domain([0, 1, 2, 3, 4, 5])
+        .range(d3.schemeOranges[5]);
 
 
     // create the svg
     var svg = d3.select("svg"),
         width = +svg.attr("width"),
         height = +svg.attr("height")
-
-    // var svg = d3.select("#map")
-    // .append("svg")
-    // .attr("height", height + margin.top + margin.bottom)
-    // .attr("width", width+margin.left+margin.right)
-    // .append("g")
-    // .attr("transform", "translate("+margin.left+","+margin.top+")");
+    // Eine Gruppe mit 03 Elementen definieren. --> 3 svg und in einer SVG definieren.mit einem Viewport
+    ///
+    // <g> <svg> </svg>
+    //         <svg> </svg>
+    //         <svg> </svg><g>
 
     /*
     Read File
      */
     d3.queue()
         .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-        .defer(d3.csv, "data/country-water-stress.csv", function (d) {
+        .defer(d3.csv, "data/countryWaterStress.csv", function (d) {
             waterStressData.set(d.code, +d.score);
+            console.log(waterStressData);
         })
+        .defer (d3.csv,"data/countries.csv")
         .await(ready);
 
     /*
@@ -95,53 +123,84 @@
     and center it (translate) and zoom in a certain amount (scale)
      */
     var projection = d3.geoMercator()
-        .translate([480, 480])
-        .scale(960 / Math.PI / 2)
+        .scale(150)
+        .translate([490, 430]);
+
+
     /*
     Create a geoPath using the projection
      */
     var path = d3.geoPath()
         .projection(projection);
 
-    function ready(error, topo) {
-         // console.log(waterStressData);
+    function ready(error, topo,waterData,wwfData) {
+        // console.log(waterStressData);
         //console.log(topo);
-        // var countries = topojson.feature(data, data.objects.countries).features;
         var countries = topo.features;
         // console.log(countries);
 
         /**
          *Add a path for each country
          */
+            // svg
+            //     .append("g")
+            //     .attr("class", "grid")
+            //     .append("path")
+            //     .datum(topo.features)
+            //     .attr("d", path)
+            //     .attr("opacity", 0.8)
+            //     .attr('stroke-width', '0.5px')
+            //     .attr('stroke', '#ccc')
+            //     .attr("fill", "none");
 
-        // Another way to do show the country
+            // console.log('wwfData', wwfData);
+            // console.log('waterstress', waterData);
+            // var link = [];
+            // wwfData.forEach(function(row){
+            //     source = [10.451526, 51.165691]
+            //     target = [+row.longitude, +row.latitude]
+            //     console.log('long', +row.longitude);
+            //     topush = {type: "LineString", coordinates: [source, target]}
+            //     link.push(topush)
+            // })
+            // console.log('link',link);
 
-        /* svg.selectAll("path")
-        .data(countries)
-        .enter()
-        .append("path")
-        .attr("d",path)
-        .attr("fill",'grey')*/
+            // Test Value
+        var link = {type: "LineString", coordinates: [[100, 60], [-60, -30]]}
+        console.log('link',link);
 
-        worldmap = svg.selectAll(".country")
+        worldmap = svg.append("g")
+            .selectAll(".country")
             .data(countries)
             .enter()
             .append("path")
             .attr("class", "country")
+            // Draw each country
             .attr("d", path)
-        /* .on('mouseover', function(d){
-        //     d3.select(this).classed("selected", true)
-        // })
-        // .on('mouseout', function(d){
-        //     d3.select(this).classed("selected", false)
-        // })*/
+            .attr("fill", "#9CB6DB")
+            .style("stroke", "#fff")
+            .on('mouseover', function (d) {
+                // d3.select(this).classed("selected", true)
+                if (waterStressData.has(d.id))
+                    tooltip.style("visibility", "visible")
+                        .html("<span>" + d.properties.name + "</span>"
+                            + ":<br/>" + waterStressData.get(d.id));
+            })
+            .on('mouseout', function (d) {
+                // d3.select(this).classed("selected", false)
+                return tooltip.style("visibility", "hidden");
+            })
+            .on('mousemove', function (d) {
+                tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
+            })
 
         const buttons = d3.selectAll('input').on("change", function (d) {
             const selection = this.value;
         });
         buttons.on('change', function (d) {
-            console.log('button chnaged to ' + this.value);
-            if(this.value == 'waterstress'){
+            console.log('button changed to ' + this.value);
+            if (this.value == 'waterstress') {
+                console.log('data', waterStressData);
                 var colorScale = d3.scaleThreshold()
                     .domain([0, 1, 2, 3, 4, 5])
                     .range(d3.schemeBlues[5]);
@@ -162,12 +221,31 @@
                     .shapePadding(4)
                     .scale(colorScale);
 
-                worldmap.attr("fill", function(d){
-                    d.total = waterStressData.get(d.id)||0;
-                    return colorScale(d.total);
+                worldmap.attr("fill", function (d) {
+                    d.total = waterStressData.get(d.id) || 0;
+
+                    return colorScaleWaterstress(d.total);
                 });
                 svg.select(".legendTreshold")
-                .call(legend);
+                    .call(legend);
+
+            }
+            else if (this.value == 'wwf'){
+                svg.append("path")
+                    .attr("d", path(link))
+                    .style("fill", "none")
+                    .style("stroke", "#3DD9E3")
+                    .style("stroke-width", 7)
+
+                // worldmap.selectAll("path")
+                //     .data(link)
+                //     .enter()
+                //     .append("path")
+                //     .attr("d", function(d){ return path(d)})
+                //     .style("fill", "none")
+                //     .style("stroke", "#3DD9E3")
+                //     .style("stroke-width", 5)
+
 
             }
         })
