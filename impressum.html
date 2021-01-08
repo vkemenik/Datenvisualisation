@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" frame="viewport" content="width=device-width, initial-scale=1">
+    <title>Wer? Wie? Was? Wasser?</title>
+    <!-- Load Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--Load Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- including ECharts file -->
+    <script src="./scripts/echarts/dist/echarts.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="5" class="background">
+
+<div class="container-fluid img-ausblick">
+    <div class="row row-about">
+        <div class="col-12 position-absolute div-img-ausblick">
+            <img src="./img/Datenvisualisierung_Wave_Ausblick_BG.png" id="background-ausblick">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-3 content-header">
+    <header>
+        <div class="col-6">
+            <a id="logo-ausblick" href="index.html">Wer? Wie? <br />Was? Wasser?</a>
+        </div>
+        <div class="d-flex p-3 justify-content-end">
+            <div class="p-4 align-self-center position-fixed" id="bt-ausblick">
+                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">Über das Projekt</a>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div id="impressum" class="container-fluid mb-3">
+    <div class="row">
+        <div class="col-10" id="headline-ausblick">
+            <p>Impressum</p>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-6 impressumText" >
+            <p>
+                Dieses Projekt ist im Wintersemester 2020/2021 im Fach Datenvisualisierung an der Hochschule Augsburg entstanden.
+            </p>
+            <br>
+            <p class="imprint-identify">
+            Projektinitiator, Projektleiter und fachliche Betreuer:
+            </p>
+            <p class="autoren">
+            Prof. Wolfgang Kowarschick<br>
+            Prof. Michael Stoll
+            </p>
+            <br>
+            <p class="imprint-identify">
+            Autoren und inhaltlich Verantwortliche:
+            </p>
+            <p class="autoren">
+            Celine Benachour, Vannessa Kemeni, Sebastian Nitsche
+            </p>
+            <br>
+            <p>
+            Das Projekt ist urheberrechtlich geschützt. Alle Rechte liegen bei den Autoren, beziehungsweise bei der Hochschule Augsburg.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="impressum-content">
+    <div class="row r-ic">
+        <div class="col-8 ic-font">
+            <h3>Rechtliche Hinweise</h3>
+            <br>
+            <p>
+                Die Autoren und Verantwortliche der Webseite prüfen und aktualisieren die Informationen auf ihrer Website.
+                Trotz aller Sorgfalt könnten sich Angaben zwischenzeitlich verändert haben. Eine Gewähr oder Haftung für die
+                Vollständigkeit, Aktualität und Richtigkeit der angebotenen Informationen kann daher nicht übernommen werden.
+                Gleiches gilt auch für alle anderen Websites, auf die verwiesen wird. Trotz Überprüfung sind für den Inhalt und die
+                Rechtmäßigkeit aller verlinkten Seiten ausschließlich deren Betreiber verantwortlich.
+                <br><br>
+                Die Benutzung dieser Website und das Herunterladen von Daten erfolgt auf eigene Gefahr. Es wird keine Verantwortung
+                für eventuell hieraus entstehende Schäden, wie beispielsweise an Datenbeständen und Hard- oder Software des Benutzers übernommen.
+                <br><br>
+                Des Weiteren behalten sich die Urheber der Webseite das Recht vor, jederzeit Änderungen oder Ergänzungen der
+                bereitgestellten Informationen vorzunehmen. Die Website ist urheberrechtlich geschützt. Für die Vervielfältigung von
+                Informationen, insbesondere die Verwendung von Texten, Textauszügen oder Bildmaterial, benötigen Sie eine vorherige Zustimmung der Autoren.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8 ic-font">
+            <h3>Quellenangaben</h3>
+            <br>
+            <p>
+                Bernsen, Kristina; Gawel, Erik: Virtuelles Wasser - Chancen und Probleme eines Wasserfußabdrucks. in: Wirtschaftsdienst. 2011
+                <br><br>
+                Bis zu 27.000 Liter Wasser pro Kilo: Diese Lebensmittel verbrauchen am meisten Wasser in der Herstellung! Test / Vergleich 2021 » Alle Modelle im Test & Vergleich: in: warenvergleich.de, 30.07.2019, [online] https://www.warenvergleich.de/bis-zu-27-000-liter-wasser-pro-kilo-diese-lebensmittel-verbrauchen-am-meisten-wasser-in-der-herstellung/ [08.01.2021].
+                <br><br>
+                Bundeszentrale für politische Bildung: Wasserverbrauch | bpb, in: bpb.de, 01.09.2017, [online] https://www.bpb.de/nachschlagen/zahlen-und-fakten/globalisierung/52730/wasserverbrauch [08.01.2021].
+                <br><br>
+                Ceylan, Aleyna: Virtuelles Wasser: So durstig sind unsere Produkte, in: Neven Subotic Stiftung, 10.08.2020, [online] https://nevensuboticstiftung.de/blogs/virtuelles-wasser-so-durstig-sind-unsere-produkte?gclid=CjwKCAjw_Y_8BRBiEiwA5MCBJvShAstUY4S920gG5FOztsWzYLzes9bCT6jk0NwevBPBGLUTVV7QpxoCl3AQAvD_BwE [08.01.2021].
+                <br><br>
+                Hofste, Rutger Willem/Paul Reig/Leah Schleifer: 17 Countries, Home to One-Quarter of the World’s Population, Face, in: World Resources Institute, 27.10.2020, [online] https://www.wri.org/blog/2019/08/17-countries-home-one-quarter-world-population-face-extremely-high-water-stress [08.01.2021].
+                <br><br>
+                Houdret, Anabelle. Wasserkonflikte sind Machtkonflikte. Ursachen und Lösungsansätze in Marokko, Heidelberg, 2010
+                <br><br>
+                Sonnenberg, Anke/Ashok Chapagain/Martin Geiger/Dorothea August: Der Wasser-Fußabdruck Deutschlands, in: World Wide Fund for Nature (WWF Deutschland), 01.08.2009, [online] https://www.wwf.de/fileadmin/user_upload/wwf_studie_wasserfussabdruck.pdf [08.01.2021].
+                <br><br>
+                Statistisches Bundesamt, Wiesbaden: Wasserfussabdruck von Ernährungsgütern in Deutschland, in: DESTATIS Statistisches Bundesamt, 18.03.2015, [online] https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Umwelt/UGR/rohstoffe-materialfluesse-wasser/Publikationen/Downloads/wasserfussabdruck-5851301129004.pdf?__blob=publicationFile [08.01.2021].
+                <br><br>
+                Statista, UN-Water: Verteilung des weltweiten Wasserverbrauchs nach Sektor im Jahr 2007, in: statista, 2007, [online] https://de-statista-com.ezproxy.hs-augsburg.de/statistik/daten/studie/275963/umfrage/verteilung-des-weltweiten-wasserverbrauchs-nach-sektor/ [08.01.2021].
+                <br><br>
+                Statista, Verband deutscher Mineralbrunnen: Per capita consumption of water in Germany from 2012 to 2019, in: statista, 01.03.2020, [online] https://www-statista-com.ezproxy.hs-augsburg.de/statistics/541021/water-per-capita-consumption-germany/ [08.01.2021].
+                <br><br>
+                Statista, Global Consumer Survey 2020: Welche der folgenden Lebensmittel- und Getränkeprodukte konsumieren Sie regelmäßig?, in: statista, 01.12.2020, [online] https://de-statista-com.ezproxy.hs-augsburg.de/prognosen/999889/umfrage-in-deutschland-zu-regelmaessig-konsumierten-lebensmitteln [08.01.2021].
+                <br><br>
+                Suhr, F.: Durstiges Essen, in: statista, 14.06.2017, [online] https://de-statista-com.ezproxy.hs-augsburg.de/infografik/9801/so-viel-wasser-verbraucht-unser-essen/ [08.01.2021].
+                <br><br>
+                Suhr, F. : Durstige Lebensmittel, in: statista, 02.07.2020, [online] https://de-statista-com.ezproxy.hs-augsburg.de/infografik/22175/wasserverbrauch-bei-der-erzeugung-ausgewaehlter-lebensmittel/  [08.01.2021].
+                <br><br>
+                Wasserstress: in: Lexikon der Biologie, [online] https://www.spektrum.de/lexikon/biologie/wasserstress/70356 [08.01.2021].
+                <br><br>
+                Wieviel Wasser bzw. Trinkwasser gibt es auf der Erde? in: Energiesparer.org, 27.01.2016, [online] https://www.energiesparer.org/wasser/trinkwasser/#:%7E:text=Wieviel%20Wasser<br>%20gibt%20es%20auf%20der%20Erde%3F&text=Aber%20mehr%20als%2097%20Prozent,uns%20als%20Trinkwasser%20nicht%20zug%C3%A4nglich. [08.01.2021].
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center" id="footer">
+    <div class="row">
+        <footer class="col-12" id="footer-content">
+            <a href="impressum.html" id="footer-text">
+                Impressum
+            </a>
+            <a href="datenschutz.html" id="footer-text">
+                Datenschutz
+            </a>
+        </footer>
+    </div>
+</div>
+
+
+
+</body>
+</html>
