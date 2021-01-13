@@ -266,6 +266,42 @@ body {
 .r-ic {
     margin-bottom: 120px;
 }
+
+/*Datenschutz*/
+#datenschutz {
+    width: 100%;
+    height: auto;
+}
+
+#datenschutz-content {
+    width: 100%;
+    margin-top: 200px;
+    margin-bottom: 150px;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+/*Impressum und Datenschutz*/
+.send-mail {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 160%;
+    /* or 24px */
+    color: #0AA7FF;
+}
+
+.send-mail:hover {
+    color: #0AA7FF;
+}
+
+.send-mail:visited {
+    color: #0AA7FF;
+    text-decoration: none;
+}
+
 .ic-font {
     margin-left: auto;
     margin-right: auto;
@@ -281,6 +317,7 @@ body {
     color: #FFFFFF;
 }
 
+/*Inhalt Einfuehrung */
 .VideoIntro {
     position: absolute;
     margin-top: -20px;
@@ -296,10 +333,6 @@ body {
     line-height: 20px;
 }
 
-/*{*/
-/*    font-size: 40px;*/
-/*    line-height: 20px;*/
-/*}*/
 
 #titleWasserHome {
     font-size: 60px;
@@ -342,6 +375,14 @@ h4 {
     line-height: 160%;
     color:  #FFFFFF;
     margin-bottom: 40px;
+}
+
+h5 {
+    font-family: Lato;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 160%;
+    color:  #FFFFFF;
 }
 
 .wave {
@@ -1304,6 +1345,8 @@ input:checked + .slider:before {
     height: 100px;
     background: #010a2f;
     margin-top: 300px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #footer-content {
@@ -1315,9 +1358,12 @@ input:checked + .slider:before {
     line-height: 12px;
     text-align: center;
     color: #FFFFFF;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #footer-text {
     text-decoration: none;
     margin-right: 20px;
 }
+
