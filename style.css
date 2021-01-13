@@ -705,8 +705,13 @@ div.tooltip {
     left: -20px;
     margin-left: 0px;
     margin-top: 50px;
+}
 
-
+.inhaltAllianz {
+    position: absolute;
+    left: -20px;
+    margin-left: 0px;
+    margin-top: 250px;
 }
 
 .abbildung {
@@ -733,7 +738,7 @@ div.tooltip {
     margin-left: 50px;
 }
 .abb-wr4 {
-    margin-top: -100px;
+    margin-top: 0px;
     left: -15px;
 }
 
@@ -1112,13 +1117,13 @@ div.tooltip {
     width: 650px;
     height: 100%;
     margin-left: 160px;
-    margin-top: 200px;
+    margin-top: 400px;
 }
 
 #abb-grafik {
     position: absolute;
     width: 100%;
-    margin-top: 250px;
+    margin-top: 420px;
     margin-left: 620px;
 }
 
@@ -1223,6 +1228,7 @@ input:checked + .slider:before {
     width: 100%;
     height: 100px;
     background: #010a2f;
+    margin-top: 400px;
 }
 
 #footer-content {
