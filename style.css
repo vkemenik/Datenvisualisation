@@ -786,7 +786,7 @@ div.tooltip {
     position: absolute;
     left: -20px;
     margin-left: 0px;
-    margin-top: 250px;
+    margin-top: 100px;
 }
 
 .abbildung {
@@ -813,7 +813,7 @@ div.tooltip {
     margin-left: 50px;
 }
 .abb-wr4 {
-    margin-top: 0px;
+    margin-top: -50px;
     left: -15px;
 }
 
@@ -830,7 +830,7 @@ div.tooltip {
     width: 187px;
     height: 132px;
     font-family: 'Lato', sans-serif;
-    color:#0AA7FF;
+    color:#055BDC;
     font-size: 50px;
     line-height: 56px;
     font-weight: bold;
@@ -861,7 +861,7 @@ div.tooltip {
 
 .hrSection1 {
     position: absolute;
-    border-color:#0AA7FF;
+    border-color:#055BDC;
     margin-top: 12em;
     margin-bottom: 0.5em;
     margin-right: auto;
@@ -1164,14 +1164,14 @@ div.tooltip {
 }
 /*Angaben Section 6*/
 .info6-ewf {
-    width: 243px;
+    width: 543px;
     height: 63px;
     top: -400px;
 
 }
 
 #fontPicture-6 {
-    width: 243px;
+    width: 343px;
     height: 63px;
     font-family: 'Lato', sans-serif;
     color:#055BDC;
