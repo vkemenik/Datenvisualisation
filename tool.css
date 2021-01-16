@@ -4,16 +4,11 @@
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
-body {
-    /*background-image: url('./img/background.png');*/
-    /*background-repeat: repeat;*/
-    /*background-size: auto;*/
-
-}
-.background {
-    /*background-image: url('./img/background.png');*/
+.backgroundMap{
+    background-image: url('./img/Datenvisualisierung_Wave_BG.png');
     background-color:#021841;
     height: 100%;
     width: 100%;
@@ -21,13 +16,81 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-.backgroundColor{
-    background-color: lightblue;
+
+.content-header {
+    margin-bottom: 100px;
+
+}
+.content-map {
+    width: auto;
+    height: 100%;
+    margin-left: 70px;
+    margin-right: 50px;
+
+}
+/**
+Button über das Projekt
+ */
+.button{
+    background-color: red; /* Green */
+    border:none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
 }
 
-#test{
-    vertical-align: middle;
+btnABout{
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
 }
+
+/*btnABout:hover{*/
+/*    background-color: #4CAF50;*/
+/*    color: white;*/
+/*}*/
+
+.btn-outline-secondary,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active,
+.btn-outline-secondary:visited{
+    border-color: #0AA7FF;
+    background-color: #0AA7FF !important;
+}
+
+/*img {*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*}*/
+.logo_gross{
+    margin-top: 0px;
+}
+
+
+
+#logo {
+    margin-left:50px;
+    padding: 10px;
+    color: white;
+    text-align: left;
+    font-family: lato;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 800;
+    position: fixed;
+    line-height: 100%;
+    width: 100%;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
 
 /*Intro*/
 .AboutBtn {
@@ -63,55 +126,6 @@ body {
     margin-right: auto;
     width: 100%;
 }
-.logo_gross{
-    margin-top: 135px;
-}
-
-#intro {
-    padding-bottom: 500px;
-}
-.introText {
-    position: absolute;
-    margin-top: 335px;
-    margin-right: 245px;
-    width:100%;
-    margin-right: 245px;
-    width: 100%;
-
-    font-family: lato;
-    font-size: 24px;
-    text-align: left;
-}
-
-.VideoIntro {
-    position: absolute;
-    margin-top: -20px;
-}
-
-#titleWWWTool {
-    font-size: 25px;
-    line-height: 20px;
-}
-
-#titleWasserTool {
-    font-size: 48px;
-    line-height: 20px;
-}
-
-/*{*/
-/*    font-size: 40px;*/
-/*    line-height: 20px;*/
-/*}*/
-
-#titleWasserHome {
-    font-size: 60px;
-    line-height: 20px;
-}
-
-
-#chevronBtndown {
-    color: white;
-}
 
 .fontTitle {
     font-family: 'Lato', sans-serif;
@@ -125,31 +139,12 @@ body {
     margin-top: 20px;
 }
 
-body, html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-}
+/*body, html {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    margin: 0;*/
+/*}*/
 
-h3 {
-    font-family: 'Lato', sans-serif;
-    color: white;
-    font-style: italic;
-}
-
-div.col-10 div {
-    /*height: 500px;*/
-}
-
-ul.nav-pills {
-    top: 150px;
-    position: fixed;
-}
-
-
-.worldMap {
-    background-color: #efefef;
-}
 
 .legendThreshold {
     font-size: 12px;
@@ -161,53 +156,32 @@ ul.nav-pills {
     text-anchor: start;
     font-weight: bold;
 }
-.contentHeightBarchar {
-    height: 900px;
-
-}
-/*body {*/
-/*    background-color: white;*/
-/*}*/
-
-/*.country {*/
-/*    fill: #9CB6DB;*/
-/*    stroke: white;*/
-/*    stroke-width: 0.5;*/
-/*}*/
 
 .country:hover {
     /*fill-opacity: 0.8;*/
     stroke: white;
     fill:#055BDC;
-
 }
 
-.selected {
-    fill: #055BDC;
+.fontProduct{
+    font-family: "lato", sans-serif;
+    color: white;
 }
+
 
 .product-label {
     font-size: 10px;
 
 }
 
-.radios {
-    text-align:left;
-}
-.radios input {
-    /*margin: 0 5px 0 20px;*/
-    margin-left: 200px;
-
-}
-
 .hrTool {
     display: block;
+    width: 100%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
     border-style: inset;
     border-width: 1px;
+    border-color: #0AA7FF;
 }
 
 .btnZoom{
@@ -223,7 +197,6 @@ ul.nav-pills {
 }
 .backgroundLine{
     background: linear-gradient(90deg, #3DD9E3 -0.01%, #FF0BFF 100%);
-
 }
 
 
@@ -244,135 +217,6 @@ div.tooltip {
     margin-left: 0px;
 
 }
-#home {
-    position: relative;
-    text-align: left;
-    color: white;
-    height: 24px;
-    margin-top: 700px;
-}
-/*#section1{*/
-/*    height: 810px;*/
-/*}*/
-
-.homeCenteredTitle {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.btnCenterBottom {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-
-}
-
-/*.btnZoom :hover{*/
-/*    background-color:darkblue;*/
-/*}*/
-
-/*#nav breadcrumb*/
-
-/*#nav-link{
-    height: 57px;
-    color: orange;
-
-}*/
-
-/*#Section 1*/
-
-#logo {
-    margin-left:240px;
-    padding: 50px 50px;
-    color: white;
-    text-align: left;
-    font-family: lato;
-    font-size: 120px;
-    font-style: italic;
-    font-weight: 800;
-    position: fixed;
-    line-height: 100%;
-    width: 100%;
-    transition: 0.2s;
-}
-
-.frame{
-    position: relative;
-    padding-top: 75px;
-    padding-bottom: 75px;
-    left: 242px;
-    right: 121px;
-    width: 100%;
-    height: 100vh;
-}
-
-#section1 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.inhalt {
-    top: 50%;
-    transform: translateY(75%);
-}
-
-.inhaltVideo {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    width: 100%;
-    left: 604px;
-
-}
-
-.abbildung {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 24px;
-    color: #4F5F84;
-    position: absolute;
-    padding-top: 2rem;
-
-}
-
-.fontPicture{
-    position: relative;
-    width: 187px;
-    height: 132px;
-    font-family: 'Lato', sans-serif;
-    color:#0AA7FF;
-    font-size: 50px;
-    line-height: 56px;
-    font-weight: bold;
-    font-style: italic;
-    text-align: right;
-    padding-top: 35px;
-
-}
-
-.hrSection1 {
-    position: absolute;
-    border-color:#0AA7FF;
-    margin-top: 12em;
-    margin-bottom: 0.5em;
-    margin-right: auto;
-    margin-left: 9em;
-    border-style: solid;
-    border-width: 4px;
-    width: 174px;
-    /*position: absolute;
-    color:#0AA7FF;
-    border-width: 4px;
-    width: 174px;*/
-
-
-}
 
 .hrToolTip{
     display: block;
@@ -387,13 +231,9 @@ div.tooltip {
     color:#0AA7FF
 
 }
-
-.info1 {
-    width: 371px;
-    height: 132px;
-    margin-top: 50px;
-    margin-left: 250px;
-    align-items: center;
+.hrProduct{
+    margin-top: 0px;
+    background-color:#055BDC;
 }
 
 /** Switch Button*/
@@ -410,6 +250,15 @@ div.tooltip {
     height: 0;
 }
 
+.switch.coffe{
+    margin-left: 45px;
+}
+.switch.rice{
+    margin-left: 60px;
+}
+.switch.coton{
+    margin-left: 10px;
+}
 .slider {
     position: absolute;
     cursor: pointer;
@@ -417,7 +266,8 @@ div.tooltip {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: transparent;
+    border: 2px solid #0AA7FF;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -425,17 +275,49 @@ div.tooltip {
 .slider:before {
     position: absolute;
     content: "";
-    height: 15px;
-    width: 15px;
-    left: 4px;
-    bottom: 2px;
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 1px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
 }
+.checkbox-menu{
+    background-color:#0AA7FF;
+}
+.slider.coffe{
+    background-color: white;
+}
+.slider.rice{
+    background-color: white;
+}
+.slider.coton{
+    background-color: white;
+}
+.slider.coffe:before {
+    background-color: #FFAC27;
+}
+.slider.rice:before {
+    background-color: #C73737;
+
+}
+.slider.coton:before {
+    background-color: #FF2EFF;
+
+}
 
 input:checked + .slider {
     background-color: #0AA7FF;
+}
+input:checked + .slider.coffe {
+    background-color: white;
+}
+input:checked + .slider.rice {
+    background-color: white;
+}
+input:checked + .slider.coton {
+    background-color: white;
 }
 
 input:focus + .slider {

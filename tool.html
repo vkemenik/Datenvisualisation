@@ -13,7 +13,6 @@
     <!-- Load external CSS File -->
     <link rel="stylesheet" href="tool.css">
 
-    <!--Load Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -22,15 +21,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
 
 </head>
-<body class="background">
-<div class="container mt-3">
-    <header>
-        <div class="d-flex justify-content-between">
-            <div>
-                <img src="./img/Logo_klein.png">
-            </div>
-            <div class="p-2">
-                <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">about</a>
+<body background ="./img/Datenvisualisierung_Wave_BG.png">
+<div class="container-fluid mt-3">
+    <header class ="pt-4 content-header">
+        <div class ="mt-4">
+            <div class="d-flex justify-content-between">
+                <div class ="p-2">
+                    <a href ="index.html">
+                        <img src="./img/Logo_klein.png">
+                    </a>
+                </div>
+                <div class="p-2 ">
+<!--                    <a type="button" class="btn btn-outline-info fontText" href="about.html" role="button">Über das Projekt</a>-->
+                    <a class ="button btnAbout" href="about.html">Über das Projekt</a>
+                </div>
             </div>
         </div>
     </header>
@@ -65,15 +69,36 @@
             </div>
             <div class="form-check form-check-inline pr-5">
                 <div class="dropdown">
-                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Produkte
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Kaffee</a>
-                        <a class="dropdown-item" href="#">Reis</a>
-                        <a class="dropdown-item" href="#">Baumwolle</a>
-                    </div>
+                    <a class="btn btn-default dropdown-toggle" type="button"
+                            id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="true" style="color:white">
+                       <label>Produkte</label>
+                    </a>
+                    <ul class="dropdown-menu checkbox-menu allow-focus fontProduct" aria-labelledby="dropdownMenu1">
+                        <li class ="form-check">
+                            <label>Kaffee</label>
+                            <label class ="switch coffe">
+                                <input type="checkbox">
+                                <span class ="slider round coffe"></span>
+                            </label>
+                        </li>
+                        <hr class="hrProduct">
+                        <li class ="form-check">
+                            <label>Reis</label>
+                            <label class ="switch rice">
+                                <input type="checkbox">
+                                <span class ="slider round rice" ></span>
+                            </label>
+                        </li>
+                        <hr class="hrProduct">
+                        <li class ="form-check" >
+                            <label>Baumwolle</label>
+                            <label class ="switch coton">
+                                <input type="checkbox">
+                                <span class ="slider round coton"></span>
+                            </label>
+                        </li>
+                    </ul>
                 </div>
                 <label class="switch">
                     <input type="checkbox" value="products">
@@ -95,6 +120,7 @@
         </div>
     </div>
 </div>
+
 <script>
     /** World map*/
     let Worldmap;
