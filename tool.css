@@ -28,6 +28,10 @@ body {
     margin-right: 50px;
 
 }
+.switchbetweensites {
+    position:relative;
+    z-index: 100;
+}
 /**
 Button über das Projekt
  */
@@ -91,6 +95,17 @@ btnABout{
     transition: 0.2s;
 }
 
+#content-only-map {
+    width: auto;
+    height: 100%;
+}
+content-map {
+    width: auto;
+    height: 100%;
+    margin-left: 70px;
+    margin-right: 50px;
+
+}
 
 /*Intro*/
 .AboutBtn {
@@ -139,11 +154,11 @@ btnABout{
     margin-top: 20px;
 }
 
-/*body, html {*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    margin: 0;*/
-/*}*/
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
 
 
 .legendThreshold {
@@ -159,7 +174,7 @@ btnABout{
 
 .country:hover {
     /*fill-opacity: 0.8;*/
-    stroke: white;
+    /*stroke: white;*/
     fill:#055BDC;
 }
 
@@ -173,6 +188,16 @@ btnABout{
     font-size: 10px;
 
 }
+
+.btn {
+    border-color: white;
+}
+
+.btn:hover{
+    border-color: #0AA7FF;
+    background-color: #0AA7FF;
+}
+
 
 .hrTool {
     display: block;
@@ -189,7 +214,12 @@ btnABout{
     color: white;
     margin-bottom: 0.5em;
 }
-
+#map-button {
+    position: absolute;
+    right: 0;
+    margin-right: 55px;
+    margin-top: 550px;
+}
 .btnProduct{
     padding: 0;
     border: none;
