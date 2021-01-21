@@ -23,15 +23,20 @@
 </head>
 <body class="backgroundMap">
 <div class="container-fluid mt-3">
-    <div class="row switchbetweensites">
+    <div class="row">
+        <!--Switch Button left -->
         <div class="col-1 position-fixed">
             <a type="button" href="index.html" class="switchbutton-left" role="button">
-                <!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class=" bi-chevron-left svgB" viewBox="0 0 16 16">-->
-                <!--                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"-->
+                <!--                     class=" bi-chevron-left svgB" viewBox="0 0 16 16">-->
+                <!--                    <path fill-rule="evenodd"-->
+                <!--                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>-->
                 <!--                </svg>-->
             </a>
         </div>
+        <!-- The middle of the site with header, function and card!-->
         <div class="col">
+            <!-- header with the logo and the button -->
             <header>
                 <div class="d-flex justify-content-between content-header">
                     <div class="p-2">
@@ -44,7 +49,9 @@
                     </div>
                 </div>
             </header>
+            <!--  the content-->
             <div class="mt-3 fontText content-map">
+                <!--  the switch buttons product, waterstrees, wwf -->
                 <div class="">
                     <div class="form-check form-check-inline pr-5 map-settings">
                         <label class="pr-2">Wasserstress
@@ -117,13 +124,14 @@
                 <hr class="hrTool ">
                 <div class="row content-only-map">
                     <div class="col text-left">
+                        <!--  the box for the info about the country-->
                         <div class="row tooltipBox">
                             <div class="col">
                                 <span class="close">&times;</span>
                                 <div class="row" id="America">
                                     <p class="map-info-headline">Amerika</p>
                                     <hr class="map-info-line">
-                                    <p class="map-info-text">
+                                    <p class=" map-info-text">
                                         Amerika ist mit einem Wasserexport von <span style="color: #0AA7FF">2,76 km&sup3; pro Jahr</span>
                                         an f&uuml;nfter Stelle des h&ouml;chsten externen Wasserfußabdrucks
                                         Deutschlands. Dazu z&auml;hlen Produkte, wie Soja, N&uuml;sse, Sonnenblumen,
@@ -239,7 +247,9 @@
                                     </p></div>
                             </div>
                         </div>
+                        <!-- the legend placeholder-->
                         <div class="row bg-success legendContainer">
+                            <!--  waterstress legend-->
                             <div id="legende-waterstress">
                                 <div class="row justify-content-start">
                                     <div class="col-6">
@@ -288,17 +298,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- wwf-legend-->
                             <div id="legende-wwf" class="bg-success">
                                 <p>legenWWF</p>
                             </div>
+                            <!-- products legend-->
                             <div id="legende-products" class="bg-warning">
                                 <p>legendProducts</p>
                             </div>
                         </div>
                     </div>
+                    <!-- Card-->
                     <div class="col text-center" id="map">
                         <svg id="tool" width="900" height="670"></svg>
                     </div>
+                    <!-- BtnZoom-->
                     <div class="col text-center">
                         <div id="" class="row btn-group-vertical p-2 btnZoomGroup">
                             <button class="btn btnZoom" id="zoom-in">
@@ -312,6 +326,7 @@
                 </div>
             </div>
         </div>
+        <!--right switch button -->
         <div class="col-1 position-fixed" id="swB">
             <a type="button" href="ausblick.html" class="switchbutton-right" role="button">
                 <p class="switchbutton-text-right">Ausblick</p>
@@ -348,7 +363,7 @@
     let tooltip = d3.select('#map')
         .append('div')
         .attr('class', 'hidden tooltip')
-        .style("visibiliry", "hidden");
+        .style("visibility", "hidden");
 
 
     /**
@@ -459,6 +474,17 @@
         .domain([1, 100])  // What's in the data
         .range([4, 50])  // Size in pixel
 
+
+    // Close the modal
+    // Get the <span> element that closes the modal
+
+
+    // span.onclick = function() {
+    //     d3.select(".tooltipBox").style('display','block');
+    //     d3.select("#America").style('display','block');
+    //     // modal.style.display = "none";
+    // }
+
     /**
      *
      * @param error
@@ -491,21 +517,22 @@
             .attr("fill", "#9CB6DB")
             .attr("stroke", strokeColorCountry)
             .attr("stroke-width", strokeWidthCountry)
-            // .style("stroke", "#fff")
-            .on('mouseover', function (d) {
-                if (introData.has(d.id))
-                    tooltip.style('visibility', "visible")
-                        .html("<span><i>" + introData.get(d.id)["state"] + "</i></span>"
-                            + "<br/>"
-                            + "<hr class =" + "hrToolTip" + ">"
-                            + introData.get(d.id)["text"])
-            })
-            .on('mouseout', function (d) {
-                return tooltip.style("visibility", "hidden");
-            })
-            .on('mousemove', function (d) {
-                tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px");
-            })
+            .on('click', clicked);
+        // .style("stroke", "#fff")
+        // .on('mouseover', function (d) {
+        //     if (introData.has(d.id))
+        //         tooltip.style('visibility', "visible")
+        //             .html("<span><i>" + introData.get(d.id)["state"] + "</i></span>"
+        //                 + "<br/>"
+        //                 + "<hr class =" + "hrToolTip" + ">"
+        //                 + introData.get(d.id)["text"])
+        // })
+        // .on('mouseout', function (d) {
+        //     return tooltip.style("visibility", "hidden");
+        // })
+        // .on('mousemove', function (d) {
+        //     tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px");
+        // })
 
         const toolButtons = d3.selectAll('.switch .checkbox').on("change", function (d) {
             const selection = this.value;
@@ -703,6 +730,73 @@
             return '4';
         } else {
             return;
+        }
+    }
+
+    function clicked(country) {
+        if (country.id === "USA") {
+            console.log("country.id", country.id);
+            d3.select(".tooltipBox").style("display", "block");
+            d3.select("#America").style("display", "block");
+            d3.select(".close").on('click', function () {
+                d3.select(".tooltipBox").style('display', 'none');
+                d3.select("#America").style('display', 'none');
+
+            })
+        }
+        if (country.id === "BRA") {
+            d3.select(".tooltipBox").style("display", "block");
+            d3.select("#Brazil").style("display", "block");
+            d3.select(".close").on('click', function () {
+                d3.select(".tooltipBox").style('display', 'none');
+                d3.select("#Brazil").style('display', 'none');
+
+            })
+        }
+        if (country.id === "IND") {
+            d3.select(".tooltipBox").style("display", "block");
+            d3.select("#India").style("display", "block");
+            d3.select(".close").on('click', function () {
+                d3.select(".tooltipBox").style('display', 'none');
+                d3.select("#India").style('display', 'none');
+
+            })
+        }
+        if (country.id === "KEN") {
+            d3.select(".tooltipBox").style("display", "block");
+            d3.select("#Kenia").style("display", "block");
+            d3.select(".close").on('click', function () {
+                d3.select(".tooltipBox").style('display', 'none');
+                d3.select("#Kenia").style('display', 'none');
+
+            })
+        }
+        if (country.id === "ESP") {
+            d3.select(".tooltipBox").style("display", "block");
+            d3.select("#Spain").style("display", "block");
+            d3.select(".close").on('click', function () {
+                d3.select(".tooltipBox").style('display', 'none');
+                d3.select("#Spain").style('display', 'none');
+
+            })
+        }
+        if (country.id === "TUR") {
+            d3.select(".tooltipBox").style("display", "block");
+            d3.select("#Turkei").style("display", "block");
+            d3.select(".close").on('click', function () {
+                d3.select(".tooltipBox").style('display', 'none');
+                d3.select("#Turkei").style('display', 'none');
+
+            })
+        }
+        if (country.id === "ITA") {
+            d3.select(".tooltipBox").style("display", "block");
+            d3.select("#Italia").style("display", "block");
+            d3.select(".close").on('click', function () {
+                d3.select(".tooltipBox").style('display', 'none');
+                d3.select("#Italia").style('display', 'none');
+
+            })
         }
     }
 

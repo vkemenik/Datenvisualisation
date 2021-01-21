@@ -493,19 +493,19 @@ input:checked + .slider:before {
 
 .tooltipBox {
     position: absolute;
-    display: block;
-    top: 80px;
-    height: 320px;
-    width:430px;
+    display: none;
+    top: 50px;
+    z-index: 1;
+    min-height: 100px;
+    overflow: hidden;
+    width:350px;
     background-color: rgb(0,0,0);
     background: rgba(16, 16, 17, 0.9);
     text-justify: initial;
-
-
 }
 
 #America{
-    display: block;
+    display: none;
 }
 #Brazil{
     display: none;
