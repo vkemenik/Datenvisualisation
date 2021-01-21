@@ -4,12 +4,13 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
-.backgroundMap{
+
+.backgroundMap {
     background-image: url('./img/Datenvisualisierung_Wave_BG.png');
-    background-color:#021841;
+    background-color: #021841;
     height: 100%;
     width: 100%;
     background-position: center;
@@ -17,110 +18,53 @@ body {
     background-attachment: fixed;
 }
 
-.content-header {
-    margin-bottom: 100px;
-
-}
-.content-map {
-    width: auto;
-    height: 100%;
-    margin-left: 70px;
-    margin-right: 50px;
-
-}
 .switchbetweensites {
-    position:relative;
+    position: relative;
     z-index: 100;
 }
-/**
-Button über das Projekt
- */
-.button{
-    background-color: red; /* Green */
-    border:none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
 
-}
-
-btnABout{
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-}
-
-/*btnABout:hover{*/
-/*    background-color: #4CAF50;*/
-/*    color: white;*/
-/*}*/
-
-.btn-outline-secondary,
-.btn-outline-secondary:hover,
-.btn-outline-secondary:active,
-.btn-outline-secondary:visited{
-    border-color: #0AA7FF;
-    background-color: #0AA7FF !important;
-}
-
-/*img {*/
-/*    max-width: 100%;*/
-/*    height: auto;*/
-/*}*/
-.logo_gross{
-    margin-top: 0px;
-}
+.switchbutton-text-right {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 32px;
+    /* identical to box height */
 
 
+    color: #FFFFFF;
 
-#logo {
-    margin-left:50px;
-    padding: 10px;
-    color: white;
-    text-align: left;
-    font-family: lato;
-    font-size: 30px;
-    font-style: italic;
-    font-weight: 800;
-    position: fixed;
-    line-height: 100%;
+    writing-mode: vertical-rl;
+    -webkit-text-orientation: mixed;
+    text-orientation: mixed;
+
+    position: absolute;
+    top: 42%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    text-decoration: none;
-    transition: 0.2s;
 }
 
-#content-only-map {
-    width: auto;
-    height: 100%;
-}
-content-map {
-    width: auto;
-    height: 100%;
-    margin-left: 70px;
-    margin-right: 50px;
-
-}
-
-/*Intro*/
-.AboutBtn {
+.switchbutton-right {
     position: fixed;
-    font-family: lato;
-    color: white;
-}
-
-.switchbutton {
-    position:fixed;
     height: 100%;
     width: 41px;
     background-color: rgba(10, 34, 255, 0.25);
     color: white;
     right: 0%;
+    top: 0%;
+}
+
+.switchbutton-left {
+    position: fixed;
+    height: 100%;
+    width: 41px;
+    background-color: rgba(10, 34, 255, 0.25);
+    color: white;
+    left: 0%;
     top: 0%;
 }
 
@@ -141,6 +85,108 @@ content-map {
     margin-right: auto;
     width: 100%;
 }
+
+
+.content-header {
+
+    margin-bottom: 80px;
+}
+
+.content-map {
+    width: auto;
+    height: 100%;
+    margin-left: 70px;
+    margin-right: 50px;
+}
+
+
+/**
+Button über das Projekt
+ */
+.button {
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+btnABout {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+
+.logo_gross {
+    margin-top: 0px;
+}
+
+#logo {
+    margin-left: 50px;
+    padding: 10px;
+    color: white;
+    text-align: left;
+    font-family: lato;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 800;
+    position: absolute;
+    line-height: 100%;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#content-only-map {
+    width: auto;
+    height: 100%;;
+}
+
+content-map {
+    width: auto;
+    height: 100%;
+    margin-left: 70px;
+    margin-right: 50px;
+
+}
+
+.btnZoomGroup {
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+.legendContainer {
+    position: absolute;
+    bottom: 0px;
+}
+
+
+/*Intro*/
+.AboutBtn {
+    position: fixed;
+    font-family: lato;
+    color: white;
+}
+
+.switchbutton {
+    position: fixed;
+    height: 100%;
+    width: 41px;
+    background-color: rgba(10, 34, 255, 0.25);
+    color: white;
+    right: 0%;
+    top: 0%;
+}
+
 
 .fontTitle {
     font-family: 'Lato', sans-serif;
@@ -172,29 +218,28 @@ body, html {
     font-weight: bold;
 }
 
-.country:hover {
-    /*fill-opacity: 0.8;*/
-    /*stroke: white;*/
-    fill:#055BDC;
-}
 
-.fontProduct{
+/*.country:hover {*/
+/*    !*fill-opacity: 0.8;*!*/
+/*    !*stroke: white;*!*/
+/*    fill:#055BDC;*/
+/*}*/
+
+.fontProduct {
     font-family: "lato", sans-serif;
     color: white;
 }
 
 
-.product-label {
-    font-size: 10px;
+/* Button Über das Projekt*/
 
-}
-
-.btn {
+#btn-tool {
     border-color: white;
 }
 
-.btn:hover{
+#btn-tool:hover {
     border-color: #0AA7FF;
+    color: white;
     background-color: #0AA7FF;
 }
 
@@ -209,23 +254,30 @@ body, html {
     border-color: #0AA7FF;
 }
 
-.btnZoom{
+.btnZoom {
     background-color: #121C78;
     color: white;
     margin-bottom: 0.5em;
 }
-#map-button {
-    position: absolute;
-    right: 0;
-    margin-right: 55px;
-    margin-top: 550px;
+
+
+#plus-svg {
+    padding-top: 5px;
+
 }
-.btnProduct{
+
+#minus-svg {
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.btnProduct {
     padding: 0;
     border: none;
     background: none;
 }
-.backgroundLine{
+
+.backgroundLine {
     background: linear-gradient(90deg, #3DD9E3 -0.01%, #FF0BFF 100%);
 }
 
@@ -248,7 +300,7 @@ div.tooltip {
 
 }
 
-.hrToolTip{
+.hrToolTip {
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -257,16 +309,26 @@ div.tooltip {
     border-style: solid;
     border-width: 1px;
     width: 10%;
-    text-align:left;
-    color:#0AA7FF
+    text-align: left;
+    color: #0AA7FF
 
 }
-.hrProduct{
+
+.hrProduct {
     margin-top: 0px;
-    background-color:#055BDC;
+    background-color: #055BDC;
 }
 
 /** Switch Button*/
+.map-settings {
+    margin-right: 100px;
+}
+
+.toolSwitch {
+    top: 150px;
+    position: fixed;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -280,15 +342,18 @@ div.tooltip {
     height: 0;
 }
 
-.switch.coffe{
+.switch.coffe {
     margin-left: 45px;
 }
-.switch.rice{
+
+.switch.rice {
     margin-left: 60px;
 }
-.switch.coton{
+
+.switch.coton {
     margin-left: 10px;
 }
+
 .slider {
     position: absolute;
     cursor: pointer;
@@ -313,25 +378,32 @@ div.tooltip {
     -webkit-transition: .4s;
     transition: .4s;
 }
-.checkbox-menu{
-    background-color:#0AA7FF;
+
+.checkbox-menu {
+    background-color: #0AA7FF;
 }
-.slider.coffe{
+
+.slider.coffe {
     background-color: white;
 }
-.slider.rice{
+
+.slider.rice {
     background-color: white;
 }
-.slider.coton{
+
+.slider.coton {
     background-color: white;
 }
+
 .slider.coffe:before {
     background-color: #FFAC27;
 }
+
 .slider.rice:before {
     background-color: #C73737;
 
 }
+
 .slider.coton:before {
     background-color: #FF2EFF;
 
@@ -340,12 +412,15 @@ div.tooltip {
 input:checked + .slider {
     background-color: #0AA7FF;
 }
+
 input:checked + .slider.coffe {
     background-color: white;
 }
+
 input:checked + .slider.rice {
     background-color: white;
 }
+
 input:checked + .slider.coton {
     background-color: white;
 }
@@ -370,37 +445,271 @@ input:checked + .slider:before {
 }
 
 /** Info Buttom Tooltip */
-.infoBtn{
+.infoBtn {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
 }
+
 .infoBtn .tooltiptext {
     visibility: hidden;
-    width: 200px;
+    width: 235px;
+    height: 90px;
+    left: -100px;
+    top: 20px;
     background-color: #0AA7FF;
     color: #fff;
     text-align: left;
-    border-radius: 6px;
+    border-radius: 0px;
     padding: 10px 10px 10px 10px;
     position: absolute;
     z-index: 1;
-    top: 200%;
-    left: 50%;
-    margin-left: -100px;
     opacity: 0;
     transition: opacity 0.3s;
+    font-size: 14px;
+    line-height: 22px;
 }
+
 .infoBtn .tooltiptext::after {
     content: "";
     position: absolute;
     bottom: 100%;
-    left: 50%;
     margin-left: -5px;
 }
 
 .infoBtn:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+.infoBtn .tooltiptext-2 {
+    left: -125px;
+
+}
+
+/*Pop-up Window Elements*/
+
+/* The Modal (background) */
+
+.tooltipBox {
+    position: absolute;
+    display: block;
+    top: 80px;
+    height: 320px;
+    width:430px;
+    background-color: rgb(0,0,0);
+    background: rgba(16, 16, 17, 0.9);
+    text-justify: initial;
+
+
+}
+
+#America{
+    display: block;
+}
+#Brazil{
+    display: none;
+}
+#India{
+    display: none;
+}
+#Kenia{
+    display: none;
+}
+#Spain{
+    display: none;
+}
+#Turkei{
+    display: none;
+}
+#Italia{
+    display: none;
+}
+
+
+/* The Close Button */
+.close {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: normal;
+    right: 15px;
+}
+
+.close:hover,
+.close:focus {
+    color: #0AA7FF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ueberschrift Land */
+.map-info-headline {
+    padding-top: 5px;
+    font-family: Lato;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 27px;
+    /* or 193% */
+
+    letter-spacing: 0.145em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+/* Trennlinie */
+.map-info-line {
+    width: 22px;
+    height: 0px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 15px;
+    border: 2px solid #0AA7FF;
+}
+
+/* Fließtext */
+.map-info-text {
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 24px;
+    /* or 171% */
+
+
+    color: #FFFFFF;
+}
+
+
+/* Legende Wasserstress */
+
+#legende-waterstress {
+    /*position: absolute;*/
+    color: #FFFFFF;
+    padding: 15px;
+    width: 350px;
+    height: 100px;
+    left: 73px;
+    margin-bottom: 0px;
+    /*visibility: visible;*/
+    display: none;
+    background-color: red;
+}
+
+#legende-wwf {
+    color: #FFFFFF;
+    padding: 15px;
+    width: 350px;
+    height: auto;
+    left: 73px;
+    margin-bottom: 0px;
+    display: block;
+    background-color: red;
+}
+
+#legende-products {
+    color: #FFFFFF;
+    padding: 15px;
+    width: 350px;
+    height: auto;
+    left: 73px;
+    margin-bottom: 0px;
+    display: block;
+    background-color: red;
+}
+
+
+.legende-headline {
+    width: 350px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 12px;
+    /* or 86% */
+
+    color: #FFFFFF;
+}
+
+#legende-content-boxes {
+    width: 350px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+#extrem-high {
+    display: table-cell;
+    width: 70px;
+    height: 10px;
+    background: #023784;
+    border: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+}
+
+#high {
+    display: table-cell;
+    width: 70px;
+    height: 10px;
+    background: #055BDC;
+    border: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+}
+
+#middle {
+    display: table-cell;
+    width: 70px;
+    height: 10px;
+    background: #2A92D8;
+    border: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+}
+
+#low {
+    display: table-cell;
+    width: 70px;
+    height: 10px;
+    background: #5BA8D3;
+    border: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+}
+
+#very-low {
+    display: table-cell;
+    width: 70px;
+    height: 10px;
+    background: #ACCFDD;
+    border: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+}
+
+.legende-content-text {
+    display: table-cell;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+
+}
+
+.legende-waterstress-text {
+    width: 70px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    /* or 140% */
+
+    text-align: center;
+
+    color: #FFFFFF;
 }
 

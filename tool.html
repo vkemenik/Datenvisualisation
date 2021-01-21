@@ -23,109 +23,307 @@
 </head>
 <body class="backgroundMap">
 <div class="container-fluid mt-3">
-    <header class="pt-4">
-        <div class="">
-            <div class="d-flex justify-content-between">
-                <div class="p-2">
-                    <a href="index.html">
-                        <img src="./img/Logo_klein.png">
-                    </a>
-                </div>
-                <div class="p-2 ">
-                    <!--                    <a type="button" class="btn btn-outline-info fontText" href="about.html" role="button">Über das Projekt</a>-->
-                    <a type="button" class="btn btn-outline-secondary fontText" href="about.html" role="button">Über das
-                        Projekt</a>
-                </div>
-            </div>
+    <div class="row switchbetweensites">
+        <div class="col-1 position-fixed">
+            <a type="button" href="index.html" class="switchbutton-left" role="button">
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class=" bi-chevron-left svgB" viewBox="0 0 16 16">-->
+                <!--                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>-->
+                <!--                </svg>-->
+            </a>
         </div>
-    </header>
-    <div class="mt-3 fontText content-map">
-        <div>
-            <div class="form-check form-check-inline pr-5">
-                <label class="pr-2">Wasserstress
-                    <sup>
-                        <i id="infoWaterStress" class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
-                            <span class="tooltiptext fontText">Absinken des Wasserpotentials bei Pflanzen aufgrund Wassermangels (Dürre).</span>
-                        </i>
-                    </sup>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" class="checkbox" value="waterStress">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+        <div class="col">
+            <header>
+                <div class="d-flex justify-content-between content-header">
+                    <div class="p-2">
+                        <!--                        <img src="./img/Logo_klein.png">-->
+                        <a class="" id="logo" href="index.html">Wer? Wie? <br/>Was? Wasser?</a>
+                    </div>
+                    <div style="margin-right:40px">
+                        <a type="button" class="btn fontText" href="about.html" role="button" id="btn-tool">Über das
+                            Projekt</a>
+                    </div>
+                </div>
+            </header>
+            <div class="mt-3 fontText content-map">
+                <div class="">
+                    <div class="form-check form-check-inline pr-5 map-settings">
+                        <label class="pr-2">Wasserstress
+                            <sup>
+                                <i id="infoWaterStress" class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
+                                    <span class="tooltiptext fontText">Absinken des Wasserpotentials bei Pflanzen aufgrund Wassermangels (Dürre).</span>
+                                </i>
+                            </sup>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" class="checkbox" value="waterStress">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
 
-            <div class="form-check form-check-inline pr-5">
-                <label class="pr-2">Virtuelles Wasser
-                    <sup>
-                        <i id="infoVirtualWater" class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
-                            <span class="tooltiptext fontText">Indirekter Wasserkonsum Deutschlands (virtuelles Wasser) durch importierte Produkte.</span>
-                        </i>
-                    </sup>
-                </label>
-                <label class="switch">
-                    <input type="checkbox" class="checkbox" value="virtualWater">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <!--Product button -->
-            <div class="form-check form-check-inline pr-5">
-                <div class="dropdown">
-                    <a class="btn btn-default dropdown-toggle" type="button"
-                       id="dropdownMenu1" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="true" style="color:white">
-                        <label>Produkte</label>
-                    </a>
-                    <ul class="dropdown-menu checkbox-menu allow-focus fontProduct" aria-labelledby="dropdownMenu1">
-                        <li class="form-check">
-                            <label>Kaffee</label>
-                            <label class="switch coffe">
-                                <input type="checkbox" class="checkbox" value="coffee">
-                                <span class="slider round coffe"></span>
-                            </label>
-                        </li>
-                        <hr class="hrProduct">
-                        <li class="form-check">
-                            <label>Reis</label>
-                            <label class="switch rice">
-                                <input type="checkbox" class="checkbox" value="rice">
-                                <span class="slider round rice"></span>
-                            </label>
-                        </li>
-                        <hr class="hrProduct">
-                        <li class="form-check">
-                            <label>Baumwolle</label>
-                            <label class="switch coton">
-                                <input type="checkbox" class="checkbox" value="cotton">
-                                <span class="slider round coton"></span>
-                            </label>
-                        </li>
-                    </ul>
+                    <div class="form-check form-check-inline pr-5 map-settings">
+                        <label class="pr-2">Virtuelles Wasser
+                            <sup>
+                                <i id="infoVirtualWater" class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
+                                    <span class="tooltiptext tooltiptext-2 fontText">Indirekter Wasserkonsum Deutschlands (virtuelles Wasser) durch importierte Produkte.</span>
+                                </i>
+                            </sup>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" class="checkbox" value="virtualWater">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <!--Product button -->
+                    <div class="form-check form-check-inline pr-5 map-settings">
+                        <div class="dropdown">
+                            <a class="btn btn-default dropdown-toggle" type="button"
+                               id="dropdownMenu1" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="true" style="color:white">
+                                <label>Produkte</label>
+                            </a>
+                            <ul class="dropdown-menu checkbox-menu allow-focus fontProduct"
+                                aria-labelledby="dropdownMenu1">
+                                <li class="form-check">
+                                    <label>Kaffee</label>
+                                    <label class="switch coffe">
+                                        <input type="checkbox" class="checkbox" value="coffee">
+                                        <span class="slider round coffe"></span>
+                                    </label>
+                                </li>
+                                <hr class="hrProduct">
+                                <li class="form-check">
+                                    <label>Reis</label>
+                                    <label class="switch rice">
+                                        <input type="checkbox" class="checkbox" value="rice">
+                                        <span class="slider round rice"></span>
+                                    </label>
+                                </li>
+                                <hr class="hrProduct">
+                                <li class="form-check">
+                                    <label>Baumwolle</label>
+                                    <label class="switch coton">
+                                        <input type="checkbox" class="checkbox" value="cotton">
+                                        <span class="slider round coton"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="checkbox" value="products">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                 </div>
-                <label class="switch">
-                    <input type="checkbox" class="checkbox" value="products">
-                    <span class="slider round"></span>
-                </label>
+                <hr class="hrTool ">
+                <div class="row content-only-map">
+                    <div class="col text-left">
+                        <div class="row tooltipBox">
+                            <div class="col">
+                                <span class="close">&times;</span>
+                                <div class="row" id="America">
+                                    <p class="map-info-headline">Amerika</p>
+                                    <hr class="map-info-line">
+                                    <p class="map-info-text">
+                                        Amerika ist mit einem Wasserexport von <span style="color: #0AA7FF">2,76 km&sup3; pro Jahr</span>
+                                        an f&uuml;nfter Stelle des h&ouml;chsten externen Wasserfußabdrucks
+                                        Deutschlands. Dazu z&auml;hlen Produkte, wie Soja, N&uuml;sse, Sonnenblumen,
+                                        &Ouml;lsat, Reis, Baumwolle, Erdn&uuml;sse und Tabak.
+                                        Vor allem <span style="color: #0AA7FF">Reis verbraucht</span> durch den Anbau
+                                        der traditionellen Methode <span style="color: #0AA7FF">durch &Uuml;berflutung der Felder viel Wasser.</span>
+                                    </p>
+                                </div>
+                                <div class="row" id="Brazil">
+                                    <p class="map-info-headline">Brasilien</p>
+                                    <hr class="map-info-line">
+                                    <p class="map-info-text">
+                                        Brasilien steckt in einer <span style="color: #0AA7FF">Wasserkrise,</span>
+                                        obwohl es <span
+                                            style="color: #0AA7FF">durch den Amazonas ein wasserreiches Land</span> ist.
+                                        Es hat vor allem aufgrund der Wasserverschmutzung
+                                        und dessen Folgen Probleme mit seinen Wasserressourcen. Deutschland importiert
+                                        mit <span style="color: #0AA7FF">5,73 km&sup3; pro Jahr</span> am meisten Wasser
+                                        aus Brasilien, darunter Produkte
+                                        wie Kaffe, Soja und Vieh. Vor allem der <span style="color: #0AA7FF">Sojaanbau tr&auml;gt zur Zerst&ouml;rung des Amazonas</span>
+                                        aufgrund der j&auml;hrlichen Rodung von <span style="color: #0AA7FF">1,4 Millionen Hektar bei.</span>
+                                    </p></div>
+                                <div class="row" id="India">
+                                    <p class="map-info-headline">Indien</p>
+                                    <hr class="map-info-line">
+                                    <p class="map-info-text">
+                                        Indien z&auml;hlt mit einem Wasserexport von <span style="color: #0AA7FF">2,18 km&sup3; pro Jahr</span>
+                                        nach Deutschland nicht zu den h&ouml;chsten externen Wasserfußabdruck. Das Land
+                                        ist jedoch aufgrund seines <span style="color: #0AA7FF">Wassermangels</span>
+                                        kritisch zu betrachten.
+                                        <span style="color: #0AA7FF">Aufgrund der Niederschl&auml;ge</span> wird <span
+                                            style="color: #0AA7FF">lediglich 60 % der Bew&auml;sserung</span> geliefert.
+                                        Neben Produkten wie &Ouml;lsaat, Kaffee und Nüssen gilt Baumwolle mit ca. 9
+                                        Millionen Hektar Anbaufl&auml;che als
+                                        wichtigster Wirtschaftsfaktor Indiens, obwohl das Land die niedrigsten Ernteertr&auml;ge
+                                        weltweit aufweist. Folgen des Baumwolleanbaus sind <span style="color: #0AA7FF">stark verschmutzte Gew&auml;sser</span>
+                                        und <span style="color: #0AA7FF">Senkung Grundwasservorkommen.</span>
+                                    </p>
+                                </div>
+                                <div class="row" id="Kenia">
+                                    <p class="map-info-headline">Kenia</p>
+                                    <hr class="map-info-line">
+                                    <p class="map-info-text">
+                                        Kenia hat einen <span style="color: #0AA7FF">j&auml;hrlichen Wasserbedarf</span>
+                                        von <span style="color: #0AA7FF">2,7 km&sup3;.</span> Zudem weist das Land eine
+                                        stetig steigende <span style="color: #0AA7FF">Verschlechterung der Trinkwasservesorgung</span>
+                                        auf.
+                                        Durch die hohe Bev&ouml;lkerungswachstumsrate sinkt die verf&uuml;gbare
+                                        Wassermenge bis 2025 rapide. Der Export <span style="color: #0AA7FF">landwirtschaftlicher G&uuml;ter</span>
+                                        ist mit 60 % die
+                                        <span style="color: #0AA7FF">wichtigste Exporteinnahme.</span> Hierzu z&auml;hlt
+                                        &uuml;berwiegend der gartenbauliche Bereich wie z. B. Schnittblumen (> 50%).
+                                        Neben diesen Produkten z&auml;hlt ebenso
+                                        <span style="color: #0AA7FF">Kaffee</span> mit einem Wasserexport von <span
+                                            style="color: #0AA7FF">488 Mm&sup3; Jahr</span> als wichtigstes Exportgut.
+                                        Kenia ist zudem <span style="color: #0AA7FF">auf die unzuverl&auml;ssigen Niederschl&auml;ge</span>
+                                        im Land <span style="color: #0AA7FF">angewiesen.</span>
+                                    </p>
+                                </div>
+                                <div class="row" id="Spain">
+                                    <p class="map-info-headline">Spanien</p>
+                                    <hr class="map-info-line">
+                                    <p class="map-info-text">
+                                        Spanien ist <span style="color: #0AA7FF">von der EU das Land,</span> welches am
+                                        <span style="color: #0AA7FF">st&auml;rksten von der Trockenheit betroffen</span>
+                                        ist und dennoch den gr&ouml;ßten Anbau der Obst- und Gem&uuml;seproduktion f&uuml;r
+                                        den europ&auml;ischen Markt betreibt. Weitere Produkte wie N&uuml;sse, Schweine
+                                        & Co sind ebenso wichtige Importg&uuml;ter Deutschlands, weshalb <span
+                                            style="color: #0AA7FF">Deutschland</span> einen <span
+                                            style="color: #0AA7FF">externen Wasserfußabdruck von 1,83 km&sup3; pro Jahr</span>
+                                        hinterl&auml;sst. Für die j&auml;hrliche Bew&auml;sserung von 3,3 Millionen
+                                        Hektar Land werden 24 km&sup3; Wasser ben&ouml;tigt. Doch nicht nur die <span
+                                            style="color: #0AA7FF">verschwenderische Bew&auml;sserung</span> in
+                                        Form von &Uuml;berflutung der Felder, sondern auch die <span
+                                            style="color: #0AA7FF">illegale Nutzung</span> von Oberfl&auml;chen- und
+                                        Grundwasser stellt ein <span style="color: #0AA7FF">großes Problem</span> dar.
+                                    </p>
+                                </div>
+                                <div class="row" id="Turkei">
+                                    <p class="map-info-headline">Türkei</p>
+                                    <hr class="map-info-line">
+                                    <p class="map-info-text">
+                                        Deutschland hinterl&auml;sst in der T&uuml;rkei einen <span
+                                            style="color: #0AA7FF">externen Wasserfußabdruck von 1,87 km&sup3; pro Jahr.</span>
+                                        Dazu z&auml;hlen Produkte wie Baumwolle, N&uuml;sse, Trauben & Co
+                                        als wichtigste Importg&uuml;ter für Deutschland. Vor allem <span
+                                            style="color: #0AA7FF">Baumwolle ist mit 700.000 Hektar Land</span> und
+                                        einem <span style="color: #0AA7FF">j&auml;hrlichen Anbau von 2,3 Millionen Tonnen</span>
+                                        Baumwolle
+                                        ein wichtiges Erzeugnis. Für dieses und viele weitere Produkte werden <span
+                                            style="color: #0AA7FF">hohe Wassermengen benutzt,</span> wodurch die
+                                        Grundwasserressourcen immer st&auml;rker &uuml;bernutzt werden.
+                                        Durch die <span style="color: #0AA7FF">unzureichende Niederschlagsmengen</span>
+                                        sowie <span style="color: #0AA7FF">illegale Wasserentnahmen</span> werden
+                                        Grundwasserk&ouml;rper nicht ausreichend aufgef&uuml;llt.
+                                    </p></div>
+                                <div class="row" id="Italia">
+                                    <p class="map-info-headline">Italien</p>
+                                    <hr class="map-info-line">
+                                    <p class="map-info-text">
+                                        In der EU ist Italien mit der Produktion von Reis mit einem Anteil von Zwei
+                                        Drittel das wichtigste Anbauland. <span style="color: #0AA7FF">Deutschland importiert durch Reis</span>
+                                        insgesamt <span style="color: #0AA7FF">120 Mm&sup3; Wasser im Jahr</span>
+                                        von Italien. Weitere Produkte wie Trauben, &Ouml;lsaat, Rind, Schweine & Co
+                                        tragen zu einem <span style="color: #0AA7FF">externen Wasserfußabdruck von 1,74 km&sup3; pro Jahr</span>
+                                        Deutschlands bei. Darunter z&auml;hlt
+                                        <span style="color: #0AA7FF">Reis</span> aufgrund der hohen ben&ouml;tigten
+                                        Wassermenge <span style="color: #0AA7FF">als kritischstes Produkt.</span> Der
+                                        Reis wird in der am st&auml;rksten landwirtschaftlichen genutzten Fl&auml;che,
+                                        dem <span style="color: #0AA7FF">Po-Becken,</span> angebaut.
+                                        Dieses Areal hat aufgrund der <span style="color: #0AA7FF">D&uuml;rre</span> und
+                                        dem <span style="color: #0AA7FF">Salzeintrag schlechte Bedingungen für den Anbau.</span>
+                                    </p></div>
+                            </div>
+                        </div>
+                        <div class="row bg-success legendContainer">
+                            <div id="legende-waterstress">
+                                <div class="row justify-content-start">
+                                    <div class="col-6">
+                                        <p class="legende-headline">Wasserstress-Legende</p>
+                                        <div id="legende-content-boxes">
+                                            <div id="extrem-high">
+                                            </div>
+                                            <div id="high">
+                                            </div>
+                                            <div id="middle">
+                                            </div>
+                                            <div id="low">
+                                            </div>
+                                            <div id="very-low">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start">
+                                    <div class="col-6">
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                Extrem hoch<br>(>80%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                Hoch<br>(40-80%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                Mittel<br>(20-40%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                Niedrig<br>(10-20%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                Sehr niedrig<br>(<10%)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="legende-wwf" class="bg-success">
+                                <p>legenWWF</p>
+                            </div>
+                            <div id="legende-products" class="bg-warning">
+                                <p>legendProducts</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center" id="map">
+                        <svg id="tool" width="900" height="670"></svg>
+                    </div>
+                    <div class="col text-center">
+                        <div id="" class="row btn-group-vertical p-2 btnZoomGroup">
+                            <button class="btn btnZoom" id="zoom-in">
+                                <img src="./img/plus.svg" id="plus-svg">
+                            </button>
+                            <button class="btn btnZoom" id="zoom-out">
+                                <img src="./img/minus.svg" id="minus-svg">
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <hr class="hrTool">
-        <div class="d-flex justify-content-center content-only-map">
-            <div class="p-2 align-content-stretch" id="map">
-                <svg id="tool" width="900" height="670"></svg>
-            </div>
-            <div class="d-flex p-2 justify-content-end" id="map-button">
-                <div class="btn-group-vertical align-self-end">
-                    <button class="btn btnZoom" id="zoom-in">
-                        <img src="./img/plus.svg" id="plus-svg">
-                    </button>
-                    <button class="btn btnZoom" id="zoom-out">
-                        <img src="./img/minus.svg" id="minus-svg">
-                    </button>
-                </div>
-            </div>
+        <div class="col-1 position-fixed" id="swB">
+            <a type="button" href="ausblick.html" class="switchbutton-right" role="button">
+                <p class="switchbutton-text-right">Ausblick</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                     class="bi-chevron-right svgB" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </a>
         </div>
     </div>
-    
+
 </div>
 
 <script>
@@ -157,8 +355,9 @@
      * ColorScaleWaterstress
      */
     let colorScaleWaterstress = d3.scaleThreshold()
-        .domain([0, 1, 2, 3, 4, 5])
-        .range(d3.schemeReds[7]);
+        .domain([0, 1, 2, 3, 4])
+        .range(["#7C7C7C", "#ACCFDD", "#5BA8D3", "#2A92D8", "#055BDC", "#023784"]);
+
 
     /**
      * SVG
@@ -318,7 +517,6 @@
         console.log('productsButton', productButtons);
 
 
-        let LinePath;
         toolButtons.on('change', function (d) {
             if (this.value === "waterStress") {
                 console.log('button changed to ' + 'waterStress');
@@ -326,6 +524,7 @@
                     console.log('true');
                     // d3.select('#infoWaterStress')
                     // .style("visibility", "visible")
+                    d3.select('#legende-waterstress').style("display", "block");
                     worldmap.attr("fill", function (d) {
                         d.total = waterStressData.get(d.id) || 0;
                         return colorScaleWaterstress(d.total);
@@ -333,44 +532,14 @@
                 } else {
                     worldmap.attr("fill", "#9CB6DB")
                         .style("stroke", "#fff")
-
+                    d3.select('#legende-waterstress').style("display", "none");
                 }
             }
 
             if (this.value === "virtualWater") {
                 console.log('button changed to ' + 'wwf');
                 if (d3.select(this).property("checked")) {
-                    d3.select('#zoom-in').on('click', function () {
-                        var scale = zoom.scale(), extent = zoom.scaleExtent(), translate = zoom.translate();
-                        var x = translate[0], y = translate[1];
-                        var factor = 1.2;
-
-                        var target_scale = scale * factor;
-
-                        if (scale === extent[1]) {
-                            return false;
-                        }
-                        var clamped_target_scale = Math.max(extent[0], Math.min(extent[1], target_scale));
-                        if (clamped_target_scale != target_scale) {
-                            target_scale = clamped_target_scale;
-                            factor = target_scale / scale;
-                        }
-                        x = (x - center[0]) * factor + center[0];
-                        y = (y - center[1]) * factor + center[1];
-
-                        zoom.scale(target_scale).translate([x, y]);
-
-                        g.transition().attr("transform", "translate(" + zoom.translate().join(",") + ") scale(" + zoom.scale() + ")");
-                        g.selectAll("path")
-                            .attr("d", path.projection(projection));
-
-                        svg.selectAll("circle")
-                            .transition()
-                            .attr("transform", "translate(" + zoom.translate().join(",") + ") scale(" + zoom.scale() + ")")
-                            .attr("r", 5 / zoom.scale());
-
-                        d3.select("#map-zoomer").node().value = zoom.scale();
-                    });
+                    d3.select("#legende-wwf").style("display", "block");
 
                     linePath = g2.selectAll("myPath")
                         .data(virtualWater)
@@ -382,13 +551,12 @@
                         .style("fill", "none")
                         .style("stroke", "url(#svgGradient)")
                         .style("stroke-width", 6)
-                    console.log('true');
                 } else {
                     linePath.remove();
+                    d3.select("#legende-wwf").style("display", "none");
+
                     console.log('false');
                 }
-
-
 
 
             }
