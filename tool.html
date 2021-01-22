@@ -80,46 +80,76 @@
                             <span class="slider round"></span>
                         </label>
                     </div>
-                    <!--Product button -->
-                    <div class="form-check form-check-inline pr-5 map-settings">
-                        <div class="dropdown">
-                            <a class="btn btn-default dropdown-toggle" type="button"
-                               id="dropdownMenu1" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="true" style="color:white">
-                                <label>Produkte</label>
-                            </a>
-                            <ul class="dropdown-menu checkbox-menu allow-focus fontProduct"
-                                aria-labelledby="dropdownMenu1">
-                                <li class="form-check">
-                                    <label>Kaffee</label>
-                                    <label class="switch coffe">
-                                        <input type="checkbox" class="checkbox" value="coffee">
-                                        <span class="slider round coffe"></span>
-                                    </label>
-                                </li>
-                                <hr class="hrProduct">
-                                <li class="form-check">
-                                    <label>Reis</label>
-                                    <label class="switch rice">
-                                        <input type="checkbox" class="checkbox" value="rice">
-                                        <span class="slider round rice"></span>
-                                    </label>
-                                </li>
-                                <hr class="hrProduct">
-                                <li class="form-check">
-                                    <label>Baumwolle</label>
-                                    <label class="switch coton">
-                                        <input type="checkbox" class="checkbox" value="cotton">
-                                        <span class="slider round coton"></span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
+                    <label class="pr-3">Produkte</label>
+
+                    <div class="form-check form-check-inline pr-3">
+                        <label class="pr-2 fontProduct">Kaffee
+                        </label>
                         <label class="switch">
-                            <input type="checkbox" class="checkbox" value="products">
-                            <span class="slider round"></span>
+                            <input type="checkbox" class="checkbox product" value="coffee">
+                            <span class="slider round coffee"></span>
                         </label>
                     </div>
+
+                    <div class="form-check form-check-inline pr-3">
+                        <label class="pr-2 fontProduct">reis
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" class="checkbox product" value="rice">
+                            <span class="slider round rice"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline pr-3">
+                        <label class="pr-2 fontProduct">Baumwolle
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" class="checkbox product" value="cotton">
+                            <span class="slider round cotton"></span>
+                        </label>
+                    </div>
+
+
+                    <!--Product button -->
+                    <!--                    <div class="form-check form-check-inline pr-5 map-settings">-->
+                    <!--                        <div class="dropdown">-->
+                    <!--                            <a class="btn btn-default dropdown-toggle" type="button"-->
+                    <!--                               id="dropdownMenu1" data-toggle="dropdown"-->
+                    <!--                               aria-haspopup="true" aria-expanded="true" style="color:white">-->
+                    <!--                                <label>Produkte</label>-->
+                    <!--                            </a>-->
+                    <!--                            <ul class="dropdown-menu checkbox-menu allow-focus fontProduct"-->
+                    <!--                                aria-labelledby="dropdownMenu1">-->
+                    <!--                                <li class="form-check">-->
+                    <!--                                    <label>Kaffee</label>-->
+                    <!--                                    <label class="switch coffe">-->
+                    <!--                                        <input type="checkbox" class="checkbox" value="coffee">-->
+                    <!--                                        <span class="slider round coffe"></span>-->
+                    <!--                                    </label>-->
+                    <!--                                </li>-->
+                    <!--                                <hr class="hrProduct">-->
+                    <!--                                <li class="form-check">-->
+                    <!--                                    <label>Reis</label>-->
+                    <!--                                    <label class="switch rice">-->
+                    <!--                                        <input type="checkbox" class="checkbox" value="rice">-->
+                    <!--                                        <span class="slider round rice"></span>-->
+                    <!--                                    </label>-->
+                    <!--                                </li>-->
+                    <!--                                <hr class="hrProduct">-->
+                    <!--                                <li class="form-check">-->
+                    <!--                                    <label>Baumwolle</label>-->
+                    <!--                                    <label class="switch coton">-->
+                    <!--                                        <input type="checkbox" class="checkbox" value="cotton">-->
+                    <!--                                        <span class="slider round coton"></span>-->
+                    <!--                                    </label>-->
+                    <!--                                </li>-->
+                    <!--                            </ul>-->
+                    <!--                        </div>-->
+                    <!--                        <label class="switch">-->
+                    <!--                            <input type="checkbox" class="checkbox" value="products">-->
+                    <!--                            <span class="slider round"></span>-->
+                    <!--                        </label>-->
+                    <!--                    </div>-->
                 </div>
                 <hr class="hrTool ">
                 <div class="row content-only-map">
@@ -475,16 +505,6 @@
         .range([4, 50])  // Size in pixel
 
 
-    // Close the modal
-    // Get the <span> element that closes the modal
-
-
-    // span.onclick = function() {
-    //     d3.select(".tooltipBox").style('display','block');
-    //     d3.select("#America").style('display','block');
-    //     // modal.style.display = "none";
-    // }
-
     /**
      *
      * @param error
@@ -517,7 +537,7 @@
             .attr("fill", "#9CB6DB")
             .attr("stroke", strokeColorCountry)
             .attr("stroke-width", strokeWidthCountry)
-            .on('click', clicked);
+            .on('click', showCountryBox);
         // .style("stroke", "#fff")
         // .on('mouseover', function (d) {
         //     if (introData.has(d.id))
@@ -566,7 +586,7 @@
             if (this.value === "virtualWater") {
                 console.log('button changed to ' + 'wwf');
                 if (d3.select(this).property("checked")) {
-                    d3.select("#legende-wwf").style("display", "block");
+                    // d3.select("#legende-wwf").style("display", "block");
 
                     linePath = g2.selectAll("myPath")
                         .data(virtualWater)
@@ -580,7 +600,7 @@
                         .style("stroke-width", 6)
                 } else {
                     linePath.remove();
-                    d3.select("#legende-wwf").style("display", "none");
+                    // d3.select("#legende-wwf").style("display", "none");
 
                     console.log('false');
                 }
@@ -588,82 +608,57 @@
 
             }
 
-            if (this.value === "products") {
-                console.log('button changed to ' + 'products');
-                if (d3.select(this).property("checked")) {
-                    console.log('true');
-                    d3.select(".dropdown-menu").selectAll("input").property('checked', true);
-                    // d3.selectAll(".dropdown-menu .checkbox").each(function(d){
-                    //     cb=d3.select(this);
-                    //     grp=cb.property("value");
-                    //
-                    //     if(cb.property("checked")){
-                    //         console.log('cb selected', cb.property("value"));
-                    //     }
-                    // });
-                } else {
-                    console.log('false');
-                    d3.select(".dropdown-menu").selectAll("input").property('checked', false);
-                }
-                // Add Circles
-                g3
-                    .selectAll("myCircles")
-                    .data(markers)
-                    .enter()
-                    .append("circle")
-                    .attr("class", function (d) {
-                        return d.group
-                    })
-                    .attr("cx", function (d) {
-                        return projection([d.long, d.lat])[0]
-                    })
-                    .attr("cy", function (d) {
-                        return projection([d.long, d.lat])[1]
-                    })
-                    .attr("r", function (d) {
-                        return size(d.size)
-                    })
-                    .style("fill", function (d) {
-                        return color(d.group)
-                    })
-                    .attr("stroke", function (d) {
-                        return color(d.group)
-                    })
-                    .attr("stroke-width", 3)
-                    .attr("fill-opacity", .4)
 
-
-                // productButtons.on('change',function(d){
-                //         cb=d3.select(this);
-                //         grp=cb.property("value");
-                //
-                //         if(cb.property("checked")){
-                //             console.log('cb selected', cb.property("value"));
-                //         }
-                //     // if (this.value === "coffee"){
-                //     //     console.log("coffee")
-                //     // }
-                //     // if (this.value === "rice"){
-                //     //     console.log("rice")
-                //     // }
-                //     // if (this.value === "cotton"){
-                //     //     console.log("cotton")
-                //     // }
-                // })
-
-                // productButtons.on('change', function (d) {
-                //
-                //
-                // })
-                // d3.selectAll(".dropdown-menu .checkbox").each(function(d){
-                //     cb=d3.select(this);
-                //     grp=cb.property("value");
-                //
-                //     if(cb.property("checked")){
-                //         console.log('cb selected', cb.property("value"));
-                //     }
-                // });
-            }
+            // if (this.value === "products") {
+            //     console.log('button changed to ' + 'products');
+            //     if (d3.select(this).property("checked")) {
+            //         console.log('true');
+            //         d3.select(".dropdown-menu").selectAll("input").property('checked', true);
+            //         // d3.selectAll(".dropdown-menu .checkbox").each(function(d){
+            //         //     cb=d3.select(this);
+            //         //     grp=cb.property("value");
+            //         //
+            //         //     if(cb.property("checked")){
+            //         //         console.log('cb selected', cb.property("value"));
+            //         //     }
+            //         // });
+            //     } else {
+            //         console.log('false');
+            //         d3.select(".dropdown-menu").selectAll("input").property('checked', false);
+            //     }
+            //
+            //
+            //     // productButtons.on('change',function(d){
+            //     //         cb=d3.select(this);
+            //     //         grp=cb.property("value");
+            //     //
+            //     //         if(cb.property("checked")){
+            //     //             console.log('cb selected', cb.property("value"));
+            //     //         }
+            //     //     // if (this.value === "coffee"){
+            //     //     //     console.log("coffee")
+            //     //     // }
+            //     //     // if (this.value === "rice"){
+            //     //     //     console.log("rice")
+            //     //     // }
+            //     //     // if (this.value === "cotton"){
+            //     //     //     console.log("cotton")
+            //     //     // }
+            //     // })
+            //
+            //     // productButtons.on('change', function (d) {
+            //     //
+            //     //
+            //     // })
+            //     // d3.selectAll(".dropdown-menu .checkbox").each(function(d){
+            //     //     cb=d3.select(this);
+            //     //     grp=cb.property("value");
+            //     //
+            //     //     if(cb.property("checked")){
+            //     //         console.log('cb selected', cb.property("value"));
+            //     //     }
+            //     // });
+            // }
 
             // if (this.value ==="coffee"){
             //     console.log('button changed to ' + 'coffee');
@@ -694,13 +689,41 @@
             //
             //     }
             // }
-            d3.selectAll(".dropdown-menu .checkbox").on("change", updateCircle);
-            updateCircle();
         })
+
+        // Add Circles
+        g3
+            .selectAll("myCircles")
+            .data(markers)
+            .enter()
+            .append("circle")
+            .attr("class", function (d) {
+                return d.group
+            })
+            .attr("cx", function (d) {
+                return projection([d.long, d.lat])[0]
+            })
+            .attr("cy", function (d) {
+                return projection([d.long, d.lat])[1]
+            })
+            .attr("r", function (d) {
+                return size(d.size)
+            })
+            .style("fill", function (d) {
+                return color(d.group)
+            })
+            .attr("stroke", function (d) {
+                return color(d.group)
+            })
+            .attr("stroke-width", 4)
+            .attr("fill-opacity", .8)
+            .attr("stroke-opacity", .2);
+        d3.selectAll(".checkbox.product").on("change", updateCircle);
+        updateCircle();
     }
 
     function updateCircle() {
-        d3.selectAll(".dropdown-menu .checkbox").each(function (d) {
+        d3.selectAll(".checkbox.product").each(function (d) {
             cb = d3.select(this);
             grp = cb.property("value");
             // If the box is check, I show the group
@@ -733,7 +756,7 @@
         }
     }
 
-    function clicked(country) {
+    function showCountryBox(country) {
         if (country.id === "USA") {
             console.log("country.id", country.id);
             d3.select(".tooltipBox").style("display", "block");

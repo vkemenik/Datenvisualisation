@@ -200,6 +200,13 @@ content-map {
     margin-top: 20px;
 }
 
+.fontProduct {
+    font-family: "lato", sans-serif;
+    color: white;
+    font-size: 10px;
+}
+
+
 body, html {
     height: 100%;
     width: 100%;
@@ -207,10 +214,7 @@ body, html {
 }
 
 
-.legendThreshold {
-    font-size: 12px;
-    font-family: sans-serif;
-}
+
 
 .caption {
     fill: #000;
@@ -225,10 +229,6 @@ body, html {
 /*    fill:#055BDC;*/
 /*}*/
 
-.fontProduct {
-    font-family: "lato", sans-serif;
-    color: white;
-}
 
 
 /* Button Über das Projekt*/
@@ -383,28 +383,17 @@ div.tooltip {
     background-color: #0AA7FF;
 }
 
-.slider.coffe {
-    background-color: white;
-}
 
-.slider.rice {
-    background-color: white;
-}
 
-.slider.coton {
-    background-color: white;
-}
-
-.slider.coffe:before {
+.slider.coffee:before {
     background-color: #FFAC27;
 }
 
 .slider.rice:before {
     background-color: #C73737;
-
 }
 
-.slider.coton:before {
+.slider.cotton:before {
     background-color: #FF2EFF;
 
 }
@@ -413,17 +402,17 @@ input:checked + .slider {
     background-color: #0AA7FF;
 }
 
-input:checked + .slider.coffe {
-    background-color: white;
-}
+/*input:checked + .slider.coffe {*/
+/*    background-color: white;*/
+/*}*/
 
-input:checked + .slider.rice {
-    background-color: white;
-}
+/*input:checked + .slider.rice {*/
+/*    background-color: white;*/
+/*}*/
 
-input:checked + .slider.coton {
-    background-color: white;
-}
+/*input:checked + .slider.coton {*/
+/*    background-color: white;*/
+/*}*/
 
 input:focus + .slider {
     box-shadow: 0 0 1px #0AA7FF;
