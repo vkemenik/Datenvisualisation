@@ -373,7 +373,6 @@
      */
     let introData = d3.map();
     let waterStressData = d3.map();
-    // let virtualWater = [];
 
     /**
      *
@@ -418,7 +417,6 @@
         .defer(d3.csv, "data/countryWaterStress.csv", function (d) {
             waterStressData.set(d.code, +d.score)
         })
-        .defer(d3.csv, "data/virtualWaterCountryMin.csv")
         .await(ready);
     console.log("introData", introData);
 
