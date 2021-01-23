@@ -553,7 +553,7 @@
             if (this.value === "virtualWater") {
                 console.log('button changed to ' + 'wwf');
                 if (d3.select(this).property("checked")) {
-                     d3.select("#legende-virtuelleswasser").style("display", "block");
+                    d3.select("#legende-virtuelleswasser").style("display", "block");
                     linePathFar = g2.selectAll("myPath")
                         .data(virtualWaterFar)
                         .enter()
@@ -645,7 +645,7 @@
             .attr("fill-opacity", .8)
             .attr("stroke-opacity", .2)
             .on("mouseover", function (d) {
-                console.log('color',color(d.group))
+                console.log('color', color(d.group))
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -654,7 +654,7 @@
                     +d.value + 'km&sup3; Wasser/Jahr')
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px")
-                })
+            })
             .on("mouseout", function () {
                 tooltip.transition()
                     .duration(500)
@@ -785,43 +785,6 @@
     }
 
 
-    // const buttons = d3.selectAll('input').on("change", function (d) {
-    //     const selection = this.value;
-    // });
-    // buttons.on('change', function (d) {
-    //     if (this.value === "waterStress") {
-    //         console.log('button changed to ' + 'waterStress')
-    //         if (d3.select(this).property("checked")) {
-    //             console.log('true');
-    //         } else {
-    //             console.log('false');
-    //         }
-    //     }
-    //
-    //     if (this.value == "virtualWater") {
-    //         console.log('button changed to ' + 'wwf')
-    //         if (d3.select(this).property("checked")) {
-    //             console.log('true');
-    //         } else {
-    //             console.log('false');
-    //
-    //         }
-    //
-    //
-    //     }
-    //
-    //     if (this.value === "products") {
-    //         console.log('button changed to ' + 'products')
-    //         if (d3.select(this).property("checked")) {
-    //             console.log('true');
-    //         } else {
-    //             console.log('false');
-    //
-    //         }
-    //
-    //
-    //     }
-    // })
 </script>
 
 </body>
