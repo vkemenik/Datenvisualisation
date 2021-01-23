@@ -32,6 +32,7 @@
                 <!--                    <path fill-rule="evenodd"-->
                 <!--                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>-->
                 <!--                </svg>-->
+
             </a>
         </div>
         <!-- The middle of the site with header, function and card!-->
@@ -43,7 +44,7 @@
                         <!--                        <img src="./img/Logo_klein.png">-->
                         <a class="" id="logo" href="index.html">Wer? Wie? <br/>Was? Wasser?</a>
                     </div>
-                    <div style="margin-right:40px">
+                    <div style="margin-right:50px">
                         <a type="button" class="btn fontText" href="about.html" role="button" id="btn-tool">Über das
                             Projekt</a>
                     </div>
@@ -80,10 +81,16 @@
                             <span class="slider round"></span>
                         </label>
                     </div>
-                    <label class="pr-3">Produkte</label>
-
-                    <div class="form-check form-check-inline pr-3">
-                        <label class="pr-2 fontProduct">Kaffee
+                    <label class="pr-1">Produkte</label>
+                    <sup>
+                        <i>
+                            <i class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
+                                <span class="tooltiptext tooltiptext-3 fontText">Indirekter Wasserkonsum Deutschlands (virtuelles Wasser) durch importierte Produkte.</span>
+                            </i>
+                        </i>
+                    </sup>
+                    <div class="form-check form-check-inline">
+                        <label class="pr-1 fontProduct">Kaffee
                         </label>
                         <label class="switch">
                             <input type="checkbox" class="checkbox product" value="coffee">
@@ -91,8 +98,8 @@
                         </label>
                     </div>
 
-                    <div class="form-check form-check-inline pr-3">
-                        <label class="pr-2 fontProduct">reis
+                    <div class="form-check form-check-inline">
+                        <label class="pr-1 fontProduct">Reis
                         </label>
                         <label class="switch">
                             <input type="checkbox" class="checkbox product" value="rice">
@@ -100,60 +107,112 @@
                         </label>
                     </div>
 
-                    <div class="form-check form-check-inline pr-3">
-                        <label class="pr-2 fontProduct">Baumwolle
+                    <div class="form-check form-check-inline">
+                        <label class="pr-1 fontProduct">Baumwolle
                         </label>
                         <label class="switch">
                             <input type="checkbox" class="checkbox product" value="cotton">
                             <span class="slider round cotton"></span>
                         </label>
                     </div>
-
-
-                    <!--Product button -->
-                    <!--                    <div class="form-check form-check-inline pr-5 map-settings">-->
-                    <!--                        <div class="dropdown">-->
-                    <!--                            <a class="btn btn-default dropdown-toggle" type="button"-->
-                    <!--                               id="dropdownMenu1" data-toggle="dropdown"-->
-                    <!--                               aria-haspopup="true" aria-expanded="true" style="color:white">-->
-                    <!--                                <label>Produkte</label>-->
-                    <!--                            </a>-->
-                    <!--                            <ul class="dropdown-menu checkbox-menu allow-focus fontProduct"-->
-                    <!--                                aria-labelledby="dropdownMenu1">-->
-                    <!--                                <li class="form-check">-->
-                    <!--                                    <label>Kaffee</label>-->
-                    <!--                                    <label class="switch coffe">-->
-                    <!--                                        <input type="checkbox" class="checkbox" value="coffee">-->
-                    <!--                                        <span class="slider round coffe"></span>-->
-                    <!--                                    </label>-->
-                    <!--                                </li>-->
-                    <!--                                <hr class="hrProduct">-->
-                    <!--                                <li class="form-check">-->
-                    <!--                                    <label>Reis</label>-->
-                    <!--                                    <label class="switch rice">-->
-                    <!--                                        <input type="checkbox" class="checkbox" value="rice">-->
-                    <!--                                        <span class="slider round rice"></span>-->
-                    <!--                                    </label>-->
-                    <!--                                </li>-->
-                    <!--                                <hr class="hrProduct">-->
-                    <!--                                <li class="form-check">-->
-                    <!--                                    <label>Baumwolle</label>-->
-                    <!--                                    <label class="switch coton">-->
-                    <!--                                        <input type="checkbox" class="checkbox" value="cotton">-->
-                    <!--                                        <span class="slider round coton"></span>-->
-                    <!--                                    </label>-->
-                    <!--                                </li>-->
-                    <!--                            </ul>-->
-                    <!--                        </div>-->
-                    <!--                        <label class="switch">-->
-                    <!--                            <input type="checkbox" class="checkbox" value="products">-->
-                    <!--                            <span class="slider round"></span>-->
-                    <!--                        </label>-->
-                    <!--                    </div>-->
                 </div>
                 <hr class="hrTool ">
                 <div class="row content-only-map">
                     <div class="col text-left">
+                        <!-- the legend placeholder-->
+                        <div class="row  legendContainer">
+                            <!--  waterstress legend-->
+                            <div id="legende-waterstress">
+                                <div class="row justify-content-start">
+                                    <div class="col-6">
+                                        <p class="legende-headline">Wasserstress-Legende</p>
+                                        <div id="legende-content-boxes">
+                                            <div id="extrem-high">
+                                            </div>
+                                            <div id="high">
+                                            </div>
+                                            <div id="middle">
+                                            </div>
+                                            <div id="low">
+                                            </div>
+                                            <div id="very-low">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start">
+                                    <div class="col-6">
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                extrem hoch<br>(>80%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                hoch<br>(40-80%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                mittel<br>(20-40%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                niedrig<br>(10-20%)
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-waterstress-text">
+                                                sehr niedrig<br>(<10%)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- wwf-legend-->
+                            <div id="legende-virtuelleswasser" class="">
+                                <div class="row justify-content-start">
+                                    <div class="col-6">
+                                        <p class="legende-headline">Virtuelles Wasser-Legende</p>
+                                        <div id="legende-content-boxes-vw">
+                                            <div id="high-vw">
+                                            </div>
+                                            <div id="middle-vw">
+                                            </div>
+                                            <div id="low-vw">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start">
+                                    <div class="col-6">
+                                        <div class="legende-content-text">
+                                            <p class="legende-vw-text">
+                                                4,96 km&sup3; Wasser<br>Export &rarr; Import
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-vw-text">
+                                                0,13 km&sup3; Wasser<br>Export &rarr; Import
+                                            </p>
+                                        </div>
+                                        <div class="legende-content-text">
+                                            <p class="legende-vw-text">
+                                                0,08 km&sup3; Wasser<br>Export &rarr; Import
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card-->
+                    <div class="col text-center" id="map">
+                        <svg id="tool" width="900" height="670"></svg>
+                    </div>
+                    <!-- BtnZoom-->
+                    <div class="col">
                         <!--  the box for the info about the country-->
                         <div class="row tooltipBox">
                             <div class="col">
@@ -277,73 +336,6 @@
                                     </p></div>
                             </div>
                         </div>
-                        <!-- the legend placeholder-->
-                        <div class="row bg-success legendContainer">
-                            <!--  waterstress legend-->
-                            <div id="legende-waterstress">
-                                <div class="row justify-content-start">
-                                    <div class="col-6">
-                                        <p class="legende-headline">Wasserstress-Legende</p>
-                                        <div id="legende-content-boxes">
-                                            <div id="extrem-high">
-                                            </div>
-                                            <div id="high">
-                                            </div>
-                                            <div id="middle">
-                                            </div>
-                                            <div id="low">
-                                            </div>
-                                            <div id="very-low">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-start">
-                                    <div class="col-6">
-                                        <div class="legende-content-text">
-                                            <p class="legende-waterstress-text">
-                                                Extrem hoch<br>(>80%)
-                                            </p>
-                                        </div>
-                                        <div class="legende-content-text">
-                                            <p class="legende-waterstress-text">
-                                                Hoch<br>(40-80%)
-                                            </p>
-                                        </div>
-                                        <div class="legende-content-text">
-                                            <p class="legende-waterstress-text">
-                                                Mittel<br>(20-40%)
-                                            </p>
-                                        </div>
-                                        <div class="legende-content-text">
-                                            <p class="legende-waterstress-text">
-                                                Niedrig<br>(10-20%)
-                                            </p>
-                                        </div>
-                                        <div class="legende-content-text">
-                                            <p class="legende-waterstress-text">
-                                                Sehr niedrig<br>(<10%)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- wwf-legend-->
-                            <div id="legende-wwf" class="bg-success">
-                                <p>legenWWF</p>
-                            </div>
-                            <!-- products legend-->
-                            <div id="legende-products" class="bg-warning">
-                                <p>legendProducts</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card-->
-                    <div class="col text-center" id="map">
-                        <svg id="tool" width="900" height="670"></svg>
-                    </div>
-                    <!-- BtnZoom-->
-                    <div class="col text-center">
                         <div id="" class="row btn-group-vertical p-2 btnZoomGroup">
                             <button class="btn btnZoom" id="zoom-in">
                                 <img src="./img/plus.svg" id="plus-svg">
@@ -380,7 +372,7 @@
      */
     let introData = d3.map();
     let waterStressData = d3.map();
-    let virtualWater = [];
+    // let virtualWater = [];
 
     /**
      *
@@ -390,11 +382,10 @@
     /**
      * Tooltip
      */
-    let tooltip = d3.select('#map')
+    let tooltip = d3.select('body')
         .append('div')
-        .attr('class', 'hidden tooltip')
-        .style("visibility", "hidden");
-
+        .attr('class', 'tooltip')
+        .style("opacity", 0);
 
     /**
      * ColorScaleWaterstress
@@ -428,6 +419,7 @@
         })
         .defer(d3.csv, "data/virtualWaterCountryMin.csv")
         .await(ready);
+    console.log("introData", introData);
 
 
     /*
@@ -450,50 +442,30 @@
     let g1 = svg.append("g");
     let g2 = svg.append("g");
     let g3 = svg.append("g");
+    let zoomZone = svg.append("g");
 
-    /**
-     * Line Gradients
-     */
-    var defs = svg.append("defs");
-    var gradient = defs.append("linearGradient")
-        .attr("id", "svgGradient")
-        .attr("x1", "0%")
-        .attr("x2", "100%")
-        .attr("y1", "0%")
-        .attr("y2", "100%");
-
-    gradient.append("stop")
-        .attr('class', 'start')
-        .attr("offset", "0%")
-        .attr("stop-color", "#FF0BFF")
-        .attr("stop-opacity", 1);
-
-    gradient.append("stop")
-        .attr('class', 'end')
-        .attr("offset", "100%")
-        .attr("stop-color", "#3DD9E3")
-        .attr("stop-opacity", 1);
-    console.log(introData);
 
     /**
      * Marker for the products.
      * */
     var markers = [
-        {long: -72, lat: 4, group: "coffee", size: 41}, // Colombia
-        {long: 120, lat: -5, group: "coffee", size: 30}, // Indonesia
-        {long: -76, lat: -10, group: "coffee", size: 22}, // Peru
-        {long: -55, lat: -10, group: "coffee", size: 100}, // Brazil
-        {long: 38, lat: 1, group: "coffee", size: 20}, // Kenya
-        {long: 77, lat: 20, group: "coffee", size: 8}, // India
-        {long: 1.17, lat: 8, group: "rice", size: 6}, // Togo
-        {long: 12.83, lat: 42.83, group: "rice", size: 4}, // Italy
-        {long: 77, lat: 20, group: "cotton", size: 39}, // India
-        {long: 35, lat: 39, group: "cotton", size: 30}, // Turkey
-        {long: 70, lat: 30, group: "cotton", size: 15}, // Pakistan
-        {long: 64, lat: 41, group: "cotton", size: 14}, // Uzbekistan
-        {long: 90, lat: 24, group: "cotton", size: 14}, // Bangladesh
-        {long: 105, lat: 35, group: "cotton", size: 13} // China
+        {long: -72, lat: 4, group: "coffee", size: 41, state: "Colombia", value: 1.03}, // Colombia
+        {long: 120, lat: -5, group: "coffee", size: 30, state: "Indonesia", value: 0.77}, // Indonesia
+        {long: -76, lat: -10, group: "coffee", size: 22, state: "Peru", value: 0.55}, // Peru
+        {long: -55, lat: -10, group: "coffee", size: 100, state: "Brazil", value: 2.65}, // Brazil
+        {long: 38, lat: 1, group: "coffee", size: 20, state: "Kenya", value: 0.45}, // Kenya
+        {long: 77, lat: 20, group: "coffee", size: 8, state: "India", value: 0.21}, // India
+        {long: 1.17, lat: 8, group: "rice", size: 6, state: "Togo", value: 0.15}, // Togo
+        {long: 12.83, lat: 42.83, group: "rice", size: 4, state: "Italy", value: 0.12}, // Italy
+        {long: 77, lat: 20, group: "cotton", size: 39, state: "India", value: 0.99}, // India
+        {long: 35, lat: 39, group: "cotton", size: 30, state: "Turkey", value: 0.76}, // Turkey
+        {long: 70, lat: 30, group: "cotton", size: 15, state: "Pakistan", value: 0.36}, // Pakistan
+        {long: 64, lat: 41, group: "cotton", size: 14, state: "Uzbekistan", value: 0.35}, // Uzbekistan
+        {long: 90, lat: 24, group: "cotton", size: 14, state: "Bangladesh", value: 0.34}, // Bangladesh
+        {long: 105, lat: 35, group: "cotton", size: 13, state: "China", value: 0.32} // China
     ];
+
+
     /* Color for the products */
     var color = d3.scaleOrdinal()
         .domain(["coffee", "rice", "cotton"])
@@ -503,6 +475,19 @@
     var size = d3.scaleLinear()
         .domain([1, 100])  // What's in the data
         .range([4, 50])  // Size in pixel
+
+
+    // Zoom function
+    var zoom = d3.zoom()
+        .scaleExtent([1, 2])
+        .extent([[0, 0], [900, 670]])
+        .on("zoom", zoomed);
+
+
+    function zoomed() {
+        var transform = d3.event.transform;
+        g1.attr("transform", transform);
+    }
 
 
     /**
@@ -516,15 +501,20 @@
 
     function ready(error, topo, data1, data2, wwf) {
         let countries = topo.features;
-        wwf.forEach(function (row) {
-            // console.log(row);
-            source = [9, 51]
-            target = [+row.Longitude, +row.Latitude]
-            topush = {type: "LineString", coordinates: [source, target]}
-            // console.log(topush);
-            virtualWater.push(topush)
-        })
-        console.log('wwf', virtualWater);
+
+        let virtualWaterFar = [
+            {id: 1, coord: {type: "LineString", coordinates: [[9, 51], [-97, 38]]}}, // USA 121 hoch
+            {id: 2, coord: {type: "LineString", coordinates: [[9, 51], [-55, -10]]}}, // Brazil 0,42 mittel
+            {id: 3, coord: {type: "LineString", coordinates: [[9, 51], [38, 1]]}}, // Kenia 0,0003 low
+            {id: 1, coord: {type: "LineString", coordinates: [[9, 51], [77, 20]]}} // India 94,31 hoch
+
+        ]
+        let virtualWaterClose = [
+            {id: 1, coord: {type: "LineString", coordinates: [[35, 57], [10, 30]]}}, // Spain 10 30 77,40 hoch
+            {id: 1, coord: {type: "LineString", coordinates: [[35, 57], [40, 40]]}}, // Italia 20 50 34,03 hoch
+            {id: 1, coord: {type: "LineString", coordinates: [[35, 57], [80, 25]]}}, // Turkey 29,28 hoch
+        ];
+
 
         worldmap = g1
             .selectAll(".country")
@@ -538,32 +528,9 @@
             .attr("stroke", strokeColorCountry)
             .attr("stroke-width", strokeWidthCountry)
             .on('click', showCountryBox);
-        // .style("stroke", "#fff")
-        // .on('mouseover', function (d) {
-        //     if (introData.has(d.id))
-        //         tooltip.style('visibility', "visible")
-        //             .html("<span><i>" + introData.get(d.id)["state"] + "</i></span>"
-        //                 + "<br/>"
-        //                 + "<hr class =" + "hrToolTip" + ">"
-        //                 + introData.get(d.id)["text"])
-        // })
-        // .on('mouseout', function (d) {
-        //     return tooltip.style("visibility", "hidden");
-        // })
-        // .on('mousemove', function (d) {
-        //     tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px");
-        // })
-
         const toolButtons = d3.selectAll('.switch .checkbox').on("change", function (d) {
             const selection = this.value;
         });
-
-        // d3.selectAll(".dropdown-menu .checkbox").on("change", updateCircle);
-
-        const productButtons = d3.selectAll(".dropdown-menu .checkbox");
-        console.log('productsButton', productButtons);
-
-
         toolButtons.on('change', function (d) {
             if (this.value === "waterStress") {
                 console.log('button changed to ' + 'waterStress');
@@ -586,21 +553,59 @@
             if (this.value === "virtualWater") {
                 console.log('button changed to ' + 'wwf');
                 if (d3.select(this).property("checked")) {
-                    // d3.select("#legende-wwf").style("display", "block");
-
-                    linePath = g2.selectAll("myPath")
-                        .data(virtualWater)
+                     d3.select("#legende-virtuelleswasser").style("display", "block");
+                    linePathFar = g2.selectAll("myPath")
+                        .data(virtualWaterFar)
                         .enter()
                         .append("path")
                         .attr("d", function (d) {
-                            return path(d)
+                            console.log('path', d.coord);
+                            return path(d.coord)
                         })
                         .style("fill", "none")
-                        .style("stroke", "url(#svgGradient)")
-                        .style("stroke-width", 6)
+                        .style("stroke", colorLine)
+                        .style("stroke-width", 3)
+
+                    d3.select('#zoom-in').on('click', function () {
+                        // Smooth zooming
+
+                        zoom.scaleBy(g1.transition().duration(750), 5);
+
+                        linePathFar.remove();
+                        linePathClose = g2.selectAll("myPath")
+                            .data(virtualWaterClose)
+                            .enter()
+                            .append("path")
+                            .attr("d", function (d) {
+                                return path(d.coord)
+                            })
+                            .style("fill", "none")
+                            .style("stroke", colorLine)
+                            .style("stroke-width", 3)
+
+                    });
+
+                    d3.select('#zoom-out').on('click', function () {
+                        // Ordinal zooming
+                        zoom.scaleBy(g1, 1 / 5);
+                        linePathFar = g2.selectAll("myPath")
+                            .data(virtualWaterFar)
+                            .enter()
+                            .append("path")
+                            .attr("d", function (d) {
+                                return path(d.coord)
+                            })
+                            .style("fill", "none")
+                            .style("stroke", colorLine)
+                            .style("stroke-width", 3)
+                        linePathClose.remove();
+                    });
+
+
                 } else {
-                    linePath.remove();
-                    // d3.select("#legende-wwf").style("display", "none");
+                    linePathFar.remove();
+
+                    d3.select("#legende-virtuelleswasser").style("display", "none");
 
                     console.log('false');
                 }
@@ -609,87 +614,8 @@
             }
 
 
-            // if (this.value === "products") {
-            //     console.log('button changed to ' + 'products');
-            //     if (d3.select(this).property("checked")) {
-            //         console.log('true');
-            //         d3.select(".dropdown-menu").selectAll("input").property('checked', true);
-            //         // d3.selectAll(".dropdown-menu .checkbox").each(function(d){
-            //         //     cb=d3.select(this);
-            //         //     grp=cb.property("value");
-            //         //
-            //         //     if(cb.property("checked")){
-            //         //         console.log('cb selected', cb.property("value"));
-            //         //     }
-            //         // });
-            //     } else {
-            //         console.log('false');
-            //         d3.select(".dropdown-menu").selectAll("input").property('checked', false);
-            //     }
-            //
-            //
-            //     // productButtons.on('change',function(d){
-            //     //         cb=d3.select(this);
-            //     //         grp=cb.property("value");
-            //     //
-            //     //         if(cb.property("checked")){
-            //     //             console.log('cb selected', cb.property("value"));
-            //     //         }
-            //     //     // if (this.value === "coffee"){
-            //     //     //     console.log("coffee")
-            //     //     // }
-            //     //     // if (this.value === "rice"){
-            //     //     //     console.log("rice")
-            //     //     // }
-            //     //     // if (this.value === "cotton"){
-            //     //     //     console.log("cotton")
-            //     //     // }
-            //     // })
-            //
-            //     // productButtons.on('change', function (d) {
-            //     //
-            //     //
-            //     // })
-            //     // d3.selectAll(".dropdown-menu .checkbox").each(function(d){
-            //     //     cb=d3.select(this);
-            //     //     grp=cb.property("value");
-            //     //
-            //     //     if(cb.property("checked")){
-            //     //         console.log('cb selected', cb.property("value"));
-            //     //     }
-            //     // });
-            // }
-
-            // if (this.value ==="coffee"){
-            //     console.log('button changed to ' + 'coffee');
-            //
-            //     if (d3.select(this).property("checked")) {
-            //         console.log(true);
-            //     } else{
-            //         console.log(false);
-            //
-            //     }
-            // }
-            // if (this.value ==="rice"){
-            //     console.log('button changed to ' + 'rice');
-            //     if (d3.select(this).property("checked")) {
-            //         console.log(true);
-            //     } else{
-            //         console.log(false);
-            //
-            //     }
-            // }
-            // if (this.value ==="cotton"){
-            //     console.log('button changed to ' + 'cotton');
-            //     if (d3.select(this).property("checked")) {
-            //         console.log(true);
-            //
-            //     } else{
-            //         console.log(false);
-            //
-            //     }
-            // }
         })
+
 
         // Add Circles
         g3
@@ -717,9 +643,27 @@
             })
             .attr("stroke-width", 4)
             .attr("fill-opacity", .8)
-            .attr("stroke-opacity", .2);
+            .attr("stroke-opacity", .2)
+            .on("mouseover", function (d) {
+                console.log('color',color(d.group))
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                tooltip.html("<span style= 'font-size:15px'><i class=\"fa fa-tint\" aria-hidden=\"true\"></i> &nbsp " + d.state + "</span>"
+                    + "<br/>" +
+                    +d.value + 'km&sup3; Wasser/Jahr')
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px")
+                })
+            .on("mouseout", function () {
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
+
         d3.selectAll(".checkbox.product").on("change", updateCircle);
         updateCircle();
+
     }
 
     function updateCircle() {
@@ -729,12 +673,12 @@
             // If the box is check, I show the group
             if (cb.property("checked")) {
                 console.log('cb selected', cb.property("value"));
-                svg.selectAll("." + grp).transition().duration(1000).style("opacity", 1).attr("r", function (d) {
+                g3.selectAll("." + grp).transition().duration(1000).style("opacity", 1).attr("r", function (d) {
                     return size(d.size)
                 })
                 // Otherwise I hide it
             } else {
-                svg.selectAll("." + grp).transition().duration(1000).style("opacity", 0).attr("r", 0)
+                g3.selectAll("." + grp).style("opacity", 0).attr("r", 0)
             }
         })
     }
@@ -750,9 +694,9 @@
 
     function strokeWidthCountry(country) {
         if (introData.has(country.id)) {
-            return '4';
+            return '2';
         } else {
-            return;
+            return '0.3';
         }
     }
 
@@ -820,6 +764,23 @@
                 d3.select("#Italia").style('display', 'none');
 
             })
+        }
+    }
+
+    function colorLine(data) {
+        if (data.id === 1) {
+            // If high value
+            return "rgba( 180,15,15,1)";
+        }
+
+        if (data.id === 2) {
+            // if average value
+            return "rgba(239,183,151,1)"
+        }
+
+        if (data.id === 3) {
+            // if low value
+            return "rgba(221,74,64,1)"
         }
     }
 

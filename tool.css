@@ -160,6 +160,7 @@ content-map {
 .btnZoomGroup {
     position: absolute;
     bottom: 0;
+    margin-left: 70px;
 }
 
 
@@ -281,24 +282,41 @@ body, html {
     background: linear-gradient(90deg, #3DD9E3 -0.01%, #FF0BFF 100%);
 }
 
-
-div.tooltip {
-    color: #ffffff;
-    background-color: #101011;
-    padding: .5em;
-    width: 275px;
-    height: 214px;
-    text-shadow: #f5f5f5 0 1px 0;
-    border-radius: 2px;
-    text-align: left;
-    opacity: 0.9;
+/*
+Tooltip for the products
+ */
+div.tooltip{
     position: absolute;
-    font-size: 12px;
-    top: -5px;
-    right: 105%;
-    margin-left: 0px;
-
+    text-align: center;
+    color:white;
+    width: 150px;
+    height: auto;
+    padding: 2px;
+    font: 12px lato, sans-serif;
+    background: LightSkyBlue;
+    border: 4px;
+    border-radius: 8px;
+    pointer-events: none;
 }
+
+
+/*div.tooltip {*/
+/*    color: #ffffff;*/
+/*    background-color: #101011;*/
+/*    padding: .5em;*/
+/*    width: 275px;*/
+/*    height: 214px;*/
+/*    text-shadow: #f5f5f5 0 1px 0;*/
+/*    border-radius: 2px;*/
+/*    text-align: left;*/
+/*    opacity: 0.9;*/
+/*    position: absolute;*/
+/*    font-size: 12px;*/
+/*    top: -5px;*/
+/*    right: 105%;*/
+/*    margin-left: 0px;*/
+
+/*}*/
 
 .hrToolTip {
     display: block;
@@ -476,6 +494,11 @@ input:checked + .slider:before {
 
 }
 
+.infoBtn .tooltiptext-3 {
+    left: -70px;
+
+}
+
 /*Pop-up Window Elements*/
 
 /* The Modal (background) */
@@ -486,6 +509,7 @@ input:checked + .slider:before {
     top: 50px;
     z-index: 1;
     min-height: 100px;
+    text-align: left;
     overflow: hidden;
     width:350px;
     background-color: rgb(0,0,0);
@@ -585,30 +609,30 @@ input:checked + .slider:before {
     margin-bottom: 0px;
     /*visibility: visible;*/
     display: none;
-    background-color: red;
+    /*background-color: red;*/
 }
 
-#legende-wwf {
-    color: #FFFFFF;
-    padding: 15px;
-    width: 350px;
-    height: auto;
-    left: 73px;
-    margin-bottom: 0px;
-    display: block;
-    background-color: red;
-}
+/*#legende-wwf {*/
+/*    color: #FFFFFF;*/
+/*    padding: 15px;*/
+/*    width: 350px;*/
+/*    height: auto;*/
+/*    left: 73px;*/
+/*    margin-bottom: 0px;*/
+/*    display: block;*/
+/*    !*background-color: red;*!*/
+/*}*/
 
-#legende-products {
-    color: #FFFFFF;
-    padding: 15px;
-    width: 350px;
-    height: auto;
-    left: 73px;
-    margin-bottom: 0px;
-    display: block;
-    background-color: red;
-}
+/*#legende-products {*/
+/*    color: #FFFFFF;*/
+/*    padding: 15px;*/
+/*    width: 350px;*/
+/*    height: auto;*/
+/*    left: 73px;*/
+/*    margin-bottom: 0px;*/
+/*    display: block;*/
+/*    !*background-color: red;*!*/
+/*}*/
 
 
 .legende-headline {
@@ -701,4 +725,92 @@ input:checked + .slider:before {
 
     color: #FFFFFF;
 }
+
+/**
+Legend wwf
+ */
+
+#legende-virtuelleswasser {
+    /*position: absolute;*/
+    color: #FFFFFF;
+    width: 350px;
+    height: auto;
+    left: 73px;
+    /*bottom: 0;*/
+    padding:15px;
+    /*padding-bottom: 50px;*/
+    /*margin-top: 100px;*/
+    /*margin-bottom: 100px;*/
+    margin-bottom: 0px;
+    display: none;
+
+}
+/*#legende-wwf {*/
+/*    color: #FFFFFF;*/
+/*    padding: 15px;*/
+/*    width: 350px;*/
+/*    height: auto;*/
+/*    left: 73px;*/
+/*    margin-bottom: 0px;*/
+/*    display: block;*/
+/*    !*background-color: red;*!*/
+/*}*/
+
+
+#legende-content-boxes-vw {
+    width: 350px;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#high-vw {
+    display: table-cell;
+    width: 95px;
+    height: 8px;
+    background-image: linear-gradient(to right, rgba(239,183,151,1), rgba(180,15,15,100),  rgba(180,15,15,100));
+    border-right: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+}
+
+#middle-vw {
+    display: table-cell;
+    width: 95px;
+    height: 8px;
+    background-image: linear-gradient(to right, rgba(239,183,151,1), rgba(221,74,64,1),  rgba(221,74,64,1));
+    border: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+    left: 10px;
+}
+
+#low-vw {
+    display: table-cell;
+    width: 95px;
+    height: 8px;
+    background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(239,183,151,1),  rgba(239,183,151,1));
+    border: 0.25px solid #4F7EC0;
+    padding: 0;
+    margin: 0;
+}
+
+.legende-vw-text {
+    width: 95px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    /* or 140% */
+
+    text-align: center;
+
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-right: 32px;
+}
+
 
