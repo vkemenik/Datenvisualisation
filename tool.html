@@ -24,17 +24,8 @@
 <body class="backgroundMap">
 <div class="container-fluid mt-3">
     <div class="row">
-        <!--Switch Button left -->
-        <div class="col-1 position-fixed">
-            <a type="button" href="index.html" class="switchbutton-left" role="button">
-                <!--                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"-->
-                <!--                     class=" bi-chevron-left svgB" viewBox="0 0 16 16">-->
-                <!--                    <path fill-rule="evenodd"-->
-                <!--                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>-->
-                <!--                </svg>-->
 
-            </a>
-        </div>
+
         <!-- The middle of the site with header, function and card!-->
         <div class="col">
             <!-- header with the logo and the button -->
@@ -85,12 +76,12 @@
                     <sup>
                         <i>
                             <i class='fa fa-fw fa-info-circle infoBtn' style="color:#0AA7FF">
-                                <span class="tooltiptext tooltiptext-3 fontText">Indirekter Wasserkonsum Deutschlands (virtuelles Wasser) durch importierte Produkte.</span>
+                                <span class="tooltiptext tooltiptext-3 fontText">Diese Produkte haben einen sehr hohen Wasser-<br>verbrauch bei der Herstellung. Sie zählen durch den hohen Konsum der deutschen Bevölkerung als beliebtes Produkt.</span>
                             </i>
                         </i>
                     </sup>
                     <div class="form-check form-check-inline">
-                        <label class="pr-1 fontProduct">Kaffee
+                        <label class="pr-2 pl-2 fontProduct">Kaffee
                         </label>
                         <label class="switch">
                             <input type="checkbox" class="checkbox product" value="coffee">
@@ -99,7 +90,7 @@
                     </div>
 
                     <div class="form-check form-check-inline">
-                        <label class="pr-1 fontProduct">Reis
+                        <label class="pr-2 fontProduct">Reis
                         </label>
                         <label class="switch">
                             <input type="checkbox" class="checkbox product" value="rice">
@@ -108,7 +99,7 @@
                     </div>
 
                     <div class="form-check form-check-inline">
-                        <label class="pr-1 fontProduct">Baumwolle
+                        <label class="pr-2 fontProduct">Baumwolle
                         </label>
                         <label class="switch">
                             <input type="checkbox" class="checkbox product" value="cotton">
@@ -311,17 +302,17 @@
                                     <div class="col-6">
                                         <div class="legende-content-text">
                                             <p class="legende-vw-text">
-                                                4,96 km&sup3; Wasser<br>Export &rarr; Import
+                                                >4,96 km&sup3; Wasser<br>Export &rarr; Import
                                             </p>
                                         </div>
                                         <div class="legende-content-text">
                                             <p class="legende-vw-text">
-                                                0,13 km&sup3; Wasser<br>Export &rarr; Import
+                                                >0,13 km&sup3; Wasser<br>Export &rarr; Import
                                             </p>
                                         </div>
                                         <div class="legende-content-text">
                                             <p class="legende-vw-text">
-                                                0,08 km&sup3; Wasser<br>Export &rarr; Import
+                                                <0,08 km&sup3; Wasser<br>Export &rarr; Import
                                             </p>
                                         </div>
                                     </div>
@@ -360,8 +351,30 @@
                 </svg>
             </a>
         </div>
+        <!--left switch button -->
+        <div class="col-1 position-fixed" id="swB">
+            <a type="button" class="switchbutton-left" href="index.html" role="button">
+                <p class="switchbutton-text-left">Einf&uuml;hrung</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class=" bi-chevron-left svgB" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+        </div>
     </div>
 
+</div>
+
+<div class="container-fluid d-flex justify-content-center" id="footer">
+    <div class="row">
+        <footer class="col-12" id="footer-content">
+            <a href="impressum.html" id="footer-text">
+                Impressum
+            </a>
+            <a href="datenschutz.html" id="footer-text">
+                Datenschutz
+            </a>
+        </footer>
+    </div>
 </div>
 
 <script>
